@@ -1,9 +1,9 @@
-import Experience from './Experience'
+import ThreeCanvas from './ThreeCanvas'
 
 const App = () => {
   return (
     <>
-      <Experience />
+      <ThreeCanvas />
     </>
   )
 }
