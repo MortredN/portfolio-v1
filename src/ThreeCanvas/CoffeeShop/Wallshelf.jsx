@@ -1,4 +1,6 @@
-const Wallshelf = ({ nodes, materials }) => {
+const Wallshelf = (props) => {
+  const { nodes, materials } = props
+
   return (
     <>
       <group name="WallshelfGroup" position={[-3.5, 3.3, -2.5]}>

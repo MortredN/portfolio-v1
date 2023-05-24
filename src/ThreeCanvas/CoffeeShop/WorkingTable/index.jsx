@@ -1,4 +1,8 @@
-const WorkingTable = ({ nodes, materials }) => {
+import CoffeeMug from './CoffeeMug'
+
+const WorkingTable = (props) => {
+  const { nodes, materials } = props
+
   return (
     <>
       <group name="WorkingTableGroup" position={[1.5, 0.02, 0]}>
@@ -52,26 +56,7 @@ const WorkingTable = ({ nodes, materials }) => {
               scale={[0.49, 0.01, 0.45]}
             />
           </group>
-          <group name="MugTableGroup" position={[0.44, 1.61, -0.69]}>
-            <mesh
-              name="MugTable"
-              castShadow
-              receiveShadow
-              geometry={nodes.MugTable.geometry}
-              material={materials.Cup}
-              rotation={[-Math.PI, Math.PI / 4, -Math.PI]}
-              scale={2}
-            />
-            <mesh
-              name="MugTableCoffee"
-              castShadow
-              receiveShadow
-              geometry={nodes.MugTableCoffee.geometry}
-              material={materials.MugCoffee}
-              position={[0, 0.16, 0]}
-              scale={0.12}
-            />
-          </group>
+          <CoffeeMug {...props} />
         </group>
         <group name="ChairGroup" position={[1.1, 0.02, 0.1]} rotation={[0, -Math.PI / 2, 0]}>
           <mesh

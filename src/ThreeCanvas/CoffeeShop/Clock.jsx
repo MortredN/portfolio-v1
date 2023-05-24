@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react'
 
-const Clock = ({ nodes, materials }) => {
+const Clock = (props) => {
+  const { nodes, materials } = props
+
   const pointHourRef = useRef()
   const pointMinuteRef = useRef()
   const pointSecondRef = useRef()

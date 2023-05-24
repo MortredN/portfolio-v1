@@ -1,4 +1,6 @@
-const Platform = ({ nodes, materials }) => {
+const Platform = (props) => {
+  const { nodes, materials } = props
+
   return (
     <group name="Platform">
       <mesh

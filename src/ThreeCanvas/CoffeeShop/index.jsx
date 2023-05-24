@@ -8,16 +8,17 @@ import Clock from './Clock'
 
 const CoffeeShop = () => {
   const { nodes, materials } = useGLTF('./models/coffeeshop.glb')
+  const gltfProps = { nodes, materials }
 
   return (
     <group dispose={null} position-y={-2}>
       <group name="Scene">
-        <Platform nodes={nodes} materials={materials} />
-        <Bookshelf nodes={nodes} materials={materials} />
-        <Wallshelf nodes={nodes} materials={materials} />
-        <WorkingTable nodes={nodes} materials={materials} />
-        <CoffeeStand nodes={nodes} materials={materials} />
-        <Clock nodes={nodes} materials={materials} />
+        <Platform {...gltfProps} />
+        <Bookshelf {...gltfProps} />
+        <Wallshelf {...gltfProps} />
+        <WorkingTable {...gltfProps} />
+        <CoffeeStand {...gltfProps} />
+        <Clock {...gltfProps} />
       </group>
     </group>
   )

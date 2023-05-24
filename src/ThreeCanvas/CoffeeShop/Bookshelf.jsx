@@ -1,4 +1,6 @@
-const Bookshelf = ({ nodes, materials }) => {
+const Bookshelf = (props) => {
+  const { nodes, materials } = props
+
   return (
     <>
       <group name="BookshelfGroup" position={[2.65, 0, -3.58]}>
