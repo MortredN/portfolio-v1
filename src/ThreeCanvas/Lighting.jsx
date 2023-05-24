@@ -1,23 +1,44 @@
-import { useHelper } from '@react-three/drei'
-import { useControls } from 'leva'
-import { useRef } from 'react'
-import * as THREE from 'three'
+import { folder, useControls } from 'leva'
 
 const Lighting = () => {
-  const { windowLightEnable } = useControls({ windowLightEnable: false })
-
-  const sunLight = useRef(null)
-  useHelper(sunLight, THREE.DirectionalLightHelper, 1, 'red')
-
-  const windowLight = useRef(null)
-  useHelper(windowLight, THREE.PointLightHelper, 0.5, 'blue')
+  const {
+    ambientLightEnable,
+    ambientLightIntensity,
+    sunLightEnable,
+    sunLightIntensity,
+    sunLightPosition,
+    windowLightEnable,
+    windowLightIntensity
+  } = useControls(
+    'Lighting',
+    {
+      Ambient: folder({
+        ambientLightEnable: true,
+        ambientLightIntensity: 0.8
+      }),
+      Sun: folder({
+        sunLightEnable: true,
+        sunLightIntensity: 0.8,
+        sunLightPosition: [6, 9, 3]
+      }),
+      Window: folder({
+        windowLightEnable: true,
+        windowLightIntensity: 0.1
+      })
+    },
+    { collapsed: true }
+  )
 
   return (
     <>
-      <ambientLight intensity={0.8} color="#ffffff" />
+      <ambientLight
+        intensity={ambientLightIntensity}
+        color="#ffffff"
+        visible={ambientLightEnable}
+      />
       <directionalLight
         castShadow
-        intensity={0.8}
+        intensity={sunLightIntensity}
         color="#ffffff"
         shadow-mapSize={[2048, 2048]}
         shadow-camera-near={0.01}
@@ -26,28 +47,26 @@ const Lighting = () => {
         shadow-camera-right={10}
         shadow-camera-bottom={-10}
         shadow-camera-left={-10}
-        shadow-normalBias={0.01}
+        shadow-normalBias={0.02}
         target-position={[0, -2, 0]}
-        position={[6, 8, 4]}
-        ref={sunLight}
+        position={sunLightPosition}
+        visible={sunLightEnable}
       />
       <pointLight
         castShadow
-        intensity={0.1}
+        intensity={windowLightIntensity}
         color="#ffffff"
-        shadow-mapSize={[1024, 1024]}
+        shadow-mapSize={[512, 512]}
         shadow-camera-near={0.01}
         shadow-camera-far={20}
         shadow-camera-top={10}
         shadow-camera-right={10}
         shadow-camera-bottom={-10}
         shadow-camera-left={-10}
-        shadow-normalBias={0.01}
+        shadow-normalBias={0.02}
         position={[0, 1.6, -3.9]}
-        ref={windowLight}
         visible={windowLightEnable}
       />
-      <axesHelper />
     </>
   )
 }

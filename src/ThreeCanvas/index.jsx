@@ -4,7 +4,7 @@ import { Perf } from 'r3f-perf'
 import { useControls } from 'leva'
 
 const ThreeCanvas = () => {
-  const { perf } = useControls({ perf: true })
+  const { perf } = useControls('Debug', { perf: false })
 
   return (
     <>

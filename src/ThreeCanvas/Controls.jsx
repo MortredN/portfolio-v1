@@ -6,20 +6,44 @@ import { useFrame, useThree } from '@react-three/fiber'
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 
-const defaultRotation = { x: Math.PI * 0.175, y: -Math.PI * 0.2375 }
-
 const Controls = () => {
+  const { enableOrbit } = useControls('Debug', { enableOrbit: false })
+  const { defaultRotation, rotationRate, rotationEaseDuration, rotationEaseType } = useControls(
+    'Controls',
+    {
+      defaultRotation: {
+        value: { x: 0.17, y: -0.24 },
+        x: { max: 0.5, min: 0, step: 0.01 },
+        y: { max: 1, min: -1, step: 0.01 }
+      },
+      rotationRate: { value: 0.04, max: 0.2, min: 0, step: 0.01 },
+      rotationEaseDuration: { value: 0.08, max: 0.2, min: 0, step: 0.01 },
+      rotationEaseType: {
+        options: [
+          'none',
+          'power1.inOut',
+          'power2.inOut',
+          'power3.inOut',
+          'circ.inOut',
+          'expo.inOut',
+          'sine.inOut'
+        ],
+        value: 'power2.inOut'
+      }
+    },
+    { collapsed: true }
+  )
+
   const wholeRef = useRef()
-  const { enableOrbit } = useControls({ enableOrbit: false })
   const { camera } = useThree()
 
   // Controls with mouse movement
   useFrame(({ mouse }) => {
     if (!enableOrbit) {
       gsap.to(wholeRef.current.rotation, {
-        y: defaultRotation.y + mouse.x * Math.PI * 0.0375,
-        ease: 'power2.inOut',
-        duration: 0.075
+        y: Math.PI * (defaultRotation.y + mouse.x * rotationRate),
+        ease: rotationEaseType,
+        duration: rotationEaseDuration
       })
     }
   })
@@ -36,7 +60,10 @@ const Controls = () => {
 
   return (
     <>
-      <group rotation={[defaultRotation.x, defaultRotation.y, 0]} ref={wholeRef}>
+      <group
+        rotation={[Math.PI * defaultRotation.x, Math.PI * defaultRotation.y, 0]}
+        ref={wholeRef}
+      >
         <CoffeeShop />
         <mesh name="BaseFloor" receiveShadow position-y={-3} rotation-x={-Math.PI / 2} scale={100}>
           <planeGeometry />
