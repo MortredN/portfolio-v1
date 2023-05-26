@@ -1,5 +1,4 @@
 import * as THREE from 'three'
-import grinderGlassFragmentShader from '../../shaders/grinderGlass/fragment.glsl'
 
 const Grinder = (props) => {
   const { nodes, materials } = props
@@ -29,11 +28,7 @@ const Grinder = (props) => {
         rotation={[0, Math.PI / 2, 0]}
         scale={0.33}
       >
-        <shaderMaterial
-          transparent
-          uniforms={{ uColor: { value: new THREE.Color('#74e3f2') } }}
-          fragmentShader={grinderGlassFragmentShader}
-        />
+        <meshBasicMaterial color="#61bfcc" transparent opacity={0.5} />
       </mesh>
     </group>
   )
