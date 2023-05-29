@@ -8,7 +8,7 @@ const Clock = (props) => {
   const pointSecondRef = useRef()
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
+    const clockInterval = setInterval(() => {
       const date = new Date()
 
       const hours = date.getHours() >= 12 ? date.getHours() - 12 : date.getHours()
@@ -21,7 +21,7 @@ const Clock = (props) => {
       pointSecondRef.current.rotation.z = -Math.PI * 2 * (seconds / 60)
     }, 1000)
 
-    return () => clearInterval(intervalId)
+    return () => clearInterval(clockInterval)
   }, [])
 
   return (
