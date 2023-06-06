@@ -1,12 +1,19 @@
-import { useRecoilState } from "recoil"
-import { cameraOrthoAtom } from "../../../../utils/recoil"
+import { useRecoilState } from 'recoil'
+import { cameraNameAtom } from '../../../../utils/recoil'
+import Constants from '../../../../utils/constants'
 
 const EspressoMachine = (props) => {
   const { nodes, materials } = props
-  const [ortho, setOrtho] = useRecoilState(cameraOrthoAtom)
+  const [cameraName, setCameraName] = useRecoilState(cameraNameAtom)
 
   return (
-    <group position={[0.34, 1.99, -3.5]} onClick={() => setOrtho(!ortho)}>
+    <group
+      position={[0.34, 1.99, -3.5]}
+      onClick={(event) => {
+        event.stopPropagation()
+        setCameraName(Constants.CAMERA_NAMES.PERSPECTIVE1)
+      }}
+    >
       <group name="EspressoMachine" scale={0.78}>
         <mesh
           name="Cube008"

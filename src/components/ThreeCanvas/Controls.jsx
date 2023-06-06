@@ -6,12 +6,13 @@ import { useFrame, useThree } from '@react-three/fiber'
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { useRecoilState } from 'recoil'
-import { cameraOrthoAtom } from '../../utils/recoil'
+import { cameraNameAtom } from '../../utils/recoil'
 import CameraPerspective from './CameraPerspective'
+import Constants from '../../utils/constants'
 
 const Controls = () => {
   const { enableOrbit } = useControls('Debug', { enableOrbit: false })
-  const [ortho, setOrtho] = useRecoilState(cameraOrthoAtom)
+  const [cameraName, setCameraName] = useRecoilState(cameraNameAtom)
   const { defaultRotation, rotationRate, rotationEaseDuration, rotationEaseType } = useControls(
     'Controls',
     {
@@ -43,7 +44,7 @@ const Controls = () => {
 
   // Controls with mouse movement
   useFrame(({ mouse }) => {
-    if (ortho && !enableOrbit) {
+    if (cameraName === Constants.CAMERA_NAMES.ORTHOGRAPHIC && !enableOrbit) {
       gsap.to(wholeRef.current.rotation, {
         y: Math.PI * (defaultRotation.y + mouse.x * rotationRate),
         ease: rotationEaseType,
@@ -55,7 +56,7 @@ const Controls = () => {
   // Reset from debug orbit controls to default camera
   useEffect(() => {
     if (!enableOrbit) {
-      setOrtho(true)
+      setCameraName(Constants.CAMERA_NAMES.ORTHOGRAPHIC)
       camera.position.set(0, 0, 200)
       camera.rotation.set(0, 0, 0)
       camera.zoom = 50

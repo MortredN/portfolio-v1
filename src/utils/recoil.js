@@ -1,6 +1,7 @@
 import { atom } from 'recoil'
+import Constants from './constants'
 
-export const cameraOrthoAtom = atom({
-  key: 'cameraOrtho',
-  default: true
+export const cameraNameAtom = atom({
+  key: 'cameraName',
+  default: Constants.CAMERA_NAMES.ORTHOGRAPHIC
 })

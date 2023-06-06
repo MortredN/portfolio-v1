@@ -9,7 +9,7 @@ const ThreeCanvas = () => {
 
   return (
     <>
-      <Canvas shadows orthographic camera={{}} style={{ touchAction: 'none' }}>
+      <Canvas shadows style={{ touchAction: 'none' }}>
         <Controls />
         <CameraOrthographic />
         {perf && <Perf position="top-left" />}

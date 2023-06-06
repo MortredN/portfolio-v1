@@ -1,9 +1,21 @@
+import { useRecoilState } from 'recoil'
+import { cameraNameAtom } from '../../../utils/recoil'
+import Constants from '../../../utils/constants'
+
 const Bookshelf = (props) => {
+  const [cameraName, setCameraName] = useRecoilState(cameraNameAtom)
   const { nodes, materials } = props
 
   return (
     <>
-      <group name="BookshelfGroup" position={[2.65, 0, -3.58]}>
+      <group
+        name="BookshelfGroup"
+        position={[2.65, 0, -3.58]}
+        onClick={(event) => {
+          event.stopPropagation()
+          setCameraName(Constants.CAMERA_NAMES.PERSPECTIVE3)
+        }}
+      >
         <mesh
           name="Bookshelf"
           castShadow

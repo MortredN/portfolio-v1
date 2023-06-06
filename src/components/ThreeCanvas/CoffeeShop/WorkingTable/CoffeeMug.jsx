@@ -27,7 +27,7 @@ const CoffeeMug = (props) => {
   })
 
   return (
-    <group name="CoffeeMugGroup" position={[0.44, 1.61, -0.69]}>
+    <group name="CoffeeMugGroup" position={[0.44, 1.61, -0.6]}>
       <mesh
         name="CoffeeMug"
         castShadow
