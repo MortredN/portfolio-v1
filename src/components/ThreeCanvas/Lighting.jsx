@@ -22,7 +22,7 @@ const Lighting = () => {
         sunLightPosition: [6, 9, 3]
       }),
       Window: folder({
-        windowLightEnable: true,
+        windowLightEnable: false,
         windowLightIntensity: 0.1
       })
     },
@@ -52,6 +52,7 @@ const Lighting = () => {
         position={sunLightPosition}
         visible={sunLightEnable}
       />
+      {/* Window light looks cool but shitty performances, Macbook M1 Pro's keyboard literally burns my finger */}
       <pointLight
         castShadow
         intensity={windowLightIntensity}

@@ -5,9 +5,13 @@ import Lighting from './Lighting'
 import { useFrame, useThree } from '@react-three/fiber'
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
+import { useRecoilState } from 'recoil'
+import { cameraOrthoAtom } from '../../utils/recoil'
+import CameraPerspective from './CameraPerspective'
 
 const Controls = () => {
   const { enableOrbit } = useControls('Debug', { enableOrbit: false })
+  const [ortho, setOrtho] = useRecoilState(cameraOrthoAtom)
   const { defaultRotation, rotationRate, rotationEaseDuration, rotationEaseType } = useControls(
     'Controls',
     {
@@ -39,7 +43,7 @@ const Controls = () => {
 
   // Controls with mouse movement
   useFrame(({ mouse }) => {
-    if (!enableOrbit) {
+    if (ortho && !enableOrbit) {
       gsap.to(wholeRef.current.rotation, {
         y: Math.PI * (defaultRotation.y + mouse.x * rotationRate),
         ease: rotationEaseType,
@@ -51,6 +55,7 @@ const Controls = () => {
   // Reset from debug orbit controls to default camera
   useEffect(() => {
     if (!enableOrbit) {
+      setOrtho(true)
       camera.position.set(0, 0, 200)
       camera.rotation.set(0, 0, 0)
       camera.zoom = 50
@@ -64,6 +69,7 @@ const Controls = () => {
         rotation={[Math.PI * defaultRotation.x, Math.PI * defaultRotation.y, 0]}
         ref={wholeRef}
       >
+        <CameraPerspective />
         <CoffeeShop />
         <mesh name="BaseFloor" receiveShadow position-y={-3} rotation-x={-Math.PI / 2} scale={100}>
           <planeGeometry />
