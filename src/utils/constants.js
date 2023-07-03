@@ -16,9 +16,18 @@ const Constants = {
       rotation: { x: Math.PI * -0.38, y: Math.PI * 0.41, z: Math.PI * 0.38 }
     },
     CAM3: {
-      position: { x: 4, y: -0.7, z: -0.8 },
+      position: { x: 3.8, y: -0.7, z: -0.5 },
       rotation: { x: 0, y: Math.PI * 0.15, z: 0 }
     }
+  },
+
+  CAMERA_SWAP_LOADING_TIME: 2,
+  PERSPECTIVE_CAMERA_TRANSITION_TIME: 1.2,
+
+  SOCIAL_LINKS: {
+    LINKEDIN: `https://www.linkedin.com/in/bach-viet-ha-b1a674198`,
+    GITHUB: `https://github.com/MortredN`,
+    TWITTER: `https://twitter.com/hvbach`
   }
 }
 

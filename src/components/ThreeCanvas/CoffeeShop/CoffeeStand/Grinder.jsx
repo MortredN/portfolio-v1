@@ -23,7 +23,6 @@ const Grinder = (props) => {
       </group>
       <mesh
         name="GrinderGlass"
-        castShadow
         geometry={nodes.BlenderGlass.geometry}
         rotation={[0, Math.PI / 2, 0]}
         scale={0.33}

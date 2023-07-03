@@ -6,24 +6,18 @@ const Lighting = () => {
     ambientLightIntensity,
     sunLightEnable,
     sunLightIntensity,
-    sunLightPosition,
-    windowLightEnable,
-    windowLightIntensity
+    sunLightPosition
   } = useControls(
     'Lighting',
     {
       Ambient: folder({
         ambientLightEnable: true,
-        ambientLightIntensity: 0.8
+        ambientLightIntensity: 0.55
       }),
       Sun: folder({
         sunLightEnable: true,
-        sunLightIntensity: 0.8,
+        sunLightIntensity: 0.85,
         sunLightPosition: [6, 9, 3]
-      }),
-      Window: folder({
-        windowLightEnable: false,
-        windowLightIntensity: 0.1
       })
     },
     { collapsed: true }
@@ -51,22 +45,6 @@ const Lighting = () => {
         target-position={[0, -2, 0]}
         position={sunLightPosition}
         visible={sunLightEnable}
-      />
-      {/* Window light looks cool but shitty performances, Macbook M1 Pro's keyboard literally burns my finger */}
-      <pointLight
-        castShadow
-        intensity={windowLightIntensity}
-        color="#ffffff"
-        shadow-mapSize={[512, 512]}
-        shadow-camera-near={0.01}
-        shadow-camera-far={20}
-        shadow-camera-top={10}
-        shadow-camera-right={10}
-        shadow-camera-bottom={-10}
-        shadow-camera-left={-10}
-        shadow-normalBias={0.02}
-        position={[0, 1.6, -3.9]}
-        visible={windowLightEnable}
       />
     </>
   )

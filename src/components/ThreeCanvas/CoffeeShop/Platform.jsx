@@ -26,7 +26,6 @@ const Platform = (props) => {
       />
       <mesh
         name="Window"
-        castShadow
         receiveShadow
         geometry={nodes.Window.geometry}
         material={materials.Window}

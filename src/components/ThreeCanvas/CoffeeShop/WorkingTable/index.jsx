@@ -1,8 +1,23 @@
+import Chair from './Chair'
 import CoffeeMug from './CoffeeMug'
 import Macbook from './Macbook'
+import { useRecoilState } from 'recoil'
+import { cameraNameAtom, cameraNameSwapAtom } from '../../../../utils/recoil'
+import Constants from '../../../../utils/constants'
+import { Html } from '@react-three/drei'
 
 const WorkingTable = (props) => {
   const { nodes, materials } = props
+  const [cameraName, setCameraName] = useRecoilState(cameraNameAtom)
+  const [cameraNameSwap, setCameraNameSwap] = useRecoilState(cameraNameSwapAtom)
+
+  const navigateToWorkExperiences = (event) => {
+    event.stopPropagation()
+    if (cameraName === Constants.CAMERA_NAMES.ORTHOGRAPHIC) {
+      setCameraNameSwap(Constants.CAMERA_NAMES.PERSPECTIVE2)
+      document.body.style.cursor = 'default'
+    }
+  }
 
   return (
     <>
@@ -14,7 +29,19 @@ const WorkingTable = (props) => {
           geometry={nodes.Cylinder.geometry}
           material={materials.Rug}
         />
-        <group name="TableGroup" position={[-0.6, 0.02, 0]}>
+        <group
+          name="TableGroup"
+          position={[-0.6, 0.02, 0]}
+          onClick={navigateToWorkExperiences}
+          onPointerEnter={() => {
+            if (cameraName === Constants.CAMERA_NAMES.ORTHOGRAPHIC) {
+              document.body.style.cursor = 'pointer'
+            }
+          }}
+          onPointerLeave={() => {
+            document.body.style.cursor = 'default'
+          }}
+        >
           <mesh
             name="TableTop"
             castShadow
@@ -29,27 +56,28 @@ const WorkingTable = (props) => {
             geometry={nodes.Table.geometry}
             material={materials.TableMetal}
           />
-          <Macbook {...props} />
+          <Macbook {...props}>
+            {cameraName === Constants.CAMERA_NAMES.ORTHOGRAPHIC &&
+              cameraName === cameraNameSwap && (
+                <Html center position={[0, 2.25, 0.5]}>
+                  <button
+                    type="button"
+                    onClick={navigateToWorkExperiences}
+                    className="flex flex-col gap-y-1 cursor-pointer items-center font-medium"
+                  >
+                    <span className="bg-white/50 rounded-lg p-1 whitespace-nowrap">
+                      Work Experiences
+                    </span>
+                    <span className="w-6 h-6 flex items-center justify-center text-sm bg-clock-0 rounded-full text-white">
+                      2
+                    </span>
+                  </button>
+                </Html>
+              )}
+          </Macbook>
           <CoffeeMug {...props} />
         </group>
-        <group name="ChairGroup" position={[1.1, 0.02, 0.1]} rotation={[0, -Math.PI / 2, 0]}>
-          <mesh
-            name="Chair"
-            castShadow
-            receiveShadow
-            geometry={nodes.Chair.geometry}
-            material={materials.TableWood}
-            scale={2}
-          />
-          <mesh
-            name="ChairCushion"
-            castShadow
-            receiveShadow
-            geometry={nodes.ChairCushion.geometry}
-            material={materials.Cushion}
-            scale={2}
-          />
-        </group>
+        <Chair {...props} />
       </group>
     </>
   )

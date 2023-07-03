@@ -1,21 +1,84 @@
 import { useRecoilState } from 'recoil'
-import { cameraNameAtom } from '../../../utils/recoil'
+import { cameraNameAtom, cameraNameSwapAtom } from '../../../utils/recoil'
 import Constants from '../../../utils/constants'
+import { Html } from '@react-three/drei'
 
 const Bookshelf = (props) => {
   const [cameraName, setCameraName] = useRecoilState(cameraNameAtom)
+  const [cameraNameSwap, setCameraNameSwap] = useRecoilState(cameraNameSwapAtom)
   const { nodes, materials } = props
+
+  const navigateToContact = (event) => {
+    event.stopPropagation()
+    if (cameraName === Constants.CAMERA_NAMES.ORTHOGRAPHIC) {
+      setCameraNameSwap(Constants.CAMERA_NAMES.PERSPECTIVE3)
+      document.body.style.cursor = 'default'
+    }
+  }
+
+  const openBookLink = (event, type) => {
+    event.stopPropagation()
+    if (cameraName !== Constants.CAMERA_NAMES.ORTHOGRAPHIC) {
+      let link = null
+      switch (type) {
+        case 'linkedin':
+          link = Constants.SOCIAL_LINKS.LINKEDIN
+          break
+        case 'github':
+          link = Constants.SOCIAL_LINKS.GITHUB
+          break
+        case 'twitter':
+          link = Constants.SOCIAL_LINKS.TWITTER
+          break
+        default:
+          break
+      }
+      if (link) window.open(link, '_blank')
+    }
+  }
+
+  const onBookHoverEnter = (event) => {
+    if (cameraName !== Constants.CAMERA_NAMES.ORTHOGRAPHIC) {
+      event.stopPropagation()
+      document.body.style.cursor = 'pointer'
+    }
+  }
+  const onBookHoverLeave = (event) => {
+    if (cameraName !== Constants.CAMERA_NAMES.ORTHOGRAPHIC) {
+      event.stopPropagation()
+      document.body.style.cursor = 'default'
+    }
+  }
 
   return (
     <>
       <group
         name="BookshelfGroup"
         position={[2.65, 0, -3.58]}
-        onClick={(event) => {
-          event.stopPropagation()
-          setCameraName(Constants.CAMERA_NAMES.PERSPECTIVE3)
+        onClick={navigateToContact}
+        onPointerEnter={(event) => {
+          if (cameraName === Constants.CAMERA_NAMES.ORTHOGRAPHIC) {
+            document.body.style.cursor = 'pointer'
+          }
+        }}
+        onPointerLeave={() => {
+          document.body.style.cursor = 'default'
         }}
       >
+        {cameraName === Constants.CAMERA_NAMES.ORTHOGRAPHIC && cameraName === cameraNameSwap && (
+          <Html center position={[1.5, 1.25, -1]}>
+            <button
+              type="button"
+              onClick={navigateToContact}
+              className="flex gap-x-1 cursor-pointer items-center font-medium"
+            >
+              <span className="w-6 h-6 flex items-center justify-center text-sm bg-clock-0 rounded-full text-white">
+                3
+              </span>
+              <span className="bg-white/50 rounded-lg p-1">Contacts</span>
+            </button>
+          </Html>
+        )}
         <mesh
           name="Bookshelf"
           castShadow
@@ -29,6 +92,9 @@ const Bookshelf = (props) => {
           position={[0.28, 1.62, 0.11]}
           rotation={[-Math.PI / 2, Math.PI / 4, Math.PI / 2]}
           scale={3.5}
+          onClick={(event) => openBookLink(event, 'linkedin')}
+          onPointerEnter={onBookHoverEnter}
+          onPointerLeave={onBookHoverLeave}
         >
           <mesh
             name="Cube020"
@@ -57,6 +123,9 @@ const Bookshelf = (props) => {
           position={[-0.26, 1.06, 0.11]}
           rotation={[-Math.PI / 2, Math.PI / 4, Math.PI / 2]}
           scale={3.5}
+          onClick={(event) => openBookLink(event, 'github')}
+          onPointerEnter={onBookHoverEnter}
+          onPointerLeave={onBookHoverLeave}
         >
           <mesh
             name="Cube023"
@@ -85,6 +154,9 @@ const Bookshelf = (props) => {
           position={[0.09, 0.61, 0.11]}
           rotation={[Math.PI / 2, Math.PI / 4, -Math.PI / 2]}
           scale={3.5}
+          onClick={(event) => openBookLink(event, 'twitter')}
+          onPointerEnter={onBookHoverEnter}
+          onPointerLeave={onBookHoverLeave}
         >
           <mesh
             name="Cube025"

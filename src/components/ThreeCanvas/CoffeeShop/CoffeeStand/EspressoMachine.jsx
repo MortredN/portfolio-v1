@@ -1,19 +1,9 @@
-import { useRecoilState } from 'recoil'
-import { cameraNameAtom } from '../../../../utils/recoil'
-import Constants from '../../../../utils/constants'
-
 const EspressoMachine = (props) => {
-  const { nodes, materials } = props
-  const [cameraName, setCameraName] = useRecoilState(cameraNameAtom)
+  const { nodes, materials, children } = props
 
   return (
-    <group
-      position={[0.34, 1.99, -3.5]}
-      onClick={(event) => {
-        event.stopPropagation()
-        setCameraName(Constants.CAMERA_NAMES.PERSPECTIVE1)
-      }}
-    >
+    <group position={[0.34, 1.99, -3.5]}>
+      {children}
       <group name="EspressoMachine" scale={0.78}>
         <mesh
           name="Cube008"
@@ -28,13 +18,7 @@ const EspressoMachine = (props) => {
           geometry={nodes.Cube008_1.geometry}
           material={materials.Rubber}
         />
-        <mesh
-          name="Cube008_2"
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube008_2.geometry}
-          material={materials.TrashBin}
-        />
+        <mesh name="Cube008_2" geometry={nodes.Cube008_2.geometry} material={materials.TrashBin} />
       </group>
     </group>
   )

@@ -1,19 +1,26 @@
-import { OrbitControls } from '@react-three/drei'
-import { useControls } from 'leva'
 import CoffeeShop from './CoffeeShop'
 import Lighting from './Lighting'
-import { useFrame, useThree } from '@react-three/fiber'
+import { useGLTF } from '@react-three/drei'
+import { useFrame } from '@react-three/fiber'
+import { useControls } from 'leva'
 import { useEffect, useRef } from 'react'
-import { gsap } from 'gsap'
 import { useRecoilState } from 'recoil'
-import { cameraNameAtom } from '../../utils/recoil'
+import { cameraNameAtom, cameraNameSwapAtom } from '../../utils/recoil'
 import CameraPerspective from './CameraPerspective'
 import Constants from '../../utils/constants'
+import { MathUtils } from 'three'
+import LoadingCoffeeMug from './LoadingCoffeeMug'
 
 const Controls = () => {
-  const { enableOrbit } = useControls('Debug', { enableOrbit: false })
+  const { nodes, materials } = useGLTF('./models/coffeeshop.glb')
   const [cameraName, setCameraName] = useRecoilState(cameraNameAtom)
-  const { defaultRotation, rotationRate, rotationEaseDuration, rotationEaseType } = useControls(
+  const [cameraNameSwap] = useRecoilState(cameraNameSwapAtom)
+
+  useEffect(() => {
+    setTimeout(() => setCameraName(cameraNameSwap), Constants.CAMERA_SWAP_LOADING_TIME * 1000)
+  }, [cameraNameSwap])
+
+  const { defaultRotation, rotationRate, rotationLerp } = useControls(
     'Controls',
     {
       defaultRotation: {
@@ -22,7 +29,7 @@ const Controls = () => {
         y: { max: 1, min: -1, step: 0.01 }
       },
       rotationRate: { value: 0.04, max: 0.2, min: 0, step: 0.01 },
-      rotationEaseDuration: { value: 0.08, max: 0.2, min: 0, step: 0.01 },
+      rotationLerp: { value: 0.02, max: 1, min: 0, step: 0.01 },
       rotationEaseType: {
         options: [
           'none',
@@ -40,45 +47,43 @@ const Controls = () => {
   )
 
   const wholeRef = useRef()
-  const { camera } = useThree()
+  const controlsRef = useRef()
 
   // Controls with mouse movement
   useFrame(({ mouse }) => {
-    if (cameraName === Constants.CAMERA_NAMES.ORTHOGRAPHIC && !enableOrbit) {
-      gsap.to(wholeRef.current.rotation, {
-        y: Math.PI * (defaultRotation.y + mouse.x * rotationRate),
-        ease: rotationEaseType,
-        duration: rotationEaseDuration
-      })
+    if (cameraName === Constants.CAMERA_NAMES.ORTHOGRAPHIC) {
+      const mouseX = Math.min(Math.max(mouse.x, -0.5), 0.5)
+      controlsRef.current.rotation.y = MathUtils.lerp(
+        controlsRef.current.rotation.y,
+        Math.PI * (defaultRotation.y + mouseX * rotationRate),
+        rotationLerp
+      )
     }
   })
 
-  // Reset from debug orbit controls to default camera
-  useEffect(() => {
-    if (!enableOrbit) {
-      setCameraName(Constants.CAMERA_NAMES.ORTHOGRAPHIC)
-      camera.position.set(0, 0, 200)
-      camera.rotation.set(0, 0, 0)
-      camera.zoom = 50
-      camera.updateProjectionMatrix()
-    }
-  }, [enableOrbit])
-
   return (
     <>
-      <group
-        rotation={[Math.PI * defaultRotation.x, Math.PI * defaultRotation.y, 0]}
-        ref={wholeRef}
-      >
-        <CameraPerspective />
-        <CoffeeShop />
-        <mesh name="BaseFloor" receiveShadow position-y={-3} rotation-x={-Math.PI / 2} scale={100}>
-          <planeGeometry />
-          <meshStandardMaterial color="#fffff0" />
-        </mesh>
-        <Lighting />
+      <group ref={wholeRef}>
+        <group
+          rotation={[Math.PI * defaultRotation.x, Math.PI * defaultRotation.y, 0]}
+          ref={controlsRef}
+        >
+          <CameraPerspective />
+          <CoffeeShop nodes={nodes} materials={materials} />
+          <mesh
+            name="BaseFloor"
+            receiveShadow
+            position-y={-3}
+            rotation-x={-Math.PI / 2}
+            scale={100}
+          >
+            <planeGeometry />
+            <meshStandardMaterial color="#fffff0" />
+          </mesh>
+          <Lighting />
+        </group>
+        <LoadingCoffeeMug nodes={nodes} materials={materials} wholeRef={wholeRef} />
       </group>
-      {enableOrbit && <OrbitControls />}
     </>
   )
 }
