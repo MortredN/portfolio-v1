@@ -13,6 +13,7 @@ const OverlayMug = () => {
   useEffect(() => {
     if (
       cameraNameSwap !== Constants.CAMERA_NAMES.ORTHOGRAPHIC &&
+      prevCamera &&
       prevCamera === Constants.CAMERA_NAMES.ORTHOGRAPHIC
     ) {
       setTimeout(
@@ -22,7 +23,7 @@ const OverlayMug = () => {
       setTimeout(() => setOverlayMugClass(`opacity-0`), Constants.CAMERA_SWAP_LOADING_TIME * 1000)
       setTimeout(
         () => setOverlayMugClass(`hidden opacity-1`),
-        (Constants.CAMERA_SWAP_LOADING_TIME + 1) * 1000
+        (Constants.CAMERA_SWAP_LOADING_TIME + 0.5) * 1000
       )
     }
   }, [cameraNameSwap])
@@ -30,7 +31,7 @@ const OverlayMug = () => {
   return (
     <div
       onClick={(event) => event.stopPropagation()}
-      className={`fixed top-0 left-0 w-screen h-screen bg-coffee-0 transition duration-1000 ${overlayMugClass}`}
+      className={`fixed top-0 left-0 w-screen h-screen bg-coffee-1 transition duration-500 z-50 ${overlayMugClass}`}
     />
   )
 }

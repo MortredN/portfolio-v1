@@ -6,7 +6,7 @@ body,
   left: 0;
   width: 100%;
   height: 100%;
-  background: #ededea;
+  background: var(--coffee-0);
 }
 
 canvas {
@@ -19,4 +19,70 @@ canvas {
   border: none;
   border-radius: 20px;
   background: #000000;
+}
+
+.box-filling {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--coffee-1);
+  font-family: Roboto;
+  overflow: hidden;
+  opacity: 0;
+  animation-name: fade;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+}
+
+.box-filling::before,
+.box-filling::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  min-width: 300vw;
+  min-height: 300vw;
+  background-color: var(--coffee-0);
+  animation-name: rotate;
+  animation-timing-function: linear;
+  animation-duration: 3s;
+}
+
+.box-filling::before {
+  bottom: 15vh;
+  border-radius: 40%;
+}
+
+.box-filling::after {
+  bottom: 12vh;
+  opacity: 0.5;
+  border-radius: 45%;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, 10%) rotateZ(0deg);
+  }
+  50% {
+    transform: translate(-50%, -15%) rotateZ(180deg);
+  }
+  100% {
+    transform: translate(-50%, -40%) rotateZ(360deg);
+  }
 }

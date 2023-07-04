@@ -6,7 +6,8 @@ module.exports = {
       colors: {
         'clock-0': 'var(--clock-0)',
 
-        'coffee-0': 'var(--coffee-0)'
+        'coffee-0': 'var(--coffee-0)',
+        'coffee-1': 'var(--coffee-1)'
       }
     }
   },

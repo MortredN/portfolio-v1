@@ -56,7 +56,7 @@ const Bookshelf = (props) => {
         name="BookshelfGroup"
         position={[2.65, 0, -3.58]}
         onClick={navigateToContact}
-        onPointerEnter={(event) => {
+        onPointerEnter={() => {
           if (cameraName === Constants.CAMERA_NAMES.ORTHOGRAPHIC) {
             document.body.style.cursor = 'pointer'
           }
@@ -66,7 +66,7 @@ const Bookshelf = (props) => {
         }}
       >
         {cameraName === Constants.CAMERA_NAMES.ORTHOGRAPHIC && cameraName === cameraNameSwap && (
-          <Html center position={[1.5, 1.25, -1]}>
+          <Html center position={[1.5, 1.25, -1]} zIndexRange={[20, 0]}>
             <button
               type="button"
               onClick={navigateToContact}

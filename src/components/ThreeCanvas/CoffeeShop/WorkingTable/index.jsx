@@ -59,7 +59,7 @@ const WorkingTable = (props) => {
           <Macbook {...props}>
             {cameraName === Constants.CAMERA_NAMES.ORTHOGRAPHIC &&
               cameraName === cameraNameSwap && (
-                <Html center position={[0, 2.25, 0.5]}>
+                <Html center position={[0, 2.25, 0.5]} zIndexRange={[20, 0]}>
                   <button
                     type="button"
                     onClick={navigateToWorkExperiences}

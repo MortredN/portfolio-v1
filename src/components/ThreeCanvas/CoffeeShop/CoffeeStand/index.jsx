@@ -48,7 +48,7 @@ const CoffeeStand = (props) => {
         />
         <EspressoMachine {...props}>
           {cameraName === Constants.CAMERA_NAMES.ORTHOGRAPHIC && cameraName === cameraNameSwap && (
-            <Html center position={[-1.5, 2, 2]}>
+            <Html center position={[-1.5, 2, 2]} zIndexRange={[20, 0]}>
               <button
                 type="button"
                 onClick={navigateToAboutMe}
