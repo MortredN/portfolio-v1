@@ -7,7 +7,11 @@ module.exports = {
         'clock-0': 'var(--clock-0)',
 
         'coffee-0': 'var(--coffee-0)',
-        'coffee-1': 'var(--coffee-1)'
+        'coffee-1': 'var(--coffee-1)',
+
+        base: 'var(--base)',
+
+        screen: 'var(--screen)'
       }
     }
   },

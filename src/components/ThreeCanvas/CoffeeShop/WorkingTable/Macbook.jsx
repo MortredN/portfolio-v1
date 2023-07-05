@@ -1,4 +1,13 @@
+import { Html } from '@react-three/drei'
+import Constants from '../../../../utils/constants'
+import { useRecoilState } from 'recoil'
+import { cameraNameAtom, cameraNameSwapAtom } from '../../../../utils/recoil'
+import WorkExperience from './WorkExperience'
+
 const Macbook = ({ nodes, materials, children }) => {
+  const [cameraName] = useRecoilState(cameraNameAtom)
+  const [cameraNameSwap] = useRecoilState(cameraNameSwapAtom)
+
   return (
     <group name="MacbookGroup" position={[0.62, 1.58, 0.06]}>
       {children}
@@ -12,16 +21,37 @@ const Macbook = ({ nodes, materials, children }) => {
         />
         <mesh name="Cube028_1" geometry={nodes.Cube028_1.geometry} material={materials.Rubber} />
       </group>
+      {(cameraName === cameraNameSwap ||
+        cameraName !== Constants.CAMERA_NAMES.ORTHOGRAPHIC ||
+        cameraNameSwap === Constants.CAMERA_NAMES.ORTHOGRAPHIC) && (
+        <group rotation-y={Math.PI / 2}>
+          <Html
+            zIndexRange={[10, 0]}
+            transform
+            rotation={[-0.08, 0, 0]}
+            position={[-0.035, 0.37, -0.48]}
+            distanceFactor={0.32}
+          >
+            <div
+              style={{ width: 1280, height: 800 }}
+              className="bg-screen p-4 rounded-lg overflow-y-auto text-white"
+            >
+              <WorkExperience />
+            </div>
+          </Html>
+        </group>
+      )}
       <mesh
         name="MacbookScreen"
         castShadow
         receiveShadow
         geometry={nodes.MacbookScreen.geometry}
-        material={materials.Window}
         position={[0, 0.01, 0]}
         rotation={[0, -Math.PI / 2, 0]}
         scale={[0.49, 0.01, 0.45]}
-      />
+      >
+        <meshStandardMaterial color="#282c34" />
+      </mesh>
     </group>
   )
 }

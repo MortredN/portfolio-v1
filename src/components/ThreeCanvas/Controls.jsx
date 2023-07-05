@@ -17,7 +17,14 @@ const Controls = () => {
   const [cameraNameSwap] = useRecoilState(cameraNameSwapAtom)
 
   useEffect(() => {
-    setTimeout(() => setCameraName(cameraNameSwap), Constants.CAMERA_SWAP_LOADING_TIME * 1000)
+    if (
+      (cameraName === Constants.CAMERA_NAMES.ORTHOGRAPHIC &&
+        cameraNameSwap !== Constants.CAMERA_NAMES.ORTHOGRAPHIC) ||
+      (cameraName !== Constants.CAMERA_NAMES.ORTHOGRAPHIC &&
+        cameraNameSwap === Constants.CAMERA_NAMES.ORTHOGRAPHIC)
+    ) {
+      setTimeout(() => setCameraName(cameraNameSwap), Constants.CAMERA_SWAP_LOADING_TIME * 1000)
+    }
   }, [cameraNameSwap])
 
   const { defaultRotation, rotationRate, rotationLerp } = useControls(

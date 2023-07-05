@@ -8,8 +8,8 @@ const CameraOrthographic = () => {
 
   return (
     <OrthographicCamera
-      position={[0, 0, 200]}
-      zoom={50}
+      position={[0, 1, 200]}
+      zoom={70} // Based on screen size, fix zoom (4K needs like 150 or sth)
       near={1}
       far={2000}
       makeDefault={cameraName === Constants.CAMERA_NAMES.ORTHOGRAPHIC}

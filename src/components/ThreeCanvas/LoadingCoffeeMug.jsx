@@ -18,10 +18,16 @@ const LoadingCoffeeMug = (props) => {
         prevCamera === Constants.CAMERA_NAMES.ORTHOGRAPHIC
       ) {
         loadingCoffeeMugRef.current.visible = true
+        gsap.to(loadingCoffeeMugRef.current.position, {
+          x: 0,
+          y: 0,
+          z: 0,
+          duration: Constants.CAMERA_SWAP_LOADING_TIME
+        })
         gsap.to(loadingCoffeeMugRef.current.scale, {
-          x: 200,
-          y: 200,
-          z: 200,
+          x: 150,
+          y: 150,
+          z: 150,
           duration: Constants.CAMERA_SWAP_LOADING_TIME
         })
         gsap.to(loadingCoffeeMugRef.current.rotation, {
@@ -41,9 +47,9 @@ const LoadingCoffeeMug = (props) => {
   return (
     <group
       ref={loadingCoffeeMugRef}
-      position={[0, 0, 0]}
+      position={[1.375, -0.6, 0.5]}
       rotation={[0, Math.PI * -0.25, 0]}
-      scale={0}
+      scale={2}
       visible={false}
     >
       <mesh
