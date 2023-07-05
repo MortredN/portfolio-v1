@@ -20,7 +20,7 @@ const ContactMeEmail = () => {
             style={{ maxWidth: 400 }}
           >
             <span>Or contact me through:</span>
-            <a href="mailto:bach.hv10@gmail.com">bach.hv10@gmail.com</a>
+            <a className="font-semibold" href="mailto:bach.hv10@gmail.com">bach.hv10@gmail.com</a>
           </motion.div>
         )}
     </AnimatePresence>

@@ -25,12 +25,22 @@ canvas {
   touch-action: none;
 }
 
-.htmlScreen iframe {
-  width: 1024px;
-  height: 670px;
-  border: none;
-  border-radius: 20px;
-  background: #000000;
+.custom-scrollbar::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar
+{
+	width: 12px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: var(--clock-0);
 }
 
 .box-filling {

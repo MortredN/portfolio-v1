@@ -31,10 +31,11 @@ const Macbook = ({ nodes, materials, children }) => {
             rotation={[-0.08, 0, 0]}
             position={[-0.035, 0.37, -0.48]}
             distanceFactor={0.32}
+            scale={0.5}
           >
             <div
-              style={{ width: 1280, height: 800 }}
-              className="bg-screen p-4 rounded-lg overflow-y-auto text-white"
+              style={{ width: 1280, height: 800, transform: "scale(2)" }}
+              className="bg-screen p-4 rounded-lg overflow-y-auto custom-scrollbar"
             >
               <WorkExperience />
             </div>
@@ -50,7 +51,7 @@ const Macbook = ({ nodes, materials, children }) => {
         rotation={[0, -Math.PI / 2, 0]}
         scale={[0.49, 0.01, 0.45]}
       >
-        <meshStandardMaterial color="#282c34" />
+        <meshBasicMaterial color="#3D4148" />
       </mesh>
     </group>
   )
