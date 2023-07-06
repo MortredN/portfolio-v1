@@ -30,7 +30,7 @@ const AboutMe = () => {
             onAnimationStart={playPaperSound}
             transition={{ duration: 1, ease: 'anticipate' }}
             className="absolute top-0 h-full flex items-center justify-center"
-            style={{ width: 600, left: screenSize.width / 10 * (screenSize.width / 1920) }}
+            style={{ width: 600, left: `10vw` }}
           >
             <div className="relative">
               <img
