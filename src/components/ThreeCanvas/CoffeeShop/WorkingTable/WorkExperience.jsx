@@ -13,7 +13,7 @@ let workExperience = [
     company: "CMC Global",
     title: "Software Engineer | Tech Support"
     dates: { start: new Date(2020, 06), end: new Date(2021, 12) },
-    location: "Hanoi, Vietnam 🇻🇳",
+    location: "Hanoi, Vietnam",
     tasks: [
       "Involvement in logistics and supply chain application",
       "Providing users with 24/7 technical support and maintenance development"
@@ -23,8 +23,8 @@ let workExperience = [
   {
     company: "PVcomBank",
     title: "Software Developer"
-    dates: { start: new Date(2022, 23), end: new Date(2023, 06) },
-    location: "Hanoi, Vietnam 🇻🇳",
+    dates: { start: new Date(2022, 03), end: new Date(2023, 06) },
+    location: "Hanoi, Vietnam",
     tasks: [
       "Providing users with multiple digital bank solutions, using Next.js as the main framework",
       "Acquaintanced with creating cloud REST APIs using AWS Lambda"
@@ -34,7 +34,7 @@ let workExperience = [
     company: "Superjoi",
     title: "Software Developer"
     dates: { start: new Date(2022, 06), end: null },
-    location: "London, England, UK 🇬🇧 (Remote)",
+    location: "London, England, UK (Remote)",
     tasks: [
       "Developing a link-in-bio/content fundraising webapp"
     ]
@@ -43,15 +43,16 @@ let workExperience = [
 ]
 
 let projects = {
-  works: [
+  work: [
     {
       name: "Superjoi",
       description: "A platform where Creators get funded by Superfans ✨",
       website: "https://superjoi.com"
     }
+    // TODO: Add more work projects here later
   ],
   personal: [
-    // TODO: Add personal projects here later
+    // TODO: Add more personal projects here later
   ]
 }
 `

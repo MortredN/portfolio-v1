@@ -12,7 +12,7 @@ const Constants = {
       rotation: { x: -0.33, y: 1, z: 0.29 }
     },
     CAM2: {
-      position: { x: 2.2, y: 0.3, z: 0.1 },
+      position: { x: 2.1, y: 0.2, z: 0.1 },
       rotation: { x: Math.PI * -0.38, y: Math.PI * 0.41, z: Math.PI * 0.38 }
     },
     CAM3: {

@@ -11,7 +11,8 @@ module.exports = {
 
         base: 'var(--base)',
 
-        screen: 'var(--screen)'
+        screen: 'var(--screen)',
+        'screen-scrollbar': 'var(--screen-scrollbar)'
       }
     }
   },

@@ -52,7 +52,7 @@ const CoffeeStand = (props) => {
               <button
                 type="button"
                 onClick={navigateToAboutMe}
-                className="flex gap-x-1 cursor-pointer items-center font-medium"
+                className="flex gap-x-1 cursor-pointer items-center font-semibold"
               >
                 <span className="bg-white/50 rounded-lg p-1 whitespace-nowrap">About Me</span>
                 <span className="w-6 h-6 flex items-center justify-center text-sm bg-clock-0 rounded-full text-white">

@@ -51,7 +51,7 @@ const Macbook = ({ nodes, materials, children }) => {
         rotation={[0, -Math.PI / 2, 0]}
         scale={[0.49, 0.01, 0.45]}
       >
-        <meshBasicMaterial color="#3D4148" />
+        <meshBasicMaterial color="#3d4148" />
       </mesh>
     </group>
   )

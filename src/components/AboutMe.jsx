@@ -2,11 +2,13 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useRecoilState } from 'recoil'
 import { cameraNameAtom, cameraNameSwapAtom } from '../utils/recoil'
 import Constants from '../utils/constants'
+import { useWindowSize } from '../hooks/screenSize'
 
 const AboutMe = () => {
   const [cameraName] = useRecoilState(cameraNameAtom)
   const [cameraNameSwap] = useRecoilState(cameraNameSwapAtom)
   const paperSound = new Audio('./sounds/paper.mp3')
+  const screenSize = useWindowSize()
 
   const playPaperSound = (definition) => {
     if (definition?.opacity) {
@@ -28,7 +30,7 @@ const AboutMe = () => {
             onAnimationStart={playPaperSound}
             transition={{ duration: 1, ease: 'anticipate' }}
             className="absolute top-0 h-full flex items-center justify-center"
-            style={{ width: 600, left: `10vw` }}
+            style={{ width: 600, left: screenSize.width / 10 * (screenSize.width / 1920) }}
           >
             <div className="relative">
               <img
@@ -56,7 +58,7 @@ const AboutMe = () => {
                     <h2 className="text-xl text-center font-semibold font-title tracking-wide">
                       Main Skills
                     </h2>
-                    <div className="mt-4 grid grid-cols-3 gap-2 font-medium">
+                    <div className="mt-4 grid grid-cols-3 gap-2 font-semibold">
                       <span className="flex items-center justify-center gap-x-1">
                         <img src="./images/logo/react.svg" width={24} height={24} />
                         <span>React</span>
