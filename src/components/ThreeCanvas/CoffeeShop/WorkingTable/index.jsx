@@ -59,17 +59,23 @@ const WorkingTable = (props) => {
           <Macbook {...props}>
             {cameraName === Constants.CAMERA_NAMES.ORTHOGRAPHIC &&
               cameraName === cameraNameSwap && (
-                <Html center position={[0, 2.25, 0.5]} zIndexRange={[20, 0]}>
+                <Html center position={[0, 2.1, 0.5]} zIndexRange={[20, 0]}>
                   <button
                     type="button"
                     onClick={navigateToWorkExperiences}
-                    className="flex flex-col gap-y-1 cursor-pointer items-center font-semibold"
+                    className="flex flex-col gap-y-1.5 cursor-pointer items-center font-semibold"
                   >
-                    <span className="bg-white/50 rounded-lg p-1 whitespace-nowrap">
+                    <span className="bg-white/75 rounded-lg py-1 px-2 whitespace-nowrap">
                       Work Experiences & Projects
                     </span>
-                    <span className="w-6 h-6 flex items-center justify-center text-sm bg-clock-0 rounded-full text-white">
-                      2
+                    <span className="w-8 h-8 flex items-center justify-center relative">
+                      <span
+                        className="absolute inset-0.5 w-7 h-7 bg-clock-0 rounded-full animate-ping"
+                        style={{ animationDuration: `2s` }}
+                      />
+                      <span className="w-full h-full flex items-center justify-center text-lg bg-clock-0 rounded-full text-white z-10">
+                        2
+                      </span>
                     </span>
                   </button>
                 </Html>

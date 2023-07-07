@@ -2,9 +2,9 @@ import { RecoilRoot } from 'recoil'
 import ThreeCanvas from './components/ThreeCanvas'
 import OverlayMug from './components/LoadingScreen/OverlayMug'
 import OverlayFilling from './components/LoadingScreen/OverlayFilling'
-import CameraSwitch from './components/CameraSwitch'
 import AboutMe from './components/AboutMe'
 import ContactMeEmail from './components/ContactMeEmail'
+import Navbar from './components/Navbar'
 
 const App = () => {
   return (
@@ -14,7 +14,8 @@ const App = () => {
       <AboutMe />
       <ContactMeEmail />
 
-      <CameraSwitch />
+      <Navbar />
+
       <OverlayMug />
       <OverlayFilling />
     </RecoilRoot>

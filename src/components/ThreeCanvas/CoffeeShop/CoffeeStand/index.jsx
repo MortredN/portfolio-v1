@@ -52,11 +52,17 @@ const CoffeeStand = (props) => {
               <button
                 type="button"
                 onClick={navigateToAboutMe}
-                className="flex gap-x-1 cursor-pointer items-center font-semibold"
+                className="flex gap-x-1.5 cursor-pointer items-center font-semibold"
               >
-                <span className="bg-white/50 rounded-lg p-1 whitespace-nowrap">About Me</span>
-                <span className="w-6 h-6 flex items-center justify-center text-sm bg-clock-0 rounded-full text-white">
-                  1
+                <span className="bg-white/75 rounded-lg py-1 px-2 whitespace-nowrap">About Me</span>
+                <span className="w-8 h-8 flex items-center justify-center relative">
+                  <span
+                    className="absolute inset-0.5 w-7 h-7 bg-coffee-2 rounded-full animate-ping"
+                    style={{ animationDuration: `2s` }}
+                  />
+                  <span className="w-full h-full flex items-center justify-center text-lg bg-coffee-2 rounded-full text-white z-10">
+                    1
+                  </span>
                 </span>
               </button>
             </Html>

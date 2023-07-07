@@ -16,8 +16,7 @@ const Bookshelf = (props) => {
     }
   }
 
-  const openBookLink = (event, type) => {
-    event.stopPropagation()
+  const openBookLink = (type) => {
     if (cameraName !== Constants.CAMERA_NAMES.ORTHOGRAPHIC) {
       let link = null
       switch (type) {
@@ -66,16 +65,22 @@ const Bookshelf = (props) => {
         }}
       >
         {cameraName === Constants.CAMERA_NAMES.ORTHOGRAPHIC && cameraName === cameraNameSwap && (
-          <Html center position={[1.5, 1.25, -1]} zIndexRange={[20, 0]}>
+          <Html center position={[1.25, 1.25, -1]} zIndexRange={[20, 0]}>
             <button
               type="button"
               onClick={navigateToContact}
-              className="flex gap-x-1 cursor-pointer items-center font-semibold"
+              className="flex gap-x-1.5 cursor-pointer items-center font-semibold"
             >
-              <span className="w-6 h-6 flex items-center justify-center text-sm bg-clock-0 rounded-full text-white">
-                3
+              <span className="w-8 h-8 flex items-center justify-center relative">
+                <span
+                  className="absolute inset-0.5 w-7 h-7 bg-coffee-2 rounded-full animate-ping"
+                  style={{ animationDuration: `2s` }}
+                />
+                <span className="w-full h-full flex items-center justify-center text-lg bg-coffee-2 rounded-full text-white z-10">
+                  3
+                </span>
               </span>
-              <span className="bg-white/50 rounded-lg p-1">Contacts</span>
+              <span className="bg-white/75 rounded-lg py-1 px-2">Contacts</span>
             </button>
           </Html>
         )}

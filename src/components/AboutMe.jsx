@@ -2,13 +2,11 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useRecoilState } from 'recoil'
 import { cameraNameAtom, cameraNameSwapAtom } from '../utils/recoil'
 import Constants from '../utils/constants'
-import { useWindowSize } from '../hooks/screenSize'
 
 const AboutMe = () => {
   const [cameraName] = useRecoilState(cameraNameAtom)
   const [cameraNameSwap] = useRecoilState(cameraNameSwapAtom)
   const paperSound = new Audio('./sounds/paper.mp3')
-  const screenSize = useWindowSize()
 
   const playPaperSound = (definition) => {
     if (definition?.opacity) {
