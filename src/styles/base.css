@@ -55,7 +55,7 @@ canvas {
   overflow: hidden;
   opacity: 0;
   animation-name: fade;
-  animation-duration: 3s;
+  animation-duration: 4s;
   animation-timing-function: linear;
 }
 
@@ -69,7 +69,7 @@ canvas {
   background-color: var(--coffee-0);
   animation-name: rotate;
   animation-timing-function: linear;
-  animation-duration: 3s;
+  animation-duration: 4s;
 }
 
 .box-filling::before {
@@ -87,10 +87,10 @@ canvas {
   0% {
     opacity: 0;
   }
-  25% {
+  20% {
     opacity: 1;
   }
-  75% {
+  80% {
     opacity: 1;
   }
   100% {

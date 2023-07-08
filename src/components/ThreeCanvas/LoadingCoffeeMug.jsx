@@ -20,20 +20,38 @@ const LoadingCoffeeMug = (props) => {
         loadingCoffeeMugRef.current.visible = true
         gsap.to(loadingCoffeeMugRef.current.position, {
           x: 0,
-          y: 0,
+          y: -2,
           z: 0,
-          duration: Constants.CAMERA_SWAP_LOADING_TIME
+          duration: Constants.CAMERA_SWAP_LOADING_TIME * 0.3
         })
         gsap.to(loadingCoffeeMugRef.current.scale, {
-          x: 150,
-          y: 150,
-          z: 150,
-          duration: Constants.CAMERA_SWAP_LOADING_TIME
+          x: 30,
+          y: 30,
+          z: 30,
+          duration: Constants.CAMERA_SWAP_LOADING_TIME * 0.3
         })
         gsap.to(loadingCoffeeMugRef.current.rotation, {
-          x: Math.PI * 0.5,
-          duration: Constants.CAMERA_SWAP_LOADING_TIME
+          x: Math.PI * 0.25,
+          duration: Constants.CAMERA_SWAP_LOADING_TIME * 0.3
         })
+        setTimeout(() => {
+          gsap.to(loadingCoffeeMugRef.current.position, {
+            x: 0,
+            y: 0,
+            z: 0,
+            duration: Constants.CAMERA_SWAP_LOADING_TIME * 0.7
+          })
+          gsap.to(loadingCoffeeMugRef.current.scale, {
+            x: 150,
+            y: 150,
+            z: 150,
+            duration: Constants.CAMERA_SWAP_LOADING_TIME * 0.7
+          })
+          gsap.to(loadingCoffeeMugRef.current.rotation, {
+            x: Math.PI * 0.5,
+            duration: Constants.CAMERA_SWAP_LOADING_TIME * 0.7
+          })
+        }, Constants.CAMERA_SWAP_LOADING_TIME * 300)
         setTimeout(
           () => (loadingCoffeeMugRef.current.visible = false),
           Constants.CAMERA_SWAP_LOADING_TIME * 1000
@@ -48,8 +66,8 @@ const LoadingCoffeeMug = (props) => {
     <group
       ref={loadingCoffeeMugRef}
       position={[1.375, -0.6, 0.5]}
-      rotation={[0, Math.PI * -0.25, 0]}
-      scale={2}
+      rotation={[Math.PI * 0.15, Math.PI * -0.25, 0]}
+      scale={1.5}
       visible={false}
     >
       <mesh

@@ -2,6 +2,7 @@ import { Canvas } from '@react-three/fiber'
 import Controls from './Controls'
 import { Perf } from 'r3f-perf'
 import { Leva, useControls } from 'leva'
+import * as THREE from 'three'
 import CameraOrthographic from './CameraOrthographic'
 
 const ThreeCanvas = () => {
@@ -11,7 +12,11 @@ const ThreeCanvas = () => {
 
   return (
     <>
-      <Canvas eventPrefix='client' shadows style={{ touchAction: 'none' }}>
+      <Canvas
+        eventPrefix="client"
+        shadows={{ type: THREE.PCFSoftShadowMap }}
+        style={{ touchAction: 'none' }}
+      >
         <Controls />
         <CameraOrthographic />
         {perf && <Perf position="top-left" />}

@@ -16,8 +16,9 @@ const Bookshelf = (props) => {
     }
   }
 
-  const openBookLink = (type) => {
+  const openBookLink = (event, type) => {
     if (cameraName !== Constants.CAMERA_NAMES.ORTHOGRAPHIC) {
+      event.stopPropagation()
       let link = null
       switch (type) {
         case 'linkedin':

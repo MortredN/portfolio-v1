@@ -17,7 +17,7 @@ const OverlayFilling = () => {
       prevCamera !== Constants.CAMERA_NAMES.ORTHOGRAPHIC
     ) {
       setOverlayFillingClass(``)
-      setTimeout(() => setOverlayFillingClass(`hidden`), 3500)
+      setTimeout(() => setOverlayFillingClass(`hidden`), (Constants.CAMERA_SWAP_LOADING_TIME + 1) * 1000)
     }
   }, [cameraNameSwap])
 
