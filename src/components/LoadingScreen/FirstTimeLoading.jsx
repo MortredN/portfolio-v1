@@ -39,11 +39,12 @@ const FirstTimeLoading = () => {
   const screenSize = useWindowSize()
 
   const { active, progress } = useProgress()
-  const allowOpen = !firstTimeLoadingEnd && !active && renderedProgress === 100
 
   const [from, setFrom] = useState(0)
   const [renderedProgress, setRenderedProgress] = useState(0)
   const [firstTimeLoadingEnd, setFirstTimeLoadingEnd] = useRecoilState(firstTimeLoadingEndAtom)
+
+  const allowOpen = !firstTimeLoadingEnd && !active && renderedProgress === 100
 
   useEffect(() => {
     const controls = animate(from, progress, {
