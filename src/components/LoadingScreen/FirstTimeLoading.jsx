@@ -39,6 +39,7 @@ const FirstTimeLoading = () => {
   const screenSize = useWindowSize()
 
   const { active, progress } = useProgress()
+  const allowOpen = !firstTimeLoadingEnd && !active && renderedProgress === 100
 
   const [from, setFrom] = useState(0)
   const [renderedProgress, setRenderedProgress] = useState(0)
@@ -61,12 +62,14 @@ const FirstTimeLoading = () => {
     <motion.div
       initial={false}
       animate={isOpen ? 'open' : 'closed'}
-      className="fixed top-0 bottom-0 left-0 h-full w-full z-20 font-title"
+      className={`fixed top-0 bottom-0 left-0 h-full w-full z-20 font-title ${
+        allowOpen ? `cursor-pointer` : `cursor-default`
+      }`}
       onClick={() => {
-        if (!firstTimeLoadingEnd && !active && renderedProgress === 100) {
+        if (allowOpen) {
           setFirstTimeLoadingEnd(true)
-          toggleOpen()
           setTimeout(() => setHidden(true), 1000)
+          toggleOpen()
         }
       }}
     >
