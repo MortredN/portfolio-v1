@@ -28,8 +28,8 @@ const NavItem = ({ children, onClick, active }) => {
         onClick()
       }}
       disabled={active}
-      className={`flex items-start text-left gap-x-4 transition-colors ${
-        !active ? `text-white cursor-pointer` : `text-coffee-0`
+      className={`flex items-start text-left gap-x-4 transition-colors duration-500 ${
+        !active ? `text-white cursor-pointer` : `text-coffee-1`
       }`}
     >
       {children}

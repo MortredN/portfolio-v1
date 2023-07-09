@@ -25,9 +25,9 @@ const LoadingCoffeeMug = (props) => {
           duration: Constants.CAMERA_SWAP_LOADING_TIME * 0.3
         })
         gsap.to(loadingCoffeeMugRef.current.scale, {
-          x: 30,
-          y: 30,
-          z: 30,
+          x: 40,
+          y: 40,
+          z: 40,
           duration: Constants.CAMERA_SWAP_LOADING_TIME * 0.3
         })
         gsap.to(loadingCoffeeMugRef.current.rotation, {
@@ -42,9 +42,9 @@ const LoadingCoffeeMug = (props) => {
             duration: Constants.CAMERA_SWAP_LOADING_TIME * 0.7
           })
           gsap.to(loadingCoffeeMugRef.current.scale, {
-            x: 150,
-            y: 150,
-            z: 150,
+            x: 180,
+            y: 180,
+            z: 180,
             duration: Constants.CAMERA_SWAP_LOADING_TIME * 0.7
           })
           gsap.to(loadingCoffeeMugRef.current.rotation, {

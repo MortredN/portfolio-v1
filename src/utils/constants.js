@@ -8,7 +8,7 @@ const Constants = {
 
   PERSPECTIVE_CAMERA_PROPERTIES: {
     CAM1: {
-      position: { x: 0.7, y: 2, z: 4 },
+      position: { x: 1, y: 2, z: 1.5 },
       rotation: { x: -0.33, y: 1, z: 0.29 }
     },
     CAM2: {

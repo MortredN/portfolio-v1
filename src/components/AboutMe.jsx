@@ -22,13 +22,13 @@ const AboutMe = () => {
       {cameraName === Constants.CAMERA_NAMES.PERSPECTIVE1 &&
         cameraNameSwap === Constants.CAMERA_NAMES.PERSPECTIVE1 && (
           <motion.div
-            initial={{ opacity: 0, translate: `-50vw 150vh`, rotate: -150 }}
+            initial={{ opacity: 0, translate: `50vw 150vh`, rotate: 150 }}
             animate={{ opacity: 1, translate: 0, rotate: 0 }}
-            exit={{ opacity: 0, translate: `-50vw 150vh`, rotate: -150 }}
+            exit={{ opacity: 0, translate: `50vw 150vh`, rotate: 150 }}
             onAnimationStart={playPaperSound}
             transition={{ duration: 1, ease: 'anticipate' }}
             className="absolute top-0 h-full flex items-center justify-center"
-            style={{ width: 600, left: `10vw` }}
+            style={{ width: 600, right: `8vw` }}
           >
             <div className="relative">
               <img
@@ -52,8 +52,8 @@ const AboutMe = () => {
                     </span>
                     <span className="leading-7">Anyway, welcome to my portfolio!</span>
                   </div>
-                  <div className="py-4 border-t-2 mx-4 border-dashed border-black">
-                    <h2 className="text-xl text-center font-semibold font-title tracking-wide">
+                  <div className="py-4 border-t-2 mx-4 border-dashed border-black mt-4">
+                    <h2 className="text-xl text-center font-bold font-title tracking-wide">
                       Main Skills
                     </h2>
                     <div className="mt-4 grid grid-cols-3 gap-2 font-semibold">

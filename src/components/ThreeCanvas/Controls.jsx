@@ -10,6 +10,8 @@ import CameraPerspective from './CameraPerspective'
 import Constants from '../../utils/constants'
 import { MathUtils } from 'three'
 import LoadingCoffeeMug from './LoadingCoffeeMug'
+import { useMouse } from '../../hooks/mouse'
+import { useWindowSize } from '../../hooks/screenSize'
 
 const Controls = () => {
   const { nodes, materials } = useGLTF('./models/coffeeshop.glb')
@@ -35,8 +37,8 @@ const Controls = () => {
         x: { max: 0.5, min: 0, step: 0.01 },
         y: { max: 1, min: -1, step: 0.01 }
       },
-      rotationRate: { value: 0.04, max: 0.2, min: 0, step: 0.01 },
-      rotationLerp: { value: 0.02, max: 1, min: 0, step: 0.01 },
+      rotationRate: { value: 0.02, max: 0.2, min: 0, step: 0.01 },
+      rotationLerp: { value: 0.04, max: 1, min: 0, step: 0.01 },
       rotationEaseType: {
         options: [
           'none',
@@ -55,11 +57,13 @@ const Controls = () => {
 
   const wholeRef = useRef()
   const controlsRef = useRef()
+  const mousey = useMouse()
+  const windowSize = useWindowSize()
 
   // Controls with mouse movement
-  useFrame(({ mouse }) => {
-    if (cameraName === Constants.CAMERA_NAMES.ORTHOGRAPHIC) {
-      const mouseX = Math.min(Math.max(mouse.x, -0.5), 0.5)
+  useFrame(() => {
+    if (windowSize.width && cameraName === Constants.CAMERA_NAMES.ORTHOGRAPHIC) {
+      const mouseX = mousey.x / windowSize.width - 0.5
       controlsRef.current.rotation.y = MathUtils.lerp(
         controlsRef.current.rotation.y,
         Math.PI * (defaultRotation.y + mouseX * rotationRate),

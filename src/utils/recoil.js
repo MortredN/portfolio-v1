@@ -10,3 +10,13 @@ export const cameraNameSwapAtom = atom({
   key: 'cameraNameSwap',
   default: Constants.CAMERA_NAMES.ORTHOGRAPHIC
 })
+
+export const firstTimeLoadingEndAtom = atom({
+  key: 'firstTimeLoadingEndAtom',
+  default: false
+})
+
+export const firstTimeNavbarAtom = atom({
+  key: 'firstTimeNavbarAtom',
+  default: false
+})

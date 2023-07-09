@@ -63,7 +63,7 @@ const WorkingTable = (props) => {
                   <button
                     type="button"
                     onClick={navigateToWorkExperiences}
-                    className="flex flex-col gap-y-1.5 cursor-pointer items-center font-semibold"
+                    className="flex flex-col gap-y-1.5 cursor-pointer items-center font-semibold font-title"
                   >
                     <span className="bg-white/75 rounded-lg py-1 px-2 whitespace-nowrap">
                       Work Experiences & Projects

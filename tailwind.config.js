@@ -9,6 +9,7 @@ module.exports = {
         'coffee-0': 'var(--coffee-0)',
         'coffee-1': 'var(--coffee-1)',
         'coffee-2': 'var(--coffee-2)',
+        'coffee-3': 'var(--coffee-3)',
 
         base: 'var(--base)',
 

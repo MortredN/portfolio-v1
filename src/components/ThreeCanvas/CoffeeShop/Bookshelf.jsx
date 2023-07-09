@@ -70,7 +70,7 @@ const Bookshelf = (props) => {
             <button
               type="button"
               onClick={navigateToContact}
-              className="flex gap-x-1.5 cursor-pointer items-center font-semibold"
+              className="flex gap-x-1.5 cursor-pointer items-center font-semibold font-title"
             >
               <span className="w-8 h-8 flex items-center justify-center relative">
                 <span
