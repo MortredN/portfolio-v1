@@ -9,12 +9,12 @@ const NameTitle = () => {
 
   return cameraName === Constants.CAMERA_NAMES.ORTHOGRAPHIC && cameraName === cameraNameSwap ? (
     <div
-      className={`absolute inset-x-0 px-4 mx-auto font-title flex flex-col items-center transition-all duration-1000 z-30 ${
+      className={`absolute inset-x-0 px-4 mx-auto font-title flex flex-col items-center transition-all duration-1000 z-50 ${
         firstTimeLoadingEnd ? `text-base` : `text-white`
       }`}
       style={{
         top: firstTimeLoadingEnd ? `85vh` : `90vh`,
-        transform: firstTimeLoadingEnd ? `translateX(-15vw)` : ``
+        transform: firstTimeLoadingEnd ? `translateX(-400px)` : ``
       }}
     >
       <h1 className="text-[40px] leading-[40px] font-bold flex items-center gap-x-3">

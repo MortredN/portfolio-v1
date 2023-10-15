@@ -28,7 +28,15 @@ const Constants = {
     LINKEDIN: `https://www.linkedin.com/in/bach-viet-ha-b1a674198`,
     GITHUB: `https://github.com/MortredN`,
     TWITTER: `https://twitter.com/hvbach`
-  }
+  },
+
+  SONG_LIST: [
+    './music/Es Jammy Jams - Book Bag.mp3',
+    './music/JR Tundra - The Night Falling.mp3',
+    './music/Silent Partner - Bet On It.mp3',
+    './music/TrackTribe - A Night Alone.mp3',
+    './music/TrackTribe - Home For the Holidays.mp3'
+  ]
 }
 
 export default Constants

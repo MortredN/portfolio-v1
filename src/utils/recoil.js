@@ -16,7 +16,7 @@ export const firstTimeLoadingEndAtom = atom({
   default: false
 })
 
-export const firstTimeNavbarAtom = atom({
-  key: 'firstTimeNavbarAtom',
+export const openMediaPlayerAtom = atom({
+  key: 'openMediaPlayerAtom',
   default: false
 })

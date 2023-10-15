@@ -5,7 +5,7 @@ import { useFrame } from '@react-three/fiber'
 import { useControls } from 'leva'
 import { useEffect, useRef } from 'react'
 import { useRecoilState } from 'recoil'
-import { cameraNameAtom, cameraNameSwapAtom } from '../../utils/recoil'
+import { cameraNameAtom, cameraNameSwapAtom, openMediaPlayerAtom } from '../../utils/recoil'
 import CameraPerspective from './CameraPerspective'
 import Constants from '../../utils/constants'
 import { MathUtils } from 'three'
@@ -17,6 +17,7 @@ const Controls = () => {
   const { nodes, materials } = useGLTF('./models/coffeeshop.glb')
   const [cameraName, setCameraName] = useRecoilState(cameraNameAtom)
   const [cameraNameSwap] = useRecoilState(cameraNameSwapAtom)
+  const [openMediaPlayer, setOpenMediaPlayer] = useRecoilState(openMediaPlayerAtom)
 
   useEffect(() => {
     if (
@@ -25,6 +26,7 @@ const Controls = () => {
       (cameraName !== Constants.CAMERA_NAMES.ORTHOGRAPHIC &&
         cameraNameSwap === Constants.CAMERA_NAMES.ORTHOGRAPHIC)
     ) {
+      setOpenMediaPlayer(false)
       setTimeout(() => setCameraName(cameraNameSwap), Constants.CAMERA_SWAP_LOADING_TIME * 1000)
     }
   }, [cameraNameSwap])

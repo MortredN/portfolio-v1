@@ -35,7 +35,7 @@ const Macbook = ({ nodes, materials, children }) => {
           >
             <div
               style={{ width: 1280, height: 800, transform: "scale(2)" }}
-              className="bg-screen p-4 rounded-lg overflow-y-auto custom-scrollbar"
+              className="bg-screen p-4 rounded-lg overflow-y-auto custom-scrollbar text-lg"
             >
               <WorkExperience />
             </div>

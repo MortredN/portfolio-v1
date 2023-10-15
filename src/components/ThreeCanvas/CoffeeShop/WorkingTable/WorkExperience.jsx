@@ -5,14 +5,13 @@ import createElement from 'react-syntax-highlighter/dist/esm/create-element'
 const codeString = `/*
   author: Bach Viet Ha
   description: Work Experiences & Projects
-  memo: Scroll down to check for more
 */
 
 let workExperience = [
   {
     company: "CMC Global",
     title: "Software Engineer | Tech Support"
-    dates: { start: new Date(2020, 06), end: new Date(2021, 12) },
+    time: "Jun 2020 - Dec 2021",
     location: "Hanoi, Vietnam",
     tasks: [
       "Involvement in logistics and supply chain application",
@@ -23,7 +22,7 @@ let workExperience = [
   {
     company: "PVcomBank",
     title: "Software Developer"
-    dates: { start: new Date(2022, 03), end: new Date(2023, 06) },
+    time: "Mar 2022 - Jun 2023",
     location: "Hanoi, Vietnam",
     tasks: [
       "Providing users with multiple digital bank solutions, using Next.js as the main framework",
@@ -33,7 +32,7 @@ let workExperience = [
   {
     company: "Superjoi",
     title: "Software Developer"
-    dates: { start: new Date(2022, 06), end: null },
+    time: "Jun 2022 - now",
     location: "London, England, UK (Remote)",
     tasks: [
       "Developing a link-in-bio/content fundraising webapp"

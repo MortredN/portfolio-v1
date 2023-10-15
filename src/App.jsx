@@ -7,6 +7,7 @@ import ContactMeEmail from './components/ContactMeEmail'
 import Navbar from './components/Navbar'
 import NameTitle from './components/NameTitle'
 import FirstTimeLoading from './components/LoadingScreen/FirstTimeLoading'
+import MediaPlayer from './components/MediaPlayer'
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
       <ContactMeEmail />
 
       <Navbar />
+      <MediaPlayer />
 
       <OverlayMug />
       <OverlayFilling />
