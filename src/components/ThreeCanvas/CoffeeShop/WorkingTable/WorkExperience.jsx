@@ -57,7 +57,7 @@ let projects = {
 }
 `
 
-const WorkExperience = () => {
+const WorkExperience = ({ padding = `10px` }) => {
   const windowSize = useWindowSize()
 
   // https://github.com/react-syntax-highlighter/react-syntax-highlighter/issues/104
@@ -99,7 +99,7 @@ const WorkExperience = () => {
       renderer={rowRenderer}
       showLineNumbers={windowSize.width >= 1024}
       wrapLongLines
-      customStyle={{ backgroundColor: 'rgba(40, 44, 52, 0.8)', padding: 16 }}
+      customStyle={{ backgroundColor: 'rgba(40, 44, 52, 0.8)', padding }}
     >
       {codeString}
     </SyntaxHighlighter>

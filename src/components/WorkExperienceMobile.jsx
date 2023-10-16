@@ -24,7 +24,7 @@ const WorkExperienceMobile = () => {
             className="absolute top-0 right-0 w-full h-full flex text-sm"
           >
             <div className="overflow-y-auto">
-              <WorkExperience />
+              <WorkExperience padding={`84px 10px`} />
             </div>
             <div
               className="absolute top-0 h-full w-[300px]"
