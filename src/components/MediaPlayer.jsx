@@ -13,12 +13,20 @@ const MediaPlayer = () => {
   const [cameraName] = useRecoilState(cameraNameAtom)
   const [cameraNameSwap] = useRecoilState(cameraNameSwapAtom)
   const [openMediaPlayer, setOpenMediaPlayer] = useRecoilState(openMediaPlayerAtom)
+  const [showSongChangedMessage, setShowSongChangedMessage] = useState(false)
   const [firstTimeLoadingEnd] = useRecoilState(firstTimeLoadingEndAtom)
 
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentSongIndex, setCurrentSongIndex] = useState(0)
 
   const mediaPlayerRef = useRef()
+  const hideMessageTimeout = useRef()
+
+  const currentSongPath = Constants.SONG_LIST[currentSongIndex]
+  const currentSongName = currentSongPath.substring(
+    currentSongPath.indexOf('music/') + 6,
+    currentSongPath.lastIndexOf('.mp3')
+  )
 
   const togglePlayPause = () => {
     const audio = mediaPlayerRef.current
@@ -33,11 +41,16 @@ const MediaPlayer = () => {
   const playSong = (index) => {
     const audio = mediaPlayerRef.current
     setCurrentSongIndex(index)
+    setShowSongChangedMessage(true)
     setIsPlaying(true)
     audio.src = Constants.SONG_LIST[index]
     audio.oncanplay = () => {
       audio.play()
     }
+    clearTimeout(hideMessageTimeout.current)
+    hideMessageTimeout.current = setTimeout(() => {
+      setShowSongChangedMessage(false)
+    }, 3000)
   }
 
   const playNextSong = () => {
@@ -64,12 +77,34 @@ const MediaPlayer = () => {
     }
   }, [firstTimeLoadingEnd])
 
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      const audio = mediaPlayerRef.current
+      if (document.hidden) {
+        if (isPlaying) {
+          audio.pause()
+        }
+      } else {
+        if (isPlaying) {
+          audio.play()
+        }
+      }
+    }
+
+    document.addEventListener('visibilitychange', handleVisibilityChange)
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
+    }
+  }, [isPlaying])
+
   return (
     <>
       <audio ref={mediaPlayerRef} src={Constants.SONG_LIST[currentSongIndex]} className="hidden" />
       <AnimatePresence>
         {cameraName === cameraNameSwap ? (
           <motion.nav
+            key="mediaPlayerDisplay"
             className="fixed top-3 left-3 z-40"
             initial={{ translateX: `-100px`, rotate: 150 }}
             animate={{ translateX: 0, rotate: 0 }}
@@ -129,6 +164,18 @@ const MediaPlayer = () => {
             </AnimatePresence>
           </motion.nav>
         ) : null}
+        {showSongChangedMessage && (
+          <motion.div
+            key="songMessageDisplay"
+            initial={{ translateX: `-500px` }}
+            animate={{ translateX: 0, rotate: 0 }}
+            exit={{ translateX: `-500px` }}
+            transition={{ duration: 1, ease: 'anticipate' }}
+            className="fixed top-20 left-3 z-40 p-2 bg-coffee-3 rounded-lg text-white"
+          >
+            {currentSongName}
+          </motion.div>
+        )}
       </AnimatePresence>
     </>
   )

@@ -1,6 +1,7 @@
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 import createElement from 'react-syntax-highlighter/dist/esm/create-element'
+import { useWindowSize } from '../../../../hooks/screenSize'
 
 const codeString = `/*
   author: Bach Viet Ha
@@ -57,6 +58,8 @@ let projects = {
 `
 
 const WorkExperience = () => {
+  const windowSize = useWindowSize()
+
   // https://github.com/react-syntax-highlighter/react-syntax-highlighter/issues/104
   // Massive thanks to jakubjafra
   const rowRenderer = ({ rows, stylesheet, useInlineStyles }) => {
@@ -94,7 +97,9 @@ const WorkExperience = () => {
       language="javascript"
       style={atomOneDark}
       renderer={rowRenderer}
-      showLineNumbers
+      showLineNumbers={windowSize.width >= 1024}
+      wrapLongLines
+      customStyle={{ backgroundColor: 'rgba(40, 44, 52, 0.8)', padding: 16 }}
     >
       {codeString}
     </SyntaxHighlighter>

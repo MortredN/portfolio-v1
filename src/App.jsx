@@ -8,6 +8,7 @@ import Navbar from './components/Navbar'
 import NameTitle from './components/NameTitle'
 import FirstTimeLoading from './components/LoadingScreen/FirstTimeLoading'
 import MediaPlayer from './components/MediaPlayer'
+import WorkExperienceMobile from './components/WorkExperienceMobile'
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
       <NameTitle />
 
       <AboutMe />
+      <WorkExperienceMobile />
       <ContactMeEmail />
 
       <Navbar />

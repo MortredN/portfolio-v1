@@ -63,7 +63,7 @@ const AboutMe = () => {
                 </div>
               </div>
             </div>
-            <div className="absolute top-0 left-[100%] h-full w-[300px] bg-white/80"></div>
+            <div className="absolute top-0 left-[100%] h-full w-[300px] bg-white/80" />
           </motion.div>
         )}
     </AnimatePresence>

@@ -2,11 +2,13 @@ import { Html } from '@react-three/drei'
 import Constants from '../../../../utils/constants'
 import { useRecoilState } from 'recoil'
 import { cameraNameAtom, cameraNameSwapAtom } from '../../../../utils/recoil'
+import { useWindowSize } from '../../../../hooks/screenSize'
 import WorkExperience from './WorkExperience'
 
 const Macbook = ({ nodes, materials, children }) => {
   const [cameraName] = useRecoilState(cameraNameAtom)
   const [cameraNameSwap] = useRecoilState(cameraNameSwapAtom)
+  const windowSize = useWindowSize()
 
   return (
     <group name="MacbookGroup" position={[0.62, 1.58, 0.06]}>
@@ -21,9 +23,8 @@ const Macbook = ({ nodes, materials, children }) => {
         />
         <mesh name="Cube028_1" geometry={nodes.Cube028_1.geometry} material={materials.Rubber} />
       </group>
-      {(cameraName === cameraNameSwap ||
-        cameraName !== Constants.CAMERA_NAMES.ORTHOGRAPHIC ||
-        cameraNameSwap === Constants.CAMERA_NAMES.ORTHOGRAPHIC) && (
+      {((cameraName !== Constants.CAMERA_NAMES.ORTHOGRAPHIC && windowSize.width >= 1024) ||
+        (cameraName === Constants.CAMERA_NAMES.ORTHOGRAPHIC && cameraName === cameraNameSwap)) && (
         <group rotation-y={Math.PI / 2}>
           <Html
             zIndexRange={[10, 0]}
@@ -34,7 +35,7 @@ const Macbook = ({ nodes, materials, children }) => {
             scale={0.5}
           >
             <div
-              style={{ width: 1280, height: 800, transform: "scale(2)" }}
+              style={{ width: 1280, height: 800, transform: 'scale(2)' }}
               className="bg-screen p-4 rounded-lg overflow-y-auto custom-scrollbar text-lg"
             >
               <WorkExperience />

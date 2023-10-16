@@ -1,4 +1,8 @@
+import { useWindowSize } from '../../hooks/screenSize'
+
 const FirstTimeLoadingCircle = ({ active, progress }) => {
+  const windowSize = useWindowSize()
+
   return (
     <>
       <div
@@ -25,7 +29,7 @@ const FirstTimeLoadingCircle = ({ active, progress }) => {
         </div>
       </div>
       <div
-        className="absolute duration-1000 text-white font-semibold text-lg"
+        className="absolute duration-1000 text-white font-semibold text-lg text-center"
         style={{
           top: progress === 100 && !active ? `50%` : `calc(50% - 100px)`,
           left: progress === 100 && !active ? `50%` : `calc(50% - 100px)`,
@@ -35,7 +39,9 @@ const FirstTimeLoadingCircle = ({ active, progress }) => {
               : `scale(0) translate(-50%, -50%)`
         }}
       >
-        Press anywhere to open
+        {windowSize?.width >= 1024 ? `Click` : `Press`} anywhere
+        <br />
+        to open
       </div>
     </>
   )

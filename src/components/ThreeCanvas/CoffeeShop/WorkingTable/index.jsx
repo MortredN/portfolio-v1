@@ -4,12 +4,14 @@ import Macbook from './Macbook'
 import { useRecoilState } from 'recoil'
 import { cameraNameAtom, cameraNameSwapAtom } from '../../../../utils/recoil'
 import Constants from '../../../../utils/constants'
+import { useWindowSize } from '../../../../hooks/screenSize'
 import { Html } from '@react-three/drei'
 
 const WorkingTable = (props) => {
   const { nodes, materials } = props
   const [cameraName, setCameraName] = useRecoilState(cameraNameAtom)
   const [cameraNameSwap, setCameraNameSwap] = useRecoilState(cameraNameSwapAtom)
+  const windowSize = useWindowSize()
 
   const navigateToWorkExperiences = (event) => {
     event.stopPropagation()
@@ -59,14 +61,21 @@ const WorkingTable = (props) => {
           <Macbook {...props}>
             {cameraName === Constants.CAMERA_NAMES.ORTHOGRAPHIC &&
               cameraName === cameraNameSwap && (
-                <Html center position={[0, 2.1, 0.5]} zIndexRange={[20, 0]}>
+                <Html
+                  center
+                  position={windowSize.width >= 1024 ? [0, 2.1, 0.5] : [-0.5, -2, 1]}
+                  zIndexRange={[20, 0]}
+                >
                   <button
                     type="button"
                     onClick={navigateToWorkExperiences}
-                    className="flex flex-col gap-y-1.5 cursor-pointer items-center font-semibold font-title"
+                    className={`flex gap-y-1.5 cursor-pointer items-center font-semibold font-title ${
+                      windowSize.width >= 1024 ? `flex-col` : `flex-col-reverse`
+                    }`}
                   >
                     <span className="bg-white/75 rounded-lg py-1 px-2 whitespace-nowrap">
-                      Work Experiences & Projects
+                      Work Experiences
+                      <br />& Projects
                     </span>
                     <span className="w-8 h-8 flex items-center justify-center relative">
                       <span

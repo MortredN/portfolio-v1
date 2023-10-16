@@ -13,7 +13,7 @@ import LoadingCoffeeMug from './LoadingCoffeeMug'
 import { useMouse } from '../../hooks/mouse'
 import { useWindowSize } from '../../hooks/screenSize'
 
-const Controls = () => {
+const Controls = ({ hammerDeltaX }) => {
   const { nodes, materials } = useGLTF('./models/coffeeshop.glb')
   const [cameraName, setCameraName] = useRecoilState(cameraNameAtom)
   const [cameraNameSwap] = useRecoilState(cameraNameSwapAtom)
@@ -59,16 +59,21 @@ const Controls = () => {
 
   const wholeRef = useRef()
   const controlsRef = useRef()
-  const mousey = useMouse()
+  const mouse = useMouse()
   const windowSize = useWindowSize()
 
   // Controls with mouse movement
   useFrame(() => {
     if (windowSize.width && cameraName === Constants.CAMERA_NAMES.ORTHOGRAPHIC) {
-      const mouseX = mousey.x / windowSize.width - 0.5
+      let x = 0
+      if (windowSize.width >= 1024) {
+        x = mouse.x / windowSize.width - 0.5
+      } else {
+        x = (hammerDeltaX / windowSize.width) * 1.5
+      }
       controlsRef.current.rotation.y = MathUtils.lerp(
         controlsRef.current.rotation.y,
-        Math.PI * (defaultRotation.y + mouseX * rotationRate),
+        Math.PI * (defaultRotation.y + x * rotationRate),
         rotationLerp
       )
     }

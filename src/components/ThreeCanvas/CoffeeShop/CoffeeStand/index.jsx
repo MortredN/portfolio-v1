@@ -4,12 +4,14 @@ import Grinder from './Grinder'
 import { useRecoilState } from 'recoil'
 import { cameraNameAtom, cameraNameSwapAtom } from '../../../../utils/recoil'
 import Constants from '../../../../utils/constants'
+import { useWindowSize } from '../../../../hooks/screenSize'
 import { Html } from '@react-three/drei'
 
 const CoffeeStand = (props) => {
   const { nodes, materials } = props
   const [cameraName, setCameraName] = useRecoilState(cameraNameAtom)
   const [cameraNameSwap, setCameraNameSwap] = useRecoilState(cameraNameSwapAtom)
+  const windowSize = useWindowSize()
 
   const navigateToAboutMe = (event) => {
     event.stopPropagation()
@@ -48,11 +50,17 @@ const CoffeeStand = (props) => {
         />
         <EspressoMachine {...props}>
           {cameraName === Constants.CAMERA_NAMES.ORTHOGRAPHIC && cameraName === cameraNameSwap && (
-            <Html center position={[-1.5, 2, 2]} zIndexRange={[20, 0]}>
+            <Html
+              center
+              position={windowSize.width >= 1024 ? [-1.5, 2, 2] : [0, 3, 2]}
+              zIndexRange={[20, 0]}
+            >
               <button
                 type="button"
                 onClick={navigateToAboutMe}
-                className="flex gap-x-1.5 cursor-pointer items-center font-semibold font-title"
+                className={`flex cursor-pointer items-center font-semibold font-title ${
+                  windowSize.width >= 1024 ? `gap-x-1.5` : `flex-col gap-y-1.5`
+                }`}
               >
                 <span className="bg-white/75 rounded-lg py-1 px-2 whitespace-nowrap">About Me</span>
                 <span className="w-8 h-8 flex items-center justify-center relative">

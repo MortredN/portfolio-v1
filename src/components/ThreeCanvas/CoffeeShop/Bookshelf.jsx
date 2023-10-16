@@ -1,12 +1,14 @@
 import { useRecoilState } from 'recoil'
 import { cameraNameAtom, cameraNameSwapAtom } from '../../../utils/recoil'
 import Constants from '../../../utils/constants'
+import { useWindowSize } from '../../../hooks/screenSize'
 import { Html } from '@react-three/drei'
 
 const Bookshelf = (props) => {
   const [cameraName, setCameraName] = useRecoilState(cameraNameAtom)
   const [cameraNameSwap, setCameraNameSwap] = useRecoilState(cameraNameSwapAtom)
   const { nodes, materials } = props
+  const windowSize = useWindowSize()
 
   const navigateToContact = (event) => {
     event.stopPropagation()
@@ -66,11 +68,17 @@ const Bookshelf = (props) => {
         }}
       >
         {cameraName === Constants.CAMERA_NAMES.ORTHOGRAPHIC && cameraName === cameraNameSwap && (
-          <Html center position={[1.25, 1.25, -1]} zIndexRange={[20, 0]}>
+          <Html
+            center
+            position={windowSize.width >= 1024 ? [1.25, 1.25, -1] : [0, 2, 0]}
+            zIndexRange={[20, 0]}
+          >
             <button
               type="button"
               onClick={navigateToContact}
-              className="flex gap-x-1.5 cursor-pointer items-center font-semibold font-title"
+              className={`flex cursor-pointer items-center font-semibold font-title ${
+                windowSize.width >= 1024 ? `gap-x-1.5` : `flex-col-reverse gap-y-1.5`
+              }`}
             >
               <span className="w-8 h-8 flex items-center justify-center relative">
                 <span

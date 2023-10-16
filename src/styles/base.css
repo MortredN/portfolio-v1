@@ -61,8 +61,8 @@ canvas {
   content: '';
   position: absolute;
   left: 50%;
-  min-width: 300vw;
-  min-height: 300vw;
+  min-width: 750vw;
+  min-height: 750vw;
   background-color: var(--coffee-0);
   animation-name: rotate;
   animation-timing-function: linear;
@@ -129,5 +129,20 @@ canvas {
   50% {
     transform: translate(0, 0);
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@media (min-width: 1024px) {
+  .box-filling::before,
+  .box-filling::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    min-width: 250vw;
+    min-height: 250vw;
+    background-color: var(--coffee-0);
+    animation-name: rotate;
+    animation-timing-function: linear;
+    animation-duration: 4s;
   }
 }
