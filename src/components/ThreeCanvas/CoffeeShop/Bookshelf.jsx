@@ -63,7 +63,7 @@ const Bookshelf = (props) => {
     const loopTime = time % 10
 
     if (loopTime >= 0 && loopTime < 0.5) {
-      bookLinkedinRef.current.position.z = (loopTime) * 0.2
+      bookLinkedinRef.current.position.z = loopTime * 0.2
     } else if (loopTime >= 0.5 && loopTime < 5) {
       bookLinkedinRef.current.position.z = 0.1
     } else if (loopTime >= 5 && loopTime < 5.5) {
@@ -115,6 +115,7 @@ const Bookshelf = (props) => {
             zIndexRange={[20, 0]}
           >
             <button
+              aria-label={'3 Contacts'}
               type="button"
               onClick={navigateToContact}
               className={`flex cursor-pointer items-center font-semibold font-title ${

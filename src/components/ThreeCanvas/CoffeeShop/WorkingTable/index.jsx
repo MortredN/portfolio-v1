@@ -67,6 +67,7 @@ const WorkingTable = (props) => {
                   zIndexRange={[20, 0]}
                 >
                   <button
+                    aria-label={'2 Work Experiences'}
                     type="button"
                     onClick={navigateToWorkExperiences}
                     className={`flex gap-y-1.5 cursor-pointer items-center font-semibold font-title ${

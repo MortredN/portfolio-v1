@@ -56,6 +56,7 @@ const CoffeeStand = (props) => {
               zIndexRange={[20, 0]}
             >
               <button
+                aria-label={'1 About me'}
                 type="button"
                 onClick={navigateToAboutMe}
                 className={`flex cursor-pointer items-center font-semibold font-title ${

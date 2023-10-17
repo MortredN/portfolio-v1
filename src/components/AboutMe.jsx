@@ -41,21 +41,21 @@ const AboutMe = () => {
                   <h2 className="text-xl text-center font-bold font-title tracking-wide">Skills</h2>
                   <div className="mt-4 flex gap-x-3 font-semibold">
                     <span className="flex items-center justify-center gap-x-1">
-                      <img src="./images/logo/react.svg" width={24} height={24} />
+                      <img src="./images/logo/react.svg" width={24} height={24} alt="react" />
                       <span>React</span>
                     </span>
                     <span className="flex items-center justify-center gap-x-1">
-                      <img src="./images/logo/nextjs.svg" width={24} height={24} />
+                      <img src="./images/logo/nextjs.svg" width={24} height={24} alt="next.js" />
                       <span>Next.js</span>
                     </span>
                     <span className="flex items-center justify-center gap-x-1">
-                      <img src="./images/logo/threejs.svg" width={24} height={24} />
+                      <img src="./images/logo/threejs.svg" width={24} height={24} alt="three.js" />
                       <span>Three.js</span>
                     </span>
                   </div>
                   <div className="mt-3 flex gap-x-3 font-semibold">
                     <span className="flex items-center justify-center gap-x-1">
-                      <img src="./images/logo/aws.svg" width={24} height={24} />
+                      <img src="./images/logo/aws.svg" width={24} height={24} alt="aws" />
                       <span>AWS</span>
                     </span>
                   </div>

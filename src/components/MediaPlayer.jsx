@@ -113,16 +113,18 @@ const MediaPlayer = () => {
             style={{ width: 60, height: 60 }}
           >
             <motion.button
+              aria-label="open/close media player"
               onClick={() => setOpenMediaPlayer((value) => !value)}
               className="button-circle absolute top-0 left-0 bg-coffee-3 rounded-full flex items-center justify-center"
               style={{ width: 60, height: 60, zIndex: 45 }}
             >
-              <img src="./images/music.svg" className="w-8 h-8" />
+              <img src="./images/music.svg" className="w-8 h-8" alt="open/close player" />
             </motion.button>
             <AnimatePresence>
               {openMediaPlayer && (
                 <>
                   <motion.button
+                    aria-label="play/pause"
                     className="button-circle absolute top-0 left-0 bg-coffee-3 rounded-full flex items-center justify-center"
                     initial={{ translateX: 0, rotate: 150 }}
                     animate={{ translateX: 76 * 1, rotate: 0 }}
@@ -132,12 +134,13 @@ const MediaPlayer = () => {
                     onClick={togglePlayPause}
                   >
                     {isPlaying ? (
-                      <img src="./images/pause.svg" className="w-8 h-8" />
+                      <img src="./images/pause.svg" className="w-8 h-8" alt="pause" />
                     ) : (
-                      <img src="./images/play.svg" className="w-8 h-8" />
+                      <img src="./images/play.svg" className="w-8 h-8" alt="play" />
                     )}
                   </motion.button>
                   <motion.button
+                    aria-label="previous"
                     className="button-circle absolute top-0 left-0 bg-coffee-3 rounded-full flex items-center justify-center"
                     initial={{ translateX: 0, rotate: 150 }}
                     animate={{ translateX: 76 * 2, rotate: 0 }}
@@ -146,9 +149,10 @@ const MediaPlayer = () => {
                     style={{ width: 60, height: 60, zIndex: 43 }}
                     onClick={playPreviousSong}
                   >
-                    <img src="./images/backward.svg" className="w-8 h-8" />
+                    <img src="./images/backward.svg" className="w-8 h-8" alt="previous" />
                   </motion.button>
                   <motion.button
+                    aria-label="next"
                     className="button-circle absolute top-0 left-0 bg-coffee-3 rounded-full flex items-center justify-center"
                     initial={{ translateX: 0, rotate: 150 }}
                     animate={{ translateX: 76 * 3, rotate: 0 }}
@@ -157,7 +161,7 @@ const MediaPlayer = () => {
                     style={{ width: 60, height: 60, zIndex: 42 }}
                     onClick={playNextSong}
                   >
-                    <img src="./images/forward.svg" className="w-8 h-8" />
+                    <img src="./images/forward.svg" className="w-8 h-8" alt="next" />
                   </motion.button>
                 </>
               )}
