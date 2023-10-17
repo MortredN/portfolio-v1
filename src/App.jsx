@@ -1,4 +1,5 @@
 import { RecoilRoot } from 'recoil'
+import { useEffect } from 'react'
 import ThreeCanvas from './components/ThreeCanvas'
 import OverlayMug from './components/LoadingScreen/OverlayMug'
 import OverlayFilling from './components/LoadingScreen/OverlayFilling'
@@ -11,6 +12,10 @@ import MediaPlayer from './components/MediaPlayer'
 import WorkExperienceMobile from './components/WorkExperienceMobile'
 
 const App = () => {
+  useEffect(() => {
+    document.title = '____ 💻☕ ____'
+  }, [])
+
   return (
     <RecoilRoot>
       <ThreeCanvas />

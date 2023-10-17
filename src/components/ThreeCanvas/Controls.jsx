@@ -12,6 +12,7 @@ import { MathUtils } from 'three'
 import LoadingCoffeeMug from './LoadingCoffeeMug'
 import { useMouse } from '../../hooks/mouse'
 import { useWindowSize } from '../../hooks/screenSize'
+import BaseFloor from './BaseFloor'
 
 const Controls = ({ hammerDeltaX }) => {
   const { nodes, materials } = useGLTF('./models/coffeeshop.glb')
@@ -88,16 +89,7 @@ const Controls = ({ hammerDeltaX }) => {
         >
           <CameraPerspective />
           <CoffeeShop nodes={nodes} materials={materials} />
-          <mesh
-            name="BaseFloor"
-            receiveShadow
-            position-y={-3}
-            rotation-x={-Math.PI / 2}
-            scale={100}
-          >
-            <planeGeometry />
-            <meshStandardMaterial color="#fffff0" />
-          </mesh>
+          <BaseFloor />
           <Lighting />
         </group>
         <LoadingCoffeeMug nodes={nodes} materials={materials} wholeRef={wholeRef} />

@@ -13,8 +13,8 @@ const CameraOrthographic = () => {
     if (windowSize?.width && windowSize?.height) {
       return windowSize.width < 1024 && windowSize.width < windowSize.height
         ? (windowSize.width / 1920) * 140
-        : (windowSize.width / 1920) * 70
-    } else return 70
+        : (windowSize.width / 1920) * 65
+    } else return 65
   }, [windowSize])
 
   return (

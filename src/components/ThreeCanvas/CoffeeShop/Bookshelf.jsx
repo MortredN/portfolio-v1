@@ -3,6 +3,8 @@ import { cameraNameAtom, cameraNameSwapAtom } from '../../../utils/recoil'
 import Constants from '../../../utils/constants'
 import { useWindowSize } from '../../../hooks/screenSize'
 import { Html } from '@react-three/drei'
+import { useFrame } from '@react-three/fiber'
+import { useRef } from 'react'
 
 const Bookshelf = (props) => {
   const [cameraName, setCameraName] = useRecoilState(cameraNameAtom)
@@ -39,6 +41,10 @@ const Bookshelf = (props) => {
     }
   }
 
+  const bookLinkedinRef = useRef()
+  const bookGitHubRef = useRef()
+  const bookTwitterRef = useRef()
+
   const onBookHoverEnter = (event) => {
     if (cameraName !== Constants.CAMERA_NAMES.ORTHOGRAPHIC) {
       event.stopPropagation()
@@ -51,6 +57,41 @@ const Bookshelf = (props) => {
       document.body.style.cursor = 'default'
     }
   }
+
+  useFrame(({ clock }) => {
+    const time = clock.elapsedTime
+    const loopTime = time % 10
+
+    if (loopTime >= 0 && loopTime < 0.5) {
+      bookLinkedinRef.current.position.z = (loopTime) * 0.2
+    } else if (loopTime >= 0.5 && loopTime < 5) {
+      bookLinkedinRef.current.position.z = 0.1
+    } else if (loopTime >= 5 && loopTime < 5.5) {
+      bookLinkedinRef.current.position.z = (5.5 - loopTime) * 0.2
+    } else {
+      bookLinkedinRef.current.position.z = 0
+    }
+
+    if (loopTime >= 1 && loopTime < 1.5) {
+      bookGitHubRef.current.position.z = (loopTime - 1) * 0.2
+    } else if (loopTime >= 1.5 && loopTime < 6) {
+      bookGitHubRef.current.position.z = 0.1
+    } else if (loopTime >= 6 && loopTime < 6.5) {
+      bookGitHubRef.current.position.z = (6.5 - loopTime) * 0.2
+    } else {
+      bookGitHubRef.current.position.z = 0
+    }
+
+    if (loopTime >= 2 && loopTime < 2.5) {
+      bookTwitterRef.current.position.z = (loopTime - 2) * 0.2
+    } else if (loopTime >= 2.5 && loopTime < 7) {
+      bookTwitterRef.current.position.z = 0.1
+    } else if (loopTime >= 7 && loopTime < 7.5) {
+      bookTwitterRef.current.position.z = (7.5 - loopTime) * 0.2
+    } else {
+      bookTwitterRef.current.position.z = 0
+    }
+  })
 
   return (
     <>
@@ -101,98 +142,103 @@ const Bookshelf = (props) => {
           material={materials.TableWood}
           scale={0.6}
         />
-        <group
-          name="BookLinkedin"
-          position={[0.28, 1.62, 0.11]}
-          rotation={[-Math.PI / 2, Math.PI / 4, Math.PI / 2]}
-          scale={3.5}
-          onClick={(event) => openBookLink(event, 'linkedin')}
-          onPointerEnter={onBookHoverEnter}
-          onPointerLeave={onBookHoverLeave}
-        >
-          <mesh
-            name="Cube020"
-            castShadow
-            receiveShadow
-            geometry={nodes.Cube020.geometry}
-            material={materials.BookCoverLinkedinColor}
-          />
-          <mesh
-            name="Cube020_1"
-            castShadow
-            receiveShadow
-            geometry={nodes.Cube020_1.geometry}
-            material={materials.BookCoverLinkedin}
-          />
-          <mesh
-            name="Cube020_2"
-            castShadow
-            receiveShadow
-            geometry={nodes.Cube020_2.geometry}
-            material={materials.BookPaper}
-          />
-        </group>
-        <group
-          name="BookGithub"
-          position={[-0.26, 1.06, 0.11]}
-          rotation={[-Math.PI / 2, Math.PI / 4, Math.PI / 2]}
-          scale={3.5}
-          onClick={(event) => openBookLink(event, 'github')}
-          onPointerEnter={onBookHoverEnter}
-          onPointerLeave={onBookHoverLeave}
-        >
-          <mesh
-            name="Cube023"
-            castShadow
-            receiveShadow
-            geometry={nodes.Cube023.geometry}
-            material={materials.BookCoverGithubColor}
-          />
-          <mesh
-            name="Cube023_1"
-            castShadow
-            receiveShadow
-            geometry={nodes.Cube023_1.geometry}
-            material={materials.BookCoverGithub}
-          />
-          <mesh
-            name="Cube023_2"
-            castShadow
-            receiveShadow
-            geometry={nodes.Cube023_2.geometry}
-            material={materials.BookPaper}
-          />
-        </group>
-        <group
-          name="BookTwitter"
-          position={[0.09, 0.61, 0.11]}
-          rotation={[Math.PI / 2, Math.PI / 4, -Math.PI / 2]}
-          scale={3.5}
-          onClick={(event) => openBookLink(event, 'twitter')}
-          onPointerEnter={onBookHoverEnter}
-          onPointerLeave={onBookHoverLeave}
-        >
-          <mesh
-            name="Cube025"
-            castShadow
-            receiveShadow
-            geometry={nodes.Cube025.geometry}
-            material={materials.BookCoverTwitterColor}
-          />
-          <mesh
-            name="Cube025_1"
-            castShadow
-            receiveShadow
-            geometry={nodes.Cube025_1.geometry}
-            material={materials.BookColorTwitter}
-          />
-          <mesh
-            name="Cube025_2"
-            castShadow
-            receiveShadow
-            geometry={nodes.Cube025_2.geometry}
-            material={materials.BookPaper}
-          />
+        <group position={[0, 0, 0.11]}>
+          <group
+            name="BookLinkedin"
+            ref={bookLinkedinRef}
+            position={[0.28, 1.62, 0]}
+            rotation={[-Math.PI / 2, Math.PI / 4, Math.PI / 2]}
+            scale={3.5}
+            onClick={(event) => openBookLink(event, 'linkedin')}
+            onPointerEnter={onBookHoverEnter}
+            onPointerLeave={onBookHoverLeave}
+          >
+            <mesh
+              name="Cube020"
+              castShadow
+              receiveShadow
+              geometry={nodes.Cube020.geometry}
+              material={materials.BookCoverLinkedinColor}
+            />
+            <mesh
+              name="Cube020_1"
+              castShadow
+              receiveShadow
+              geometry={nodes.Cube020_1.geometry}
+              material={materials.BookCoverLinkedin}
+            />
+            <mesh
+              name="Cube020_2"
+              castShadow
+              receiveShadow
+              geometry={nodes.Cube020_2.geometry}
+              material={materials.BookPaper}
+            />
+          </group>
+          <group
+            name="BookGithub"
+            ref={bookGitHubRef}
+            position={[-0.28, 1.08, 0]}
+            rotation={[-Math.PI / 2, Math.PI / 4, Math.PI / 2]}
+            scale={3.5}
+            onClick={(event) => openBookLink(event, 'github')}
+            onPointerEnter={onBookHoverEnter}
+            onPointerLeave={onBookHoverLeave}
+          >
+            <mesh
+              name="Cube023"
+              castShadow
+              receiveShadow
+              geometry={nodes.Cube023.geometry}
+              material={materials.BookCoverGithubColor}
+            />
+            <mesh
+              name="Cube023_1"
+              castShadow
+              receiveShadow
+              geometry={nodes.Cube023_1.geometry}
+              material={materials.BookCoverGithub}
+            />
+            <mesh
+              name="Cube023_2"
+              castShadow
+              receiveShadow
+              geometry={nodes.Cube023_2.geometry}
+              material={materials.BookPaper}
+            />
+          </group>
+          <group
+            name="BookTwitter"
+            ref={bookTwitterRef}
+            position={[0.09, 0.61, 0]}
+            rotation={[Math.PI / 2, Math.PI / 4, -Math.PI / 2]}
+            scale={3.5}
+            onClick={(event) => openBookLink(event, 'twitter')}
+            onPointerEnter={onBookHoverEnter}
+            onPointerLeave={onBookHoverLeave}
+          >
+            <mesh
+              name="Cube025"
+              castShadow
+              receiveShadow
+              geometry={nodes.Cube025.geometry}
+              material={materials.BookCoverTwitterColor}
+            />
+            <mesh
+              name="Cube025_1"
+              castShadow
+              receiveShadow
+              geometry={nodes.Cube025_1.geometry}
+              material={materials.BookColorTwitter}
+            />
+            <mesh
+              name="Cube025_2"
+              castShadow
+              receiveShadow
+              geometry={nodes.Cube025_2.geometry}
+              material={materials.BookPaper}
+            />
+          </group>
         </group>
         <group
           name="Book001"
