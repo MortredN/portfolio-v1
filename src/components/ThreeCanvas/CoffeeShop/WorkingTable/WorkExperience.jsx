@@ -10,14 +10,12 @@ const codeString = `/*
 
 let workExperience = [
   {
-    company: "CMC Global",
-    title: "Software Engineer | Tech Support"
-    time: "Jun 2020 - Dec 2021",
-    location: "Hanoi, Vietnam",
+    company: "Superjoi",
+    title: "Software Developer"
+    time: "Jun 2022 - now",
+    location: "London, England, UK (Remote)",
     tasks: [
-      "Involvement in logistics and supply chain application",
-      "Providing users with 24/7 technical support and maintenance development"
-      "Web development tech stacks: jQWidgets and Vue.js as front-end and Java as back-end"
+      "Developing a link-in-bio/content fundraising webapp"
     ]
   },
   {
@@ -31,12 +29,14 @@ let workExperience = [
     ]
   },
   {
-    company: "Superjoi",
-    title: "Software Developer"
-    time: "Jun 2022 - now",
-    location: "London, England, UK (Remote)",
+    company: "CMC Global",
+    title: "Software Engineer | Tech Support"
+    time: "Jun 2020 - Dec 2021",
+    location: "Hanoi, Vietnam",
     tasks: [
-      "Developing a link-in-bio/content fundraising webapp"
+      "Involvement in logistics and supply chain application",
+      "Providing users with 24/7 technical support and maintenance development"
+      "Web development tech stacks: jQWidgets and Vue.js as front-end and Java as back-end"
     ]
   }
   // TODO: Add more work experiences

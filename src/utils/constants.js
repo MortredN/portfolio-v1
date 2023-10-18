@@ -31,10 +31,10 @@ const Constants = {
   },
 
   SONG_LIST: [
-    './music/Es Jammy Jams - Book Bag.mp3',
-    './music/JR Tundra - The Night Falling.mp3',
-    './music/Silent Partner - Bet On It.mp3',
     './music/TrackTribe - A Night Alone.mp3',
+    './music/JR Tundra - The Night Falling.mp3',
+    './music/Es Jammy Jams - Book Bag.mp3',
+    './music/Silent Partner - Bet On It.mp3',
     './music/TrackTribe - Home For the Holidays.mp3'
   ]
 }
