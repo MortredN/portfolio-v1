@@ -1,12 +1,24 @@
 version: 0.2
 
 phases:
-  pre_build:
+  install:
+    runtime-versions:
+      nodejs: 18.x
     commands:
+      - echo "Installing Node.js dependencies..."
       - npm install
   build:
     commands:
+      - echo "Building React app..."
       - npm run build
+      - echo "Zipping Lambda function..."
+      - mv ./aws/updateS3PolicyWithCloudflareIPs.mjs ./aws/index.mjs
+      - zip -j ./aws/lambda_function.zip ./aws/index.mjs
   post_build:
     commands:
+      - echo "Deploying React app..."
+      - aws s3 rm --recursive s3://$BUCKET_NAME/
       - aws s3 cp --recursive ./dist s3://$BUCKET_NAME/
+      - echo "Updating Lambda function..."
+      - aws lambda update-function-code --function-name $FUNCTION_NAME --zip-file fileb://./aws/lambda_function.zip
+      - echo "Done!"
