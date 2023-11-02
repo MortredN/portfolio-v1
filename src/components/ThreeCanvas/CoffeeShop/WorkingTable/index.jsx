@@ -67,7 +67,7 @@ const WorkingTable = (props) => {
                   zIndexRange={[20, 0]}
                 >
                   <button
-                    aria-label={'2 Work Experiences'}
+                    aria-label={'2 Experiences & Projects'}
                     type="button"
                     onClick={navigateToWorkExperiences}
                     className={`flex gap-y-1.5 cursor-pointer items-center font-semibold font-title ${
@@ -75,7 +75,7 @@ const WorkingTable = (props) => {
                     }`}
                   >
                     <span className="bg-white/75 rounded-lg py-1 px-2 whitespace-nowrap">
-                      Work Experiences
+                      Experiences
                       <br />& Projects
                     </span>
                     <span className="w-8 h-8 flex items-center justify-center relative">
