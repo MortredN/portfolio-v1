@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700;800&family=Source+Code+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap');
 
 html,
 body,
@@ -9,36 +9,27 @@ body,
   width: 100%;
   height: 100%;
   background: var(--floor-html);
-  font-family: 'Source Sans 3', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   color: var(--base);
   font-weight: 500;
 }
 
 .font-title {
-  font-family: 'Montserrat', sans-serif;
-}
-
-.font-code {
-  font-family: 'Source Code Pro', monospace;
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: 0.025em;
 }
 
 canvas {
   touch-action: none;
 }
 
-.custom-scrollbar::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-}
-
 .custom-scrollbar::-webkit-scrollbar {
-  width: 12px;
+  width: 4px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: var(--screen-scrollbar);
+  background-color: var(--coffee-3);
 }
 
 .box-filling {
@@ -81,7 +72,7 @@ canvas {
 }
 
 .button-circle {
-  background: var(--coffee-2);
+  background: var(--coffee-3);
   transition: box-shadow 0.25s;
 }
 
@@ -133,6 +124,10 @@ canvas {
 }
 
 @media (min-width: 1024px) {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 12px;
+  }
+
   .box-filling::before,
   .box-filling::after {
     content: '';

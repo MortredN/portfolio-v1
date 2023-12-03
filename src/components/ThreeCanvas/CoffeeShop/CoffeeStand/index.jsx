@@ -59,17 +59,19 @@ const CoffeeStand = (props) => {
                 aria-label={'1 About me'}
                 type="button"
                 onClick={navigateToAboutMe}
-                className={`flex cursor-pointer items-center font-semibold font-title ${
-                  windowSize.width >= 1024 ? `gap-x-1.5` : `flex-col gap-y-1.5`
+                className={`flex cursor-pointer items-center font-semibold ${
+                  windowSize.width >= 1024 ? `gap-x-2.5` : `flex-col gap-y-1.5`
                 }`}
               >
-                <span className="bg-white/75 rounded-lg py-1 px-2 whitespace-nowrap">About Me</span>
-                <span className="w-8 h-8 flex items-center justify-center relative">
+                <span className="bg-white/80 rounded-lg py-1 px-2 whitespace-nowrap text-lg lg:text-xl">
+                  About Me
+                </span>
+                <span className="w-8 lg:w-10 h-8 lg:h-10 flex items-center justify-center relative">
                   <span
-                    className="absolute inset-0.5 w-7 h-7 bg-coffee-2 rounded-full animate-ping"
+                    className="absolute inset-0.5 w-7 lg:w-9 h-7 lg:h-9 bg-coffee-3 rounded-full animate-ping"
                     style={{ animationDuration: `2s` }}
                   />
-                  <span className="w-full h-full flex items-center justify-center text-lg bg-coffee-2 rounded-full text-white z-10">
+                  <span className="w-full h-full flex items-center justify-center text-xl lg:text-2xl bg-coffee-3 rounded-full text-white z-10">
                     1
                   </span>
                 </span>

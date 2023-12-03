@@ -1,9 +1,9 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useRecoilState } from 'recoil'
-import { cameraNameAtom, cameraNameSwapAtom } from '../utils/recoil'
-import Constants from '../utils/constants'
-import { useWindowSize } from '../hooks/screenSize'
-import WorkExperience from './ThreeCanvas/CoffeeShop/WorkingTable/WorkExperience'
+import { cameraNameAtom, cameraNameSwapAtom } from '../../utils/recoil'
+import Constants from '../../utils/constants'
+import { useWindowSize } from '../../hooks/screenSize'
+import WorkExperience from '.'
 
 const WorkExperienceMobile = () => {
   const [cameraName] = useRecoilState(cameraNameAtom)
@@ -23,7 +23,7 @@ const WorkExperienceMobile = () => {
             transition={{ duration: 1, ease: 'anticipate' }}
             className="absolute top-0 right-0 w-full h-full flex text-sm"
           >
-            <div className="overflow-y-auto">
+            <div className="overflow-y-auto w-full">
               <WorkExperience padding={`84px 16px`} />
             </div>
             <div

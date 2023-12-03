@@ -1,9 +1,9 @@
 import { Html } from '@react-three/drei'
 import Constants from '../../../../utils/constants'
-import { useRecoilState } from 'recoil'
+import { RecoilRoot, useRecoilState } from 'recoil'
 import { cameraNameAtom, cameraNameSwapAtom } from '../../../../utils/recoil'
 import { useWindowSize } from '../../../../hooks/screenSize'
-import WorkExperience from './WorkExperience'
+import WorkExperience from '../../../WorkExperience'
 
 const Macbook = ({ nodes, materials, children }) => {
   const [cameraName] = useRecoilState(cameraNameAtom)
@@ -34,12 +34,14 @@ const Macbook = ({ nodes, materials, children }) => {
             distanceFactor={0.32}
             scale={0.5}
           >
-            <div
-              style={{ width: 1280, height: 800, transform: 'scale(2)' }}
-              className="bg-screen p-4 rounded-lg overflow-y-auto custom-scrollbar text-lg"
-            >
-              <WorkExperience />
-            </div>
+            <RecoilRoot>
+              <div
+                style={{ width: 1280, height: 800, transform: 'scale(2)' }}
+                className="bg-coffee-6 py-4 rounded-lg overflow-hidden"
+              >
+                <WorkExperience />
+              </div>
+            </RecoilRoot>
           </Html>
         </group>
       )}
@@ -52,7 +54,7 @@ const Macbook = ({ nodes, materials, children }) => {
         rotation={[0, -Math.PI / 2, 0]}
         scale={[0.49, 0.01, 0.45]}
       >
-        <meshBasicMaterial color="#3d4148" />
+        <meshBasicMaterial color="#987562" />
       </mesh>
     </group>
   )

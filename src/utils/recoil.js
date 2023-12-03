@@ -20,3 +20,8 @@ export const openMediaPlayerAtom = atom({
   key: 'openMediaPlayerAtom',
   default: false
 })
+
+export const displayedWorkAtom = atom({
+  key: 'displayedWorkAtom',
+  default: null
+})

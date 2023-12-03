@@ -31,7 +31,7 @@ const NameTitle = () => {
     >
       <h1
         className={`${
-          windowSize.width >= 1024 ? `text-[40px] leading-[40px]` : `text-[32px] leading-[32px]`
+          windowSize.width >= 1024 ? `text-[48px] leading-[48px]` : `text-[40px] leading-[40px]`
         } font-bold flex items-center gap-x-3`}
       >
         <span>Bach Viet Ha</span>
@@ -41,7 +41,7 @@ const NameTitle = () => {
           windowSize.width >= 1024 ? `text-lg leading-6` : `text-base leading-5`
         } font-normal mt-2 transition-opacity ${firstTimeLoadingEnd ? `opacity-100` : `opacity-0`}`}
       >
-        Software Developer
+        Frontend Developer
       </span>
     </div>
   ) : null

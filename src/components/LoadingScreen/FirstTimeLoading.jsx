@@ -63,7 +63,7 @@ const FirstTimeLoading = () => {
     <motion.div
       initial={false}
       animate={isOpen ? 'open' : 'closed'}
-      className={`fixed top-0 bottom-0 left-0 h-full w-full z-50 font-title ${
+      className={`fixed top-0 bottom-0 left-0 h-full w-full z-[60] font-title ${
         allowOpen ? `cursor-pointer` : `cursor-default`
       }`}
       onClick={() => {

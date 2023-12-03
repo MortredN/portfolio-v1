@@ -70,20 +70,20 @@ const WorkingTable = (props) => {
                     aria-label={'2 Experiences & Projects'}
                     type="button"
                     onClick={navigateToWorkExperiences}
-                    className={`flex gap-y-1.5 cursor-pointer items-center font-semibold font-title ${
-                      windowSize.width >= 1024 ? `flex-col` : `flex-col-reverse`
+                    className={`flex cursor-pointer items-center font-semibold font-title ${
+                      windowSize.width >= 1024 ? `flex-col gap-y-2.5` : `flex-col-reverse gap-y-1.5`
                     }`}
                   >
-                    <span className="bg-white/75 rounded-lg py-1 px-2 whitespace-nowrap">
+                    <span className="bg-white/75 rounded-lg py-1 px-2 whitespace-nowrap text-lg lg:text-xl">
                       Experiences
-                      <br />& Projects
+                      <br />& Works
                     </span>
-                    <span className="w-8 h-8 flex items-center justify-center relative">
+                    <span className="w-8 lg:w-10 h-8 lg:h-10 flex items-center justify-center relative">
                       <span
-                        className="absolute inset-0.5 w-7 h-7 bg-clock-0 rounded-full animate-ping"
+                        className="absolute inset-0.5 w-7 lg:w-9 h-7 lg:h-9 bg-clock-0 rounded-full animate-ping"
                         style={{ animationDuration: `2s` }}
                       />
-                      <span className="w-full h-full flex items-center justify-center text-lg bg-clock-0 rounded-full text-white z-10">
+                      <span className="w-full h-full flex items-center justify-center text-xl lg:text-2xl bg-clock-0 rounded-full text-white z-10">
                         2
                       </span>
                     </span>
