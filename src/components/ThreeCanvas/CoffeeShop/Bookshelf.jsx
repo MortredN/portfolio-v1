@@ -25,6 +25,9 @@ const Bookshelf = (props) => {
       event.stopPropagation()
       let link = null
       switch (type) {
+        case 'email':
+          link = Constants.SOCIAL_LINKS.EMAIL
+          break
         case 'linkedin':
           link = Constants.SOCIAL_LINKS.LINKEDIN
           break
@@ -44,6 +47,7 @@ const Bookshelf = (props) => {
   const bookLinkedinRef = useRef()
   const bookGitHubRef = useRef()
   const bookTwitterRef = useRef()
+  const bookEmailRef = useRef()
 
   const onBookHoverEnter = (event) => {
     if (cameraName !== Constants.CAMERA_NAMES.ORTHOGRAPHIC) {
@@ -90,6 +94,16 @@ const Bookshelf = (props) => {
       bookTwitterRef.current.position.z = (7.5 - loopTime) * 0.2
     } else {
       bookTwitterRef.current.position.z = 0
+    }
+
+    if (loopTime >= 3 && loopTime < 3.5) {
+      bookEmailRef.current.position.z = (loopTime - 3) * 0.2
+    } else if (loopTime >= 3.5 && loopTime < 8) {
+      bookEmailRef.current.position.z = 0.1
+    } else if (loopTime >= 8 && loopTime < 8.5) {
+      bookEmailRef.current.position.z = (8.5 - loopTime) * 0.2
+    } else {
+      bookEmailRef.current.position.z = 0
     }
   })
 
@@ -179,7 +193,7 @@ const Bookshelf = (props) => {
           <group
             name="BookGithub"
             ref={bookGitHubRef}
-            position={[-0.28, 1.08, 0]}
+            position={[-0.27, 1.07, 0]}
             rotation={[-Math.PI / 2, Math.PI / 4, Math.PI / 2]}
             scale={3.5}
             onClick={(event) => openBookLink(event, 'github')}
@@ -205,6 +219,35 @@ const Bookshelf = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.Cube023_2.geometry}
+              material={materials.BookPaper}
+            />
+          </group>
+          <group
+            name="BookEmail"
+            ref={bookEmailRef}
+            position={[-0.09, 1.25, 0]}
+            rotation={[-Math.PI / 2, Math.PI / 4, Math.PI / 2]}
+            scale={3.5}
+            onClick={(event) => openBookLink(event, 'email')}
+            onPointerEnter={onBookHoverEnter}
+            onPointerLeave={onBookHoverLeave}
+          >
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.Cube034.geometry}
+              material={materials.BookCoverEmailColor}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.Cube034_1.geometry}
+              material={materials.BookCoverEmail}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.Cube034_2.geometry}
               material={materials.BookPaper}
             />
           </group>

@@ -25,6 +25,7 @@ const Constants = {
   PERSPECTIVE_CAMERA_TRANSITION_TIME: 1.2,
 
   SOCIAL_LINKS: {
+    EMAIL: `mailto:bach.hv10@gmail.com`,
     LINKEDIN: `https://www.linkedin.com/in/bach-viet-ha-b1a674198`,
     GITHUB: `https://github.com/MortredN`,
     TWITTER: `https://twitter.com/hvbach`
