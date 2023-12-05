@@ -111,11 +111,11 @@ const AboutMe = () => {
                 <div className="flex flex-col items-center lg:w-4/5 gap-y-4 mt-6 py-6 text-sm lg:text-base text-center">
                   <span className="leading-7">
                     <i>
-                      This is just the beginning of my journey, there will be a lot of more to
-                      come...
+                      This is just the beginning of my journey, there will be a lot more of
+                      surprises!
                     </i>
                     <br />
-                    And I hope that you can be a part of that too!
+                    And I hope that we can work together!
                   </span>
                   <button
                     onClick={navigateToContact}
