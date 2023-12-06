@@ -10,10 +10,10 @@ const WorkDrawer = () => {
 
   const renderWork = () => {
     switch (displayedWork) {
-      case Works['2020'].EDUTECH.name:
-        return <Work_2020_Edutech />
-      case Works['2022'].SUPERJOI.name:
+      case Works.Y2022.SUPERJOI.name:
         return <Work_2022_Superjoi />
+      case Works.Y2020.EDUTECH.name:
+        return <Work_2020_Edutech />
       default:
         return null
     }
