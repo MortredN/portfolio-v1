@@ -4,12 +4,15 @@ import { displayedWorkAtom } from '../../utils/recoil'
 import Works from '../../utils/works'
 import Work_2020_Edutech from './WorkListing/2020/Work_2020_Edutech'
 import Work_2022_Superjoi from './WorkListing/2022/Work_2022_Superjoi'
+import Work_2024_StudentSpace from './WorkListing/2024/Work_2024_StudentSpace'
 
 const WorkDrawer = () => {
   const [displayedWork, setDisplayedWork] = useRecoilState(displayedWorkAtom)
 
   const renderWork = () => {
     switch (displayedWork) {
+      case Works.Y2024.STUDENTSPACE.name:
+        return <Work_2024_StudentSpace />
       case Works.Y2022.SUPERJOI.name:
         return <Work_2022_Superjoi />
       case Works.Y2020.EDUTECH.name:

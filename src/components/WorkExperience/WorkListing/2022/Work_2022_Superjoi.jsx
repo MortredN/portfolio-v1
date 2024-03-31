@@ -16,7 +16,7 @@ const Work_2022_Superjoi = () => {
           <div className="flex flex-col gap-y-1 ml-4 lg:ml-8">
             <span>Superjoi</span>
             <span>2022</span>
-            <span>Web Developer</span>
+            <span>Software Developer</span>
           </div>
         </div>
         <a
@@ -28,6 +28,10 @@ const Work_2022_Superjoi = () => {
           <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-coffee-6"></span>
         </a>
       </div>
+      <i className="flex flex-col mt-8 mx-4 lg:mx-16 lg:text-lg">
+        Superjoi enables creators to get funded, co-create content and reward their superfans - all
+        in one platform!
+      </i>
       <div className="flex flex-col mt-8 mx-4 lg:mx-8 gap-y-4 lg:gap-y-8">
         <div className="flex">
           <img src="https://i.imgur.com/QmxvKGU.jpg" />

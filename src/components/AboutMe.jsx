@@ -38,7 +38,7 @@ const AboutMe = () => {
                       Hey there! I'm Bach 👋
                     </span>
                     <span className="leading-7">
-                      I'm a frontend developer from Vietnam specialized in web, with a few years of
+                      I'm a software developer from Vietnam specialized in web, with a few years of
                       working experiences in both in-office and remote jobs
                     </span>
                   </div>
@@ -46,7 +46,7 @@ const AboutMe = () => {
                 <div className="grid lg:grid-cols-2 py-6 text-base lg:text-lg gap-y-12 gap-x-12 lg:pb-32">
                   <div className="flex flex-col gap-y-3">
                     <span className="leading-7 text-xl lg:text-2xl font-title font-semibold">
-                      Web Developer
+                      Software Developer
                     </span>
                     <span className="leading-7">
                       When working on JavaScript applications with ease of collaboration and

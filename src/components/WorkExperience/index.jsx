@@ -27,13 +27,17 @@ const WorkExperience = () => {
                       <span className="font-bold text-lg lg:text-xl">{experience.job}</span>
                       <span className="font-bold text-lg lg:text-xl">
                         <span className="!text-white/75"> at </span>
-                        <a
-                          href={experience.url}
-                          target="_blank"
-                          className="underline cursor-pointer hover:text-coffee-1 transition-colors"
-                        >
-                          {experience.company}
-                        </a>
+                        {experience.url ? (
+                          <a
+                            href={experience.url}
+                            target="_blank"
+                            className="underline cursor-pointer hover:text-coffee-1 transition-colors"
+                          >
+                            {experience.company}
+                          </a>
+                        ) : (
+                          <span>{experience.company}</span>
+                        )}
                       </span>
                     </div>
                     <div className="flex items-center gap-x-1 mt-2">
@@ -47,7 +51,7 @@ const WorkExperience = () => {
             </div>
           </div>
           <div className="flex py-6 text-base !text-white lg:text-lg flex-col w-full">
-            <h2 className="leading-7 text-[32px] lg:text-[40px] font-title font-semibold">Works</h2>
+            <h2 className="leading-7 text-[32px] lg:text-[40px] font-title font-semibold">Works & Projects</h2>
             <div className="bg-white/50 w-full h-px mt-1 mb-8 lg:mb-12" />
             <div className="flex flex-row gap-4 lg:gap-12 w-full flex-wrap">
               {Object.entries(Works).map(([year, work]) => (

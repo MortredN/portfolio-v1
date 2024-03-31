@@ -11,6 +11,7 @@ import FirstTimeLoading from './components/LoadingScreen/FirstTimeLoading'
 import MediaPlayer from './components/MediaPlayer'
 import WorkExperienceMobile from './components/WorkExperience/WorkExperienceMobile'
 import WorkDrawer from './components/WorkExperience/WorkDrawer'
+import ResumePopup from './components/ResumePopup'
 
 const App = () => {
   useEffect(() => {
@@ -27,6 +28,7 @@ const App = () => {
 
       <AboutMe />
       <WorkExperienceMobile />
+      <ResumePopup />
 
       <Navbar />
       <MediaPlayer />

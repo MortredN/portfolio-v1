@@ -41,7 +41,7 @@ const NameTitle = () => {
           windowSize.width >= 1024 ? `text-lg leading-6` : `text-base leading-5`
         } font-normal mt-2 transition-opacity ${firstTimeLoadingEnd ? `opacity-100` : `opacity-0`}`}
       >
-        Frontend Developer
+        Software Developer
       </span>
     </div>
   ) : null
