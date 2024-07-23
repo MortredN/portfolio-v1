@@ -14,9 +14,6 @@ import WorkDrawer from './components/WorkExperience/WorkDrawer'
 import ResumePopup from './components/ResumePopup'
 
 const App = () => {
-  useEffect(() => {
-    document.title = '____ 💻☕ ____'
-  }, [])
   const windowSize = useWindowSize()
 
   return (

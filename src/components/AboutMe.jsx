@@ -24,11 +24,11 @@ const AboutMe = () => {
             animate={{ opacity: 1, translate: 0 }}
             exit={{ opacity: 0, translate: `60vw` }}
             transition={{ duration: 1, ease: 'anticipate' }}
-            className="absolute top-0 right-0 h-full flex items-center justify-center"
+            className="absolute inset-y-0 right-0 h-full flex items-center justify-center"
             style={{ width: screenSize.width >= 1024 ? `60%` : `100%` }}
           >
-            <div className="relative bg-[#EEEEEED9] w-full h-full">
-              <div className="pt-8 pb-20 lg:pt-16 lg:pb-16 px-4 lg:px-16 tracking-wide h-full overflow-y-auto flex flex-col items-center justify-start lg:justify-center">
+            <div className="h-screen overflow-y-auto relative bg-[#EEEEEED9]">
+              <div className="pt-8 pb-16 px-4 lg:px-8 tracking-wide h-full overflow-y-auto flex flex-col items-center">
                 <h1 className="text-[32px] lg:text-[40px] text-center font-bold font-title tracking-wider mb-6">
                   About me
                 </h1>
@@ -38,20 +38,20 @@ const AboutMe = () => {
                       Hey there! I'm Bach 👋
                     </span>
                     <span className="leading-7">
-                      I'm a software developer from Vietnam specialized in web, with a few years of
-                      working experiences in both in-office and remote jobs
+                      I'm a software developer from Vietnam who loves tinkering with web
+                      technologies, whether they are web frameworks, 3D rendering, or cloud
+                      integrations!
                     </span>
                   </div>
                 </div>
-                <div className="grid lg:grid-cols-2 py-6 text-base lg:text-lg gap-y-12 gap-x-12 lg:pb-32">
+                <div className="grid lg:grid-cols-2 py-6 text-base lg:text-lg gap-y-12 gap-x-12">
                   <div className="flex flex-col gap-y-3">
                     <span className="leading-7 text-xl lg:text-2xl font-title font-semibold">
-                      Software Developer
+                      Web Development
                     </span>
                     <span className="leading-7">
-                      When working on JavaScript applications with ease of collaboration and
-                      maintainability, I'm usually equipped with{' '}
-                      <span className="text-[#3B82F6] inline-block">
+                      I'm most familiar with frontend web works, usually equipped with{' '}
+                      <span className="text-[#3B82F6] inline-block font-semibold">
                         <img
                           src="./images/logo/react.svg"
                           width={24}
@@ -62,7 +62,7 @@ const AboutMe = () => {
                         React
                       </span>
                       {' and '}
-                      <span className="text-black inline-block">
+                      <span className="text-black inline-block font-semibold">
                         <img
                           src="./images/logo/nextjs.svg"
                           width={24}
@@ -72,9 +72,22 @@ const AboutMe = () => {
                         />{' '}
                         Next.js
                       </span>{' '}
-                      as my trusty frontend friends.
-                      <br />I also love 3D modelling and putting them in eye-catching websites using{' '}
-                      <span className="text-white bg-black/75 inline-block py-0.5 px-1.5 rounded-lg">
+                      as my go-to toolboxes. I can also work with backend REST APIs using{' '}
+                      <span className="text-white bg-gray-700 inline-block px-1.5 rounded-lg font-semibold">
+                        <img
+                          src="./images/logo/expressjs.svg"
+                          width={24}
+                          height={24}
+                          alt="react"
+                          className="inline -translate-y-px"
+                        />{' '}
+                        Express.js
+                      </span>{' '}
+                      to create full-stack projects if needed.
+                      <br />
+                      And I really adore 3D modelling and want to put them in eye-catching websites
+                      using{' '}
+                      <span className="text-white bg-emerald-700 inline-block px-1.5 rounded-lg font-semibold">
                         <img
                           src="./images/logo/threejs.svg"
                           width={24}
@@ -84,28 +97,89 @@ const AboutMe = () => {
                         />{' '}
                         Three.js
                       </span>
+                      !
                     </span>
                   </div>
-                  <div className="flex flex-col gap-y-3 lg:translate-y-32">
+                  <div className="flex flex-col gap-y-3">
                     <span className="leading-7 text-xl lg:text-2xl font-title font-semibold">
-                      DevOps Engineer
+                      Cloud / DevOps
                     </span>
                     <span className="leading-7">
-                      As a developer, I simply value saving my team's application development time.
-                      While currently having little work experiences, I have been honing myself by
-                      achieving multiple{' '}
-                      <span className="text-[#222f3f] inline-block">
-                        <img
-                          src="./images/logo/aws.svg"
-                          width={24}
-                          height={24}
-                          alt="react"
-                          className="inline"
-                        />{' '}
+                      When I worked as a junior developer, I often asked myself how to deploy apps
+                      to the web. From there, I have been indulging myself with cloud tech, from
+                      services for software development 💻 to system administration 🔧.
+                      <br />
+                      While currently having little work experiences, I have been honing my
+                      skillsets by passing multiple{' '}
+                      <span className="text-gray-800 font-semibold">
+                        <span className="text-white bg-[#ed7100] inline-block px-1.5 rounded-lg font-semibold">
+                          <img
+                            src="./images/logo/aws.svg"
+                            width={24}
+                            height={24}
+                            alt="react"
+                            className="inline"
+                          />{' '}
+                          AWS
+                        </span>
+                        {' and '}
+                        <span className=" bg-[#f3f3f3] inline-block px-1.5 rounded-lg">
+                          <img
+                            src="./images/logo/microsoft.svg"
+                            width={24}
+                            height={24}
+                            alt="react"
+                            className="inline"
+                          />{' '}
+                          Microsoft
+                        </span>{' '}
                         certifications
-                      </span>{' '}
-                      (AWS), and apply the knowledge to my personal projects.
+                      </span>
+                      , and apply the knowledge to my personal projects.
                     </span>
+                  </div>
+                </div>
+                <div className="w-full flex flex-col justify-start gap-y-4 mt-6 py-6 text-sm lg:text-base">
+                  <span className="leading-7 text-xl lg:text-2xl font-title font-semibold">
+                    Certifications 📃 I have achieved!
+                    <span className='ml-2 italic text-xs lg:text-sm'>(And many more to come...)</span>
+                  </span>
+                  <div className="grid grid-cols-4 lg:grid-cols-8 items-center">
+                    <a href="https://www.credly.com/badges/a87b2ce2-6f95-4202-8701-9af0a3cb757b/public_url">
+                      <img
+                        src="/images/certifications/aws-certified-cloud-practitioner.png"
+                        alt="drawing"
+                        width="100"
+                      />
+                    </a>
+                    <a href="https://www.credly.com/badges/4538b70e-d7da-4c76-b98a-0c311e7279ea/public_url">
+                      <img
+                        src="/images/certifications/aws-certified-developer-associate.png"
+                        alt="drawing"
+                        width="100"
+                      />
+                    </a>
+                    <a href="https://www.credly.com/badges/a1eb00a0-cf97-44a7-8f82-3729849db352/public_url">
+                      <img
+                        src="/images/certifications/aws-certified-solutions-architect-associate.png"
+                        alt="drawing"
+                        width="100"
+                      />
+                    </a>
+                    <a href="https://learn.microsoft.com/api/credentials/share/en-us/BachHa/596373B87AA164E0?sharingId=ED53CABF2080B677">
+                      <img
+                        src="/images/certifications/microsoft-identity-and-access-admin-associate.png"
+                        alt="drawing"
+                        width="100"
+                      />
+                    </a>
+                    <a href="https://learn.microsoft.com/api/credentials/share/en-us/BachHa/61CAC71264A1B02?sharingId=ED53CABF2080B677">
+                      <img
+                        src="/images/certifications/microsoft-365-admin-expert.png"
+                        alt="drawing"
+                        width="100"
+                      />
+                    </a>
                   </div>
                 </div>
                 <div className="flex flex-col items-center lg:w-4/5 gap-y-4 mt-6 py-6 text-sm lg:text-base text-center">

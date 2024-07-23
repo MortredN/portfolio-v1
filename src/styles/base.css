@@ -14,6 +14,26 @@ body,
   font-weight: 500;
 }
 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--coffee-6) transparent;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--coffee-6);
+  border-radius: 20px;
+  border: 2px solid transparent;
+}
+
 .font-title {
   font-family: 'DM Sans', sans-serif;
   letter-spacing: 0.025em;
@@ -21,6 +41,10 @@ body,
 
 canvas {
   touch-action: none;
+}
+
+.custom-scrollbar {
+  scrollbar-color: var(--coffee-3) transparent;
 }
 
 .custom-scrollbar::-webkit-scrollbar {
