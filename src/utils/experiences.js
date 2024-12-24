@@ -1,14 +1,15 @@
 const Experiences = [
   {
-    company: 'Stealth Startup',
-    job: 'Software Developer',
+    company: 'Anyjoi',
+    url: 'https://anyjoi.com',
+    job: 'Web Developer',
     from: '12/2023',
     to: 'Now'
   },
   {
     company: 'Superjoi',
     url: 'https://superjoi.com',
-    job: 'Software Developer',
+    job: 'Web Developer',
     from: '06/2022',
     to: '11/2023'
   },
@@ -22,7 +23,7 @@ const Experiences = [
   {
     company: 'CMC Global',
     url: 'https://cmcglobal.com.vn',
-    job: 'Software Developer | Tech Support',
+    job: 'Software Developer',
     from: '06/2020',
     to: '12/2021'
   }

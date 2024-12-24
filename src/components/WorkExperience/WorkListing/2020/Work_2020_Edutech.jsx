@@ -16,37 +16,38 @@ const Work_2020_Edutech = () => {
           <div className="flex flex-col gap-y-1 ml-4 lg:ml-8">
             <span>EdutechConsulting</span>
             <span>2020</span>
-            <span>Designer, Front-end Developer</span>
+            <span>Designer, Web Developer</span>
           </div>
         </div>
         <a
-          className="group transition-colors duration-300 mt-8 lg:mt-0 ml-auto lg:ml-24 hover:text-coffee-6 text-xl lg:text-2xl w-fit lg:w-auto"
+          className="group transition-colors duration-300 mt-8 lg:mt-0 ml-auto lg:ml-24 hover:text-coffee-6 text-base lg:text-2xl w-fit lg:w-auto"
           href="https://www.edutechconsulting.com.au/"
           target="_blank"
         >
           Visit site ↗
-          <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-coffee-6"></span>
+          <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-coffee-6"></span>
         </a>
       </div>
       <i className="flex flex-col mt-8 mx-4 lg:mx-16 lg:text-lg">
         EduTech has delivered the technical savvy and IT solutions that help businesses achieve
         strategic goals. A Sydney based IT consulting company, EduTech office is in the central part
-        of the CBD in Sydney.
+        of the CBD in Sydney. For this project, I redesigned and developed the UI of the home
+        website.
       </i>
       <div className="flex flex-col mt-8 mx-4 lg:mx-8 gap-y-4 lg:gap-y-8">
         <div className="flex">
-          <img src="https://i.imgur.com/6G2JM3W.jpg" />
+          <img src="/images/works/2020/edutech/desktop-1.jpg" />
         </div>
         <div className="flex">
-          <img src="https://i.imgur.com/U4dF614.jpg" />
+          <img src="/images/works/2020/edutech/desktop-2.jpg" />
         </div>
         <div className="flex">
-          <img src="https://i.imgur.com/jSG1r44.jpg" />
+          <img src="/images/works/2020/edutech/desktop-3.jpg" />
         </div>
-        <div className="grid lg:grid-cols-3 w-full gap-4 lg:gap-8">
-          <img className="w-full" src="https://i.imgur.com/k30Irb3.jpg" />
-          <img className="w-full" src="https://i.imgur.com/TCAIlZB.jpg" />
-          <img className="w-full" src="https://i.imgur.com/PSk8g4D.jpg" />
+        <div className="grid lg:grid-cols-3 w-full gap-4 lg:gap-8 px-8 lg:px-0">
+          <img className="w-full" src="/images/works/2020/edutech/mobile-1.jpg" />
+          <img className="w-full" src="/images/works/2020/edutech/mobile-2.jpg" />
+          <img className="w-full" src="/images/works/2020/edutech/mobile-3.jpg" />
         </div>
       </div>
     </div>

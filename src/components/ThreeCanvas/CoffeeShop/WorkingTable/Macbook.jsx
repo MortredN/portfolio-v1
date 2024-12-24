@@ -37,7 +37,7 @@ const Macbook = ({ nodes, materials, children }) => {
             <RecoilRoot>
               <div
                 style={{ width: 1280, height: 800, transform: 'scale(2)' }}
-                className="bg-coffee-6 py-4 rounded-lg overflow-hidden"
+                className="bg-coffee-6 rounded-lg overflow-hidden"
               >
                 <WorkExperience />
               </div>

@@ -13,7 +13,7 @@ const WorkExperience = () => {
     <>
       {windowSize.width >= 1024 && <WorkDrawer />}
       <div className="overflow-y-auto bg-screen w-full h-full custom-scrollbar">
-        <div className="pt-20 pb-20 lg:pt-4 lg:pb-12 px-4 lg:px-12 flex flex-col justify-start lg:justify-center gap-y-8 lg:gap-y-12">
+        <div className="py-20 lg:py-8 px-4 lg:px-12 flex flex-col justify-start lg:justify-center gap-y-8 lg:gap-y-12">
           <div className="flex py-6 text-base !text-white lg:text-lg flex-col w-full">
             <h2 className="leading-7 text-[32px] lg:text-[40px] font-title font-semibold">
               Experiences
@@ -50,20 +50,49 @@ const WorkExperience = () => {
               ))}
             </div>
           </div>
+
           <div className="flex py-6 text-base !text-white lg:text-lg flex-col w-full">
-            <h2 className="leading-7 text-[32px] lg:text-[40px] font-title font-semibold">Works & Projects</h2>
+            <h2 className="leading-7 text-[32px] lg:text-[40px] font-title font-semibold">
+              Works & Projects
+            </h2>
             <div className="bg-white/50 w-full h-px mt-1 mb-8 lg:mb-12" />
-            <div className="flex flex-row gap-4 lg:gap-12 w-full flex-wrap">
+
+            <div className="hidden lg:flex flex-row gap-y-12 gap-x-4 w-full flex-wrap">
+              {Object.entries(Works).map(([year, work]) => {
+                return Object.entries(work).map(([key, value], index) => (
+                  <div
+                    key={`${year}-${key}`}
+                    className="flex flex-col items-start justify-end gap-y-4"
+                  >
+                    {index === 0 && (
+                      <h2 className="leading-7 text-[32px] font-title font-semibold py-1.5 px-2.5 bg-white text-coffee-6">
+                        {year.replace('Y', '')}
+                      </h2>
+                    )}
+                    <button
+                      onClick={() => setDisplayedWork(value.name)}
+                      className="w-[200px] bg-coffee-0 hover:scale-[110%] transition-transform duration-500"
+                      style={{ aspectRatio: `1` }}
+                      key={key}
+                    >
+                      <img src={value.thumbnail} className="w-full h-full object-contain" />
+                    </button>
+                  </div>
+                ))
+              })}
+            </div>
+
+            <div className="flex lg:hidden flex-col gap-6 w-full flex-wrap">
               {Object.entries(Works).map(([year, work]) => (
-                <div className="flex flex-col items-start gap-y-4" key={year}>
-                  <h2 className="leading-7 text-2xl lg:text-[32px] font-title font-semibold py-1 px-2 lg:py-1.5 lg:px-2.5 bg-white text-coffee-6">
+                <div className="flex flex-col items-start gap-y-2" key={year}>
+                  <h2 className="leading-7 text-2xl font-title font-semibold py-1 px-2 bg-white text-coffee-6">
                     {year.replace('Y', '')}
                   </h2>
-                  <div className="flex gap-4">
+                  <div className="grid grid-cols-3 gap-2">
                     {Object.entries(work).map(([key, value]) => (
                       <button
                         onClick={() => setDisplayedWork(value.name)}
-                        className="w-[100px] lg:w-[200px] bg-coffee-0 hover:scale-[110%] transition-transform duration-500"
+                        className="bg-coffee-0 hover:scale-[110%] transition-transform duration-500"
                         style={{ aspectRatio: `1` }}
                         key={key}
                       >

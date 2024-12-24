@@ -13,7 +13,7 @@ const Constants = {
     },
     CAM2: {
       position: { x: 2.1, y: 0.2, z: 0.1 },
-      rotation: { x: Math.PI * -0.38, y: Math.PI * 0.41, z: Math.PI * 0.38 }
+      rotation: { x: Math.PI * -0.43, y: Math.PI * 0.43, z: Math.PI * 0.43 }
     },
     CAM3: {
       position: { x: 4, y: -0.7, z: -0.5 },
@@ -22,7 +22,7 @@ const Constants = {
   },
 
   CAMERA_SWAP_LOADING_TIME: 3,
-  PERSPECTIVE_CAMERA_TRANSITION_TIME: 1.2,
+  PERSPECTIVE_CAMERA_TRANSITION_TIME: 1.5,
 
   SOCIAL_LINKS: {
     EMAIL: `mailto:bach.hv10@gmail.com`,

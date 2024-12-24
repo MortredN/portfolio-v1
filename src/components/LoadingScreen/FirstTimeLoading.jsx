@@ -46,15 +46,6 @@ const FirstTimeLoading = () => {
 
   const allowOpen = !firstTimeLoadingEnd && !active && renderedProgress === 100
 
-  useEffect(() => {
-    if (allowOpen) {
-      setTimeout(() => {
-        setFirstTimeLoadingEnd(true)
-        setTimeout(() => setHidden(true), 1000)
-        toggleOpen()
-      }, 2000)
-    }
-  }, [allowOpen])
 
   useEffect(() => {
     const controls = animate(from, progress, {
@@ -76,13 +67,20 @@ const FirstTimeLoading = () => {
       className={`fixed top-0 bottom-0 left-0 h-full w-full z-[60] font-title ${
         allowOpen ? `cursor-pointer` : `cursor-default`
       }`}
+      onClick={() => {
+        if (allowOpen) {
+          setFirstTimeLoadingEnd(true)
+          setTimeout(() => setHidden(true), 1000)
+          toggleOpen()
+        }
+      }}
     >
       <motion.div
         className="absolute top-0 bottom-0 left-0 h-full w-full bg-coffee-3"
         custom={screenSize}
         variants={navbarVariants}
       >
-        <FirstTimeLoadingCircle allowOpen={allowOpen} progress={renderedProgress} />
+        <FirstTimeLoadingCircle active={active} progress={renderedProgress} />
       </motion.div>
     </motion.div>
   ) : (

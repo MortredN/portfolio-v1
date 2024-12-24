@@ -1,20 +1,42 @@
 const Works = {
   Y2024: {
+    EKS_DEMO: {
+      name: '2024_EKS_DEMO',
+      thumbnail: '/images/works/2024/eks-demo/logo.png'
+    },
+    GOD: {
+      name: '2024_GOD',
+      thumbnail: '/images/works/2024/god/logo.png'
+    },
+    MEZZYA: {
+      name: '2024_Mezzya',
+      thumbnail: '/images/works/2024/mezzya/logo.png'
+    },
+    BREEEDS: {
+      name: '2024_Breeeds',
+      thumbnail: '/images/works/2024/breeeds/logo.png'
+    },
     STUDENTSPACE: {
       name: '2024_StudentSpace',
-      thumbnail: 'https://i.imgur.com/FvKc8q5.png'
+      thumbnail: '/images/works/2024/studentspace/logo.png'
+    }
+  },
+  Y2023: {
+    ANYJOI: {
+      name: '2023_Anyjoi',
+      thumbnail: '/images/works/2023/anyjoi/logo.png'
     }
   },
   Y2022: {
     SUPERJOI: {
       name: '2022_Superjoi',
-      thumbnail: 'https://i.imgur.com/lUXbuBY.png'
+      thumbnail: '/images/works/2022/superjoi/logo.png'
     }
   },
   Y2020: {
     EDUTECH: {
       name: '2020_Edutech',
-      thumbnail: 'https://i.imgur.com/rct90DQ.png'
+      thumbnail: '/images/works/2020/edutech/logo.png'
     }
   }
 }

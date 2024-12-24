@@ -14,34 +14,32 @@ const Work_2024_StudentSpace = () => {
             <span>Role:</span>
           </div>
           <div className="flex flex-col gap-y-1 ml-4 lg:ml-8">
-            <span>StudentSpace</span>
+            <span>Seneca Hackathon</span>
             <span>2024</span>
-            <span>Back-end Developer</span>
+            <span>Project Member (API Developer)</span>
           </div>
         </div>
         <a
-          className="group transition-colors duration-300 mt-8 lg:mt-0 ml-auto lg:ml-24 hover:text-coffee-6 text-xl lg:text-2xl w-fit lg:w-auto"
+          className="group transition-colors duration-300 mt-8 lg:mt-0 ml-auto lg:ml-24 hover:text-coffee-6 text-base lg:text-2xl w-fit lg:w-auto"
           href="https://github.com/MortredN/StudentSpace"
           target="_blank"
         >
           Visit GitHub repo ↗
-          <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-coffee-6"></span>
+          <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-coffee-6"></span>
         </a>
       </div>
       <i className="flex flex-col mt-8 mx-4 lg:mx-16 lg:text-lg">
-        Seneca Polytechnic 2024 Housing Hackathon - Finalist
-        <br />A demo qualified to the final round, showcasing how the application can assist
-        international students in making better decisions when choosing accommodations in Canada.
+        <b>Seneca Polytechnic 2024 Housing Hackathon - Finalist</b>Working as a team member, I
+        helped creating a demo which is qualified to the final round, showcasing how the application
+        can assist international students on making better decisions based on location factors when
+        choosing accommodations in Canada.
       </i>
       <div className="flex flex-col mt-8 mx-4 lg:mx-8 gap-y-4 lg:gap-y-8">
         <div className="flex">
-          <img src="https://i.imgur.com/ETRMMhj.jpg" />
+          <img src="/images/works/2024/studentspace/desktop-1.jpg" />
         </div>
         <div className="flex">
-          <img src="https://i.imgur.com/2GWwfNs.jpg" />
-        </div>
-        <div className="flex">
-          <img src="https://i.imgur.com/IsQNzmJ.jpg" />
+          <img src="/images/works/2024/studentspace/desktop-2.jpg" />
         </div>
       </div>
     </div>

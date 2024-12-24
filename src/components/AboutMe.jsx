@@ -38,9 +38,10 @@ const AboutMe = () => {
                       Hey there! I'm Bach 👋
                     </span>
                     <span className="leading-7">
-                      I'm a software developer from Vietnam who loves tinkering with web
-                      technologies, whether they are web frameworks, 3D rendering, or cloud
-                      integrations!
+                      I'm a software developer from Vietnam with a few years of web development
+                      experience, mostly on the user interface and the REST APIs. I also have
+                      college experience on Cloud Computing and DevOps, and cannot wait to try my
+                      skills on real projects!
                     </span>
                   </div>
                 </div>
@@ -50,7 +51,7 @@ const AboutMe = () => {
                       Web Development
                     </span>
                     <span className="leading-7">
-                      I'm most familiar with frontend web works, usually equipped with{' '}
+                      I'm most familiar with working on websites, usually equipped with{' '}
                       <span className="text-[#3B82F6] inline-block font-semibold">
                         <img
                           src="./images/logo/react.svg"
@@ -61,7 +62,7 @@ const AboutMe = () => {
                         />{' '}
                         React
                       </span>
-                      {' and '}
+                      {', '}
                       <span className="text-black inline-block font-semibold">
                         <img
                           src="./images/logo/nextjs.svg"
@@ -71,22 +72,15 @@ const AboutMe = () => {
                           className="inline"
                         />{' '}
                         Next.js
-                      </span>{' '}
-                      as my go-to toolboxes. I can also work with backend REST APIs using{' '}
+                      </span>
+                      {', and '}
                       <span className="text-white bg-gray-700 inline-block px-1.5 rounded-lg font-semibold">
-                        <img
-                          src="./images/logo/expressjs.svg"
-                          width={24}
-                          height={24}
-                          alt="react"
-                          className="inline -translate-y-px"
-                        />{' '}
                         Express.js
                       </span>{' '}
-                      to create full-stack projects if needed.
+                      as my go-to toolboxes to meet the needs and design from my clients.
                       <br />
-                      And I really adore 3D modelling and want to put them in eye-catching websites
-                      using{' '}
+                      Also, I love studying 3D modelling and always want to try creating
+                      eye-catching websites using{' '}
                       <span className="text-white bg-emerald-700 inline-block px-1.5 rounded-lg font-semibold">
                         <img
                           src="./images/logo/threejs.svg"
@@ -105,12 +99,35 @@ const AboutMe = () => {
                       Cloud / DevOps
                     </span>
                     <span className="leading-7">
-                      When I worked as a junior developer, I often asked myself how to deploy apps
-                      to the web. From there, I have been indulging myself with cloud tech, from
-                      services for software development 💻 to system administration 🔧.
+                      After a few years working as a junior developer, I eventually got myself
+                      curious on how to deploy apps to the Internet. From there, I took a Cloud
+                      Computing course in college, and have also been looking by myself on Cloud /
+                      DevOps.
                       <br />
-                      While currently having little work experiences, I have been honing my
-                      skillsets by passing multiple{' '}
+                      While currently having little to no work experiences, I'm keeping myself
+                      updated by learning{' '}
+                      <span className="text-[#326ce5] inline-block font-semibold">
+                        <img
+                          src="./images/logo/kubernetes.svg"
+                          width={24}
+                          height={24}
+                          alt="react"
+                          className="inline"
+                        />{' '}
+                        Kubernetes
+                      </span>
+                      {' and '}
+                      <span className="text-[#623ce4] inline-block font-semibold">
+                        <img
+                          src="./images/logo/terraform.svg"
+                          width={24}
+                          height={24}
+                          alt="react"
+                          className="inline"
+                        />{' '}
+                        Terraform
+                      </span>
+                      , passed a number of{' '}
                       <span className="text-gray-800 font-semibold">
                         <span className="text-white bg-[#ed7100] inline-block px-1.5 rounded-lg font-semibold">
                           <img
@@ -135,14 +152,16 @@ const AboutMe = () => {
                         </span>{' '}
                         certifications
                       </span>
-                      , and apply the knowledge to my personal projects.
+                      , and applying the knowledge to my personal projects.
                     </span>
                   </div>
                 </div>
                 <div className="w-full flex flex-col justify-start gap-y-4 mt-6 py-6 text-sm lg:text-base">
                   <span className="leading-7 text-xl lg:text-2xl font-title font-semibold">
                     Certifications 📃 I have achieved!
-                    <span className='ml-2 italic text-xs lg:text-sm'>(And many more to come...)</span>
+                    <span className="ml-2 italic text-xs lg:text-sm">
+                      (And many more to come...)
+                    </span>
                   </span>
                   <div className="grid grid-cols-4 lg:grid-cols-8 items-center">
                     <a href="https://www.credly.com/badges/a87b2ce2-6f95-4202-8701-9af0a3cb757b/public_url">
