@@ -27,7 +27,7 @@ const WorkDrawer = () => {
       case Works.Y2024.STUDENTSPACE.name:
         return <Work_2024_StudentSpace />
 
-      case Works.Y2024.ANYJOI.name:
+      case Works.Y2023.ANYJOI.name:
         return <Work_2023_Anyjoi />
 
       case Works.Y2022.SUPERJOI.name:
