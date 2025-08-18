@@ -199,6 +199,16 @@ const AboutMe = () => {
                         width="100"
                       />
                     </a>
+                    <a href="https://learn.microsoft.com/en-us/users/bachha/credentials/b46f8687d4eb2af6">
+                      <img
+                        src="/images/certifications/microsoft-azure-fundamentals.png"
+                        alt="drawing"
+                        width="100"
+                      />
+                    </a>
+                    <a href="https://www.credly.com/badges/42513a44-7f78-4062-a878-bd034b11639a/public_url">
+                      <img src="/images/certifications/isc2-cc.png" alt="drawing" width="100" />
+                    </a>
                   </div>
                 </div>
                 <div className="flex flex-col items-center lg:w-4/5 gap-y-4 mt-6 py-6 text-sm lg:text-base text-center">
