@@ -10,12 +10,16 @@ import Work_2024_Breeeds from './WorkListing/2024/Work_2024_Breeeds'
 import Work_2024_Mezzya from './WorkListing/2024/Work_2024_Mezzya'
 import Work_2024_GOD from './WorkListing/2024/Work_2024_GOD'
 import Work_2024_EKSDemo from './WorkListing/2024/Work_2024_EKSDemo'
+import Work_2025_EKSDemoTerraform from './WorkListing/2025/Work_2025_EKSDemoTerraform'
 
 const WorkDrawer = () => {
   const [displayedWork, setDisplayedWork] = useRecoilState(displayedWorkAtom)
 
   const renderWork = () => {
     switch (displayedWork) {
+      case Works.Y2025.EKS_DEMO_TERRAFORM.name:
+        return <Work_2025_EKSDemoTerraform />
+
       case Works.Y2024.EKS_DEMO.name:
         return <Work_2024_EKSDemo />
       case Works.Y2024.GOD.name:

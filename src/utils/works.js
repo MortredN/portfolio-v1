@@ -1,4 +1,10 @@
 const Works = {
+  Y2025: {
+    EKS_DEMO_TERRAFORM: {
+      name: '2025_EKS_DEMO_TERRAFORM',
+      thumbnail: '/images/works/2025/eks-demo-terraform/logo.png'
+    }
+  },
   Y2024: {
     EKS_DEMO: {
       name: '2024_EKS_DEMO',
