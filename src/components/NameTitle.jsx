@@ -25,7 +25,7 @@ const NameTitle = () => {
             : `85dvh`,
         transform:
           firstTimeLoadingEnd && (windowSize.width >= 1024 || windowSize.width >= windowSize.height)
-            ? `translateX(-${Math.sqrt(windowSize.width / 1920 * 1.2) * 350}px)`
+            ? `translateX(-${Math.sqrt(windowSize.width / 1920 * 1.2) * 400}px)`
             : ``
       }}
     >

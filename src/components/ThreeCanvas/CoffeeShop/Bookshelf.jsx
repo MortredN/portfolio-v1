@@ -2,21 +2,22 @@ import { useRecoilState } from 'recoil'
 import { cameraNameAtom, cameraNameSwapAtom } from '../../../utils/recoil'
 import Constants from '../../../utils/constants'
 import { useWindowSize } from '../../../hooks/screenSize'
+import { useRouter } from '../../../hooks/router'
 import { Html } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { useRef } from 'react'
 
 const Bookshelf = (props) => {
-  const [cameraName, setCameraName] = useRecoilState(cameraNameAtom)
-  const [cameraNameSwap, setCameraNameSwap] = useRecoilState(cameraNameSwapAtom)
+  const [cameraName] = useRecoilState(cameraNameAtom)
+  const [cameraNameSwap] = useRecoilState(cameraNameSwapAtom)
   const { nodes, materials } = props
   const windowSize = useWindowSize()
+  const router = useRouter()
 
   const navigateToContact = (event) => {
     event.stopPropagation()
     if (cameraName === Constants.CAMERA_NAMES.ORTHOGRAPHIC) {
-      setCameraNameSwap(Constants.CAMERA_NAMES.PERSPECTIVE3)
-      document.body.style.cursor = 'default'
+      router.push('/contact')
     }
   }
 

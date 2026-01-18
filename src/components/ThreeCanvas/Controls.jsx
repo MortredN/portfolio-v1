@@ -18,7 +18,7 @@ const Controls = ({ hammerDeltaX }) => {
   const { nodes, materials } = useGLTF('./models/coffeeshop.glb')
   const [cameraName, setCameraName] = useRecoilState(cameraNameAtom)
   const [cameraNameSwap] = useRecoilState(cameraNameSwapAtom)
-  const [openMediaPlayer, setOpenMediaPlayer] = useRecoilState(openMediaPlayerAtom)
+  const [, setOpenMediaPlayer] = useRecoilState(openMediaPlayerAtom)
 
   useEffect(() => {
     if (

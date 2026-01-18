@@ -6,7 +6,7 @@ import WorkDrawer from './WorkDrawer'
 import { useWindowSize } from '../../hooks/screenSize'
 
 const WorkExperience = () => {
-  const [displayedWork, setDisplayedWork] = useRecoilState(displayedWorkAtom)
+  const [, setDisplayedWork] = useRecoilState(displayedWorkAtom)
   const windowSize = useWindowSize()
 
   return (

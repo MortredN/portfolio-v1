@@ -3,16 +3,17 @@ import { useRecoilState } from 'recoil'
 import { cameraNameAtom, cameraNameSwapAtom } from '../utils/recoil'
 import Constants from '../utils/constants'
 import { useWindowSize } from '../hooks/screenSize'
+import { useRouter } from '../hooks/router'
 
 const AboutMe = () => {
-  const [cameraName, setCameraName] = useRecoilState(cameraNameAtom)
-  const [cameraNameSwap, setCameraNameSwap] = useRecoilState(cameraNameSwapAtom)
+  const [cameraName] = useRecoilState(cameraNameAtom)
+  const [cameraNameSwap] = useRecoilState(cameraNameSwapAtom)
   const screenSize = useWindowSize()
+  const router = useRouter()
 
   const navigateToContact = (event) => {
     event.stopPropagation()
-    setCameraName(Constants.CAMERA_NAMES.PERSPECTIVE3)
-    setCameraNameSwap(Constants.CAMERA_NAMES.PERSPECTIVE3)
+    router.push('/contact')
   }
 
   return (

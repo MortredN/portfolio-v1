@@ -2,6 +2,7 @@ import { useRecoilState } from 'recoil'
 import Constants from '../utils/constants'
 import { cameraNameAtom, cameraNameSwapAtom } from '../utils/recoil'
 import { AnimatePresence, motion } from 'framer-motion'
+import { useRouter } from '../hooks/router'
 
 const NavbarItem = ({ children, onClick, disabled, ariaLabel }) => {
   return (
@@ -22,25 +23,22 @@ const NavbarItem = ({ children, onClick, disabled, ariaLabel }) => {
 }
 
 const Navbar = () => {
-  const [cameraName, setCameraName] = useRecoilState(cameraNameAtom)
-  const [cameraNameSwap, setCameraNameSwap] = useRecoilState(cameraNameSwapAtom)
+  const [cameraName] = useRecoilState(cameraNameAtom)
+  const [cameraNameSwap] = useRecoilState(cameraNameSwapAtom)
+  const router = useRouter()
 
   const handleChevronClick = (forward) => {
     if (forward) {
-      if (cameraName === Constants.CAMERA_NAMES.PERSPECTIVE1) {
-        setCameraName(Constants.CAMERA_NAMES.PERSPECTIVE2)
-        setCameraNameSwap(Constants.CAMERA_NAMES.PERSPECTIVE2)
-      } else if (cameraName === Constants.CAMERA_NAMES.PERSPECTIVE2) {
-        setCameraName(Constants.CAMERA_NAMES.PERSPECTIVE3)
-        setCameraNameSwap(Constants.CAMERA_NAMES.PERSPECTIVE3)
+      if (router.path === '/about') {
+        router.push('/works')
+      } else if (router.path === '/works') {
+        router.push('/contact')
       }
     } else {
-      if (cameraName === Constants.CAMERA_NAMES.PERSPECTIVE2) {
-        setCameraName(Constants.CAMERA_NAMES.PERSPECTIVE1)
-        setCameraNameSwap(Constants.CAMERA_NAMES.PERSPECTIVE1)
-      } else if (cameraName === Constants.CAMERA_NAMES.PERSPECTIVE3) {
-        setCameraName(Constants.CAMERA_NAMES.PERSPECTIVE2)
-        setCameraNameSwap(Constants.CAMERA_NAMES.PERSPECTIVE2)
+      if (router.path === '/works') {
+        router.push('/about')
+      } else if (router.path === '/contact') {
+        router.push('/works')
       }
     }
   }
@@ -57,10 +55,7 @@ const Navbar = () => {
             >
               <img src="./images/chevron-left.svg" className="w-8 h-8" alt="back" />
             </NavbarItem>
-            <NavbarItem
-              onClick={() => setCameraNameSwap(Constants.CAMERA_NAMES.ORTHOGRAPHIC)}
-              ariaLabel="home"
-            >
+            <NavbarItem onClick={() => router.push('/')} ariaLabel="home">
               <img src="./images/home.svg" className="w-8 h-8" alt="home" />
             </NavbarItem>
             <NavbarItem
