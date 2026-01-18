@@ -4,7 +4,7 @@ import { Perf } from 'r3f-perf'
 import { Leva, useControls } from 'leva'
 import * as THREE from 'three'
 import CameraOrthographic from './CameraOrthographic'
-import MobileSwipe from '@/MobileSwipe'
+import MobileSwipe from '@/components/MobileSwipe'
 
 const ThreeCanvas = () => {
   const searchParams = new URLSearchParams(document.location.search)
