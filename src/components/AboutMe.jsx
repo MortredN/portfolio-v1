@@ -1,9 +1,9 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useRecoilState } from 'recoil'
-import { cameraNameAtom, cameraNameSwapAtom } from '../utils/recoil'
-import Constants from '../utils/constants'
-import { useWindowSize } from '../hooks/screenSize'
-import { useRouter } from '../hooks/router'
+import { cameraNameAtom, cameraNameSwapAtom } from '@/utils/recoil'
+import Constants from '@/utils/constants'
+import { useWindowSize } from '@/hooks/screenSize'
+import { useRouter } from '@/hooks/router'
 
 const AboutMe = () => {
   const [cameraName] = useRecoilState(cameraNameAtom)

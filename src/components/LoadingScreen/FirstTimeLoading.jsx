@@ -1,10 +1,10 @@
 import { animate, motion, useCycle } from 'framer-motion'
-import { useWindowSize } from '../../hooks/screenSize'
+import { useWindowSize } from '@/hooks/screenSize'
 import { useProgress } from '@react-three/drei'
 import { useEffect, useState } from 'react'
 import FirstTimeLoadingCircle from './FirstTimeLoadingCircle'
 import { useRecoilState } from 'recoil'
-import { firstTimeLoadingEndAtom } from '../../utils/recoil'
+import { firstTimeLoadingEndAtom } from '@/utils/recoil'
 
 const navbarVariants = {
   open: (screenSize) => {

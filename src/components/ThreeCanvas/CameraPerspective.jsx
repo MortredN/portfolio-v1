@@ -1,9 +1,9 @@
 import { PerspectiveCamera } from '@react-three/drei'
 import { useRecoilState } from 'recoil'
-import { cameraNameAtom } from '../../utils/recoil'
+import { cameraNameAtom } from '@/utils/recoil'
 import { button, useControls } from 'leva'
-import Constants from '../../utils/constants'
-import { usePrevCamera } from '../../hooks/camera'
+import Constants from '@/utils/constants'
+import { usePrevCamera } from '@/hooks/camera'
 import { useEffect, useMemo, useRef } from 'react'
 import { gsap } from 'gsap'
 

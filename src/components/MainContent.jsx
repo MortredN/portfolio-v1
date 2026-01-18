@@ -1,4 +1,4 @@
-import { useWindowSize } from '../hooks/screenSize'
+import { useWindowSize } from '@/hooks/screenSize'
 import ThreeCanvas from './ThreeCanvas'
 import OverlayMug from './LoadingScreen/OverlayMug'
 import OverlayFilling from './LoadingScreen/OverlayFilling'

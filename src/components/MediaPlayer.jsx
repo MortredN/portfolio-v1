@@ -5,9 +5,9 @@ import {
   cameraNameSwapAtom,
   firstTimeLoadingEndAtom,
   openMediaPlayerAtom
-} from '../utils/recoil'
+} from '@/utils/recoil'
 import { useEffect, useRef, useState } from 'react'
-import Constants from '../utils/constants'
+import Constants from '@/utils/constants'
 
 const MediaPlayer = () => {
   const [cameraName] = useRecoilState(cameraNameAtom)

@@ -1,9 +1,9 @@
 import { Html } from '@react-three/drei'
-import Constants from '../../../../utils/constants'
+import Constants from '@/utils/constants'
 import { RecoilRoot, useRecoilState } from 'recoil'
-import { cameraNameAtom, cameraNameSwapAtom } from '../../../../utils/recoil'
-import { useWindowSize } from '../../../../hooks/screenSize'
-import WorkExperience from '../../../WorkExperience'
+import { cameraNameAtom, cameraNameSwapAtom } from '@/utils/recoil'
+import { useWindowSize } from '@/hooks/screenSize'
+import WorkExperience from '@/components/WorkExperience'
 
 const Macbook = ({ nodes, materials, children }) => {
   const [cameraName] = useRecoilState(cameraNameAtom)

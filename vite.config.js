@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
+import { fileURLToPath, URL } from 'node:url'
 
 const isCodeSandbox = 'SANDBOX_URL' in process.env || 'CODESANDBOX_HOST' in process.env
 
@@ -16,5 +17,10 @@ export default defineConfig({
     outDir: './dist',
     emptyOutDir: true,
     sourcemap: true
+  },
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url))
+    }
   }
 })

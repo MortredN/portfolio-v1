@@ -1,9 +1,9 @@
 import { useLayoutEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { useRecoilState } from 'recoil'
-import Constants from '../../utils/constants'
-import { cameraNameSwapAtom } from '../../utils/recoil'
-import { usePrevCamera } from '../../hooks/camera'
+import Constants from '@/utils/constants'
+import { cameraNameSwapAtom } from '@/utils/recoil'
+import { usePrevCamera } from '@/hooks/camera'
 
 const LoadingCoffeeMug = (props) => {
   const { nodes, materials, wholeRef } = props

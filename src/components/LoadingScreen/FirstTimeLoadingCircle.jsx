@@ -1,4 +1,4 @@
-import { useWindowSize } from '../../hooks/screenSize'
+import { useWindowSize } from '@/hooks/screenSize'
 
 const FirstTimeLoadingCircle = ({ active, progress }) => {
   const windowSize = useWindowSize()

@@ -1,6 +1,6 @@
 import { useRecoilState } from 'recoil'
-import { cameraNameAtom } from '../../../../utils/recoil'
-import Constants from '../../../../utils/constants'
+import { cameraNameAtom } from '@/utils/recoil'
+import Constants from '@/utils/constants'
 
 const Chair = (props) => {
   const { nodes, materials } = props

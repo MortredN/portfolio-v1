@@ -1,8 +1,8 @@
 import { OrthographicCamera } from '@react-three/drei'
 import { useRecoilState } from 'recoil'
-import { cameraNameAtom } from '../../utils/recoil'
-import Constants from '../../utils/constants'
-import { useWindowSize } from '../../hooks/screenSize'
+import { cameraNameAtom } from '@/utils/recoil'
+import Constants from '@/utils/constants'
+import { useWindowSize } from '@/hooks/screenSize'
 import { useMemo } from 'react'
 
 const CameraOrthographic = () => {

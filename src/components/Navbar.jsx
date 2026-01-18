@@ -1,8 +1,8 @@
 import { useRecoilState } from 'recoil'
-import Constants from '../utils/constants'
-import { cameraNameAtom, cameraNameSwapAtom } from '../utils/recoil'
+import Constants from '@/utils/constants'
+import { cameraNameAtom, cameraNameSwapAtom } from '@/utils/recoil'
 import { AnimatePresence, motion } from 'framer-motion'
-import { useRouter } from '../hooks/router'
+import { useRouter } from '@/hooks/router'
 
 const NavbarItem = ({ children, onClick, disabled, ariaLabel }) => {
   return (

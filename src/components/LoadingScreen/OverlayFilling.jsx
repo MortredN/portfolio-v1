@@ -1,7 +1,7 @@
 import { useRecoilState } from 'recoil'
-import { cameraNameSwapAtom } from '../../utils/recoil'
-import { usePrevCamera } from '../../hooks/camera'
-import Constants from '../../utils/constants'
+import { cameraNameSwapAtom } from '@/utils/recoil'
+import { usePrevCamera } from '@/hooks/camera'
+import Constants from '@/utils/constants'
 import { useEffect, useState } from 'react'
 
 const OverlayFilling = () => {

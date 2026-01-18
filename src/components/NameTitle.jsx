@@ -1,7 +1,7 @@
 import { useRecoilState } from 'recoil'
-import { cameraNameAtom, cameraNameSwapAtom, firstTimeLoadingEndAtom } from '../utils/recoil'
-import Constants from '../utils/constants'
-import { useWindowSize } from '../hooks/screenSize'
+import { cameraNameAtom, cameraNameSwapAtom, firstTimeLoadingEndAtom } from '@/utils/recoil'
+import Constants from '@/utils/constants'
+import { useWindowSize } from '@/hooks/screenSize'
 
 const NameTitle = () => {
   const [firstTimeLoadingEnd] = useRecoilState(firstTimeLoadingEndAtom)

@@ -1,9 +1,9 @@
 import { useRecoilState } from 'recoil'
-import { displayedWorkAtom } from '../../utils/recoil'
-import Experiences from '../../utils/experiences'
-import Works from '../../utils/works'
+import { displayedWorkAtom } from '@/utils/recoil'
+import Experiences from '@/utils/experiences'
+import Works from '@/utils/works'
 import WorkDrawer from './WorkDrawer'
-import { useWindowSize } from '../../hooks/screenSize'
+import { useWindowSize } from '@/hooks/screenSize'
 
 const WorkExperience = () => {
   const [, setDisplayedWork] = useRecoilState(displayedWorkAtom)

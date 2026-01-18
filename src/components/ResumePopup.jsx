@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useRecoilState } from 'recoil'
-import { cameraNameAtom, cameraNameSwapAtom } from '../utils/recoil'
-import Constants from '../utils/constants'
+import { cameraNameAtom, cameraNameSwapAtom } from '@/utils/recoil'
+import Constants from '@/utils/constants'
 
 const ResumePopup = () => {
   const [cameraName] = useRecoilState(cameraNameAtom)
