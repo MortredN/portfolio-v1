@@ -28,7 +28,7 @@ const Constants = {
     EMAIL: `mailto:bach.hv10@gmail.com`,
     LINKEDIN: `https://www.linkedin.com/in/bach-viet-ha-b1a674198`,
     GITHUB: `https://github.com/MortredN`,
-    TWITTER: `https://twitter.com/hvbach`
+    RESUME: `https://drive.google.com/file/d/1_kX2xiiQUJNfDq_hMjP3yJ5z6rILyaJ1/view?usp=sharing`
   },
 
   SONG_LIST: [

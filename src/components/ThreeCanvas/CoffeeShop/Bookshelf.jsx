@@ -35,8 +35,8 @@ const Bookshelf = (props) => {
         case 'github':
           link = Constants.SOCIAL_LINKS.GITHUB
           break
-        case 'twitter':
-          link = Constants.SOCIAL_LINKS.TWITTER
+        case 'resume':
+          link = Constants.SOCIAL_LINKS.RESUME
           break
         default:
           break
@@ -47,7 +47,7 @@ const Bookshelf = (props) => {
 
   const bookLinkedinRef = useRef()
   const bookGitHubRef = useRef()
-  const bookTwitterRef = useRef()
+  const bookResumeRef = useRef()
   const bookEmailRef = useRef()
 
   const onBookHoverEnter = (event) => {
@@ -88,13 +88,13 @@ const Bookshelf = (props) => {
     }
 
     if (loopTime >= 2 && loopTime < 2.5) {
-      bookTwitterRef.current.position.z = (loopTime - 2) * 0.2
+      bookResumeRef.current.position.z = (loopTime - 2) * 0.2
     } else if (loopTime >= 2.5 && loopTime < 7) {
-      bookTwitterRef.current.position.z = 0.1
+      bookResumeRef.current.position.z = 0.1
     } else if (loopTime >= 7 && loopTime < 7.5) {
-      bookTwitterRef.current.position.z = (7.5 - loopTime) * 0.2
+      bookResumeRef.current.position.z = (7.5 - loopTime) * 0.2
     } else {
-      bookTwitterRef.current.position.z = 0
+      bookResumeRef.current.position.z = 0
     }
 
     if (loopTime >= 3 && loopTime < 3.5) {
@@ -253,12 +253,12 @@ const Bookshelf = (props) => {
             />
           </group>
           <group
-            name="BookTwitter"
-            ref={bookTwitterRef}
+            name="BookResume"
+            ref={bookResumeRef}
             position={[0.09, 0.61, 0]}
             rotation={[Math.PI / 2, Math.PI / 4, -Math.PI / 2]}
             scale={3.5}
-            onClick={(event) => openBookLink(event, 'twitter')}
+            onClick={(event) => openBookLink(event, 'resume')}
             onPointerEnter={onBookHoverEnter}
             onPointerLeave={onBookHoverLeave}
           >
@@ -267,14 +267,14 @@ const Bookshelf = (props) => {
               castShadow
               receiveShadow
               geometry={nodes.Cube025.geometry}
-              material={materials.BookCoverTwitterColor}
+              material={materials.BookCoverResumeColor}
             />
             <mesh
               name="Cube025_1"
               castShadow
               receiveShadow
               geometry={nodes.Cube025_1.geometry}
-              material={materials.BookColorTwitter}
+              material={materials.BookColorResume}
             />
             <mesh
               name="Cube025_2"

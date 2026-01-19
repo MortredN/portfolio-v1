@@ -9,7 +9,6 @@ import FirstTimeLoading from './LoadingScreen/FirstTimeLoading'
 import MediaPlayer from './MediaPlayer'
 import WorkExperienceMobile from './WorkExperience/WorkExperienceMobile'
 import WorkDrawer from './WorkExperience/WorkDrawer'
-import ResumePopup from './ResumePopup'
 
 const MainContent = () => {
   const windowSize = useWindowSize()
@@ -23,7 +22,6 @@ const MainContent = () => {
 
       <AboutMe />
       <WorkExperienceMobile />
-      <ResumePopup />
 
       <Navbar />
       <MediaPlayer />

@@ -40,9 +40,8 @@ const AboutMe = () => {
                     </span>
                     <span className="leading-7">
                       I'm a software developer from Vietnam with a few years of web development
-                      experience, mostly on the user interface and the REST APIs. I also have
-                      college experience on Cloud Computing and DevOps, and cannot wait to try my
-                      skills on real projects!
+                      experience, I also studied Cloud Computing and AI during my post-graduate
+                      college years, and cannot wait to try my skills on real projects!
                     </span>
                   </div>
                 </div>
@@ -52,7 +51,7 @@ const AboutMe = () => {
                       Web Development
                     </span>
                     <span className="leading-7">
-                      I'm most familiar with working on websites, usually equipped with{' '}
+                      My current go-to teck stack for most of my works usually consists of:{' '}
                       <span className="text-[#3B82F6] inline-block font-semibold">
                         <img
                           src="./images/logo/react.svg"
@@ -63,7 +62,7 @@ const AboutMe = () => {
                         />{' '}
                         React
                       </span>
-                      {', '}
+                      {' / '}
                       <span className="text-black inline-block font-semibold">
                         <img
                           src="./images/logo/nextjs.svg"
@@ -74,15 +73,19 @@ const AboutMe = () => {
                         />{' '}
                         Next.js
                       </span>
-                      {', and '}
-                      <span className="text-white bg-gray-700 inline-block px-1.5 rounded-lg font-semibold">
+                      {' and '}
+                      <span className="text-white bg-gray-600 inline-block px-1.5 rounded-lg font-semibold">
                         Express.js
-                      </span>{' '}
-                      as my go-to toolboxes to meet the needs and design from my clients.
+                      </span>
+                      .
                       <br />
-                      Also, I love studying 3D modelling and always want to try creating
-                      eye-catching websites using{' '}
-                      <span className="text-white bg-emerald-700 inline-block px-1.5 rounded-lg font-semibold">
+                      To improve myself in the mean time, I'm learning other languages, software
+                      architecture design techniques, and ML/AI modelling as well.
+                      <br />
+                      <br />
+                      Also, my passion also includes graphics design & 3D modelling, so I'm reading
+                      up on{' '}
+                      <span className="text-white bg-[#222222] inline-block px-1.5 rounded-lg font-semibold">
                         <img
                           src="./images/logo/threejs.svg"
                           width={24}
@@ -92,18 +95,19 @@ const AboutMe = () => {
                         />{' '}
                         Three.js
                       </span>
-                      !
+                      , learning how to creates eye-catching 3D websites!
                     </span>
                   </div>
                   <div className="flex flex-col gap-y-3">
                     <span className="leading-7 text-xl lg:text-2xl font-title font-semibold">
-                      Cloud / DevOps
+                      DevOps & IT
                     </span>
                     <span className="leading-7">
-                      After a few years working as a junior developer, I eventually got myself
-                      curious on how to deploy apps to the Internet. From there, I took a Cloud
-                      Computing course in college, and have also been looking by myself on Cloud /
-                      DevOps.
+                      After graduating with a Bachelor of IT and having a few years working as a
+                      junior developer, I eventually got myself curious on how to deploy & manage
+                      apps on the Internet. From there, I took a Cloud Computing course in college
+                      and have been self-studying to learn more about DevOps.
+                      <br />
                       <br />
                       While currently having little to no work experiences, I'm keeping myself
                       updated by learning{' '}
@@ -117,7 +121,7 @@ const AboutMe = () => {
                         />{' '}
                         Kubernetes
                       </span>
-                      {' and '}
+                      {', '}
                       <span className="text-[#623ce4] inline-block font-semibold">
                         <img
                           src="./images/logo/terraform.svg"
@@ -128,32 +132,7 @@ const AboutMe = () => {
                         />{' '}
                         Terraform
                       </span>
-                      , passed a number of{' '}
-                      <span className="text-gray-800 font-semibold">
-                        <span className="text-white bg-[#ed7100] inline-block px-1.5 rounded-lg font-semibold">
-                          <img
-                            src="./images/logo/aws.svg"
-                            width={24}
-                            height={24}
-                            alt="react"
-                            className="inline"
-                          />{' '}
-                          AWS
-                        </span>
-                        {' and '}
-                        <span className=" bg-[#f3f3f3] inline-block px-1.5 rounded-lg">
-                          <img
-                            src="./images/logo/microsoft.svg"
-                            width={24}
-                            height={24}
-                            alt="react"
-                            className="inline"
-                          />{' '}
-                          Microsoft
-                        </span>{' '}
-                        certifications
-                      </span>
-                      , and applying the knowledge to my personal projects.
+                      , etc.; and applying them to my personal softdev projects whenever possible.
                     </span>
                   </div>
                 </div>
@@ -161,66 +140,83 @@ const AboutMe = () => {
                   <span className="leading-7 text-xl lg:text-2xl font-title font-semibold">
                     Certifications 📃 I have achieved!
                     <span className="ml-2 italic text-xs lg:text-sm">
-                      (And many more to come...)
+                      (and I'm still hungry for more 💪)
                     </span>
                   </span>
-                  <div className="grid grid-cols-4 lg:grid-cols-8 items-center">
-                    <a href="https://www.credly.com/badges/a87b2ce2-6f95-4202-8701-9af0a3cb757b/public_url">
+                  <span className="leading-7">
+                    I enjoy continuously learning and improving my skills, which is why I actively
+                    study for different certifications, varying from: cloud provider-specific,
+                    networking, cybersecurity, etc. They help me stay current with new technologies
+                    and grow confidently in my career. You can check out my certifications down
+                    below:
+                  </span>
+                  <div className="flex flex-wrap justify-center gap-x-2 items-center">
+                    <a href="https://www.credly.com/badges/25743ab2-ddd6-4187-865c-2b5eb5b1d5ac/public_url">
                       <img
-                        src="/images/certifications/aws-certified-cloud-practitioner.png"
-                        alt="drawing"
+                        src="/images/certifications/cisco-ccna.png"
+                        alt="Cisco Certified Network Associate"
                         width="100"
                       />
                     </a>
-                    <a href="https://www.credly.com/badges/4538b70e-d7da-4c76-b98a-0c311e7279ea/public_url">
+                    <a href="https://www.credly.com/badges/42513a44-7f78-4062-a878-bd034b11639a/public_url">
                       <img
-                        src="/images/certifications/aws-certified-developer-associate.png"
-                        alt="drawing"
-                        width="100"
-                      />
-                    </a>
-                    <a href="https://www.credly.com/badges/a1eb00a0-cf97-44a7-8f82-3729849db352/public_url">
-                      <img
-                        src="/images/certifications/aws-certified-solutions-architect-associate.png"
-                        alt="drawing"
-                        width="100"
-                      />
-                    </a>
-                    <a href="https://learn.microsoft.com/api/credentials/share/en-us/BachHa/596373B87AA164E0?sharingId=ED53CABF2080B677">
-                      <img
-                        src="/images/certifications/microsoft-identity-and-access-admin-associate.png"
-                        alt="drawing"
-                        width="100"
-                      />
-                    </a>
-                    <a href="https://learn.microsoft.com/api/credentials/share/en-us/BachHa/61CAC71264A1B02?sharingId=ED53CABF2080B677">
-                      <img
-                        src="/images/certifications/microsoft-365-admin-expert.png"
-                        alt="drawing"
+                        src="/images/certifications/isc2-cc.png"
+                        alt="ISC2 Certified in Cybersecurity"
                         width="100"
                       />
                     </a>
                     <a href="https://learn.microsoft.com/en-us/users/bachha/credentials/b46f8687d4eb2af6">
                       <img
                         src="/images/certifications/microsoft-azure-fundamentals.png"
-                        alt="drawing"
+                        alt="Microsoft Azure Fundamentals"
                         width="100"
                       />
                     </a>
-                    <a href="https://www.credly.com/badges/42513a44-7f78-4062-a878-bd034b11639a/public_url">
-                      <img src="/images/certifications/isc2-cc.png" alt="drawing" width="100" />
+                    <a href="https://learn.microsoft.com/api/credentials/share/en-us/BachHa/61CAC71264A1B02?sharingId=ED53CABF2080B677">
+                      <img
+                        src="/images/certifications/microsoft-365-admin-expert.png"
+                        alt="Microsoft 365 Admin Expert"
+                        width="100"
+                      />
+                    </a>
+                    <a href="https://learn.microsoft.com/api/credentials/share/en-us/BachHa/596373B87AA164E0?sharingId=ED53CABF2080B677">
+                      <img
+                        src="/images/certifications/microsoft-identity-and-access-admin-associate.png"
+                        alt="Microsoft Identity and Access Admin Associate"
+                        width="100"
+                      />
+                    </a>
+                    <a href="https://www.credly.com/badges/a1eb00a0-cf97-44a7-8f82-3729849db352/public_url">
+                      <img
+                        src="/images/certifications/aws-certified-solutions-architect-associate.png"
+                        alt="AWS Solutions Architect Associate"
+                        width="100"
+                      />
+                    </a>
+                    <a href="https://www.credly.com/badges/4538b70e-d7da-4c76-b98a-0c311e7279ea/public_url">
+                      <img
+                        src="/images/certifications/aws-certified-developer-associate.png"
+                        alt="AWS Developer Associate"
+                        width="100"
+                      />
+                    </a>
+                    <a href="https://www.credly.com/badges/a87b2ce2-6f95-4202-8701-9af0a3cb757b/public_url">
+                      <img
+                        src="/images/certifications/aws-certified-cloud-practitioner.png"
+                        alt="AWS Cloud Practitioner"
+                        width="100"
+                      />
+                    </a>
+                    <a href="https://threejs-journey.com/certificate/view/25280">
+                      <img
+                        src="/images/certifications/threejs-journey.png"
+                        alt="Three.js Journey"
+                        width="100"
+                      />
                     </a>
                   </div>
                 </div>
                 <div className="flex flex-col items-center lg:w-4/5 gap-y-4 mt-6 py-6 text-sm lg:text-base text-center">
-                  <span className="leading-7">
-                    <i>
-                      This is just the beginning of my journey, there will be a lot more of
-                      surprises!
-                    </i>
-                    <br />
-                    And I hope that we can work together!
-                  </span>
                   <button
                     onClick={navigateToContact}
                     className="py-2 px-4 rounded-full border border-base hover:bg-coffee-3 hover:border-coffee-3 hover:text-white transition-colors"
