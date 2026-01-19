@@ -1,6 +1,6 @@
-const Work_2023_Anyjoi = () => {
+const Work_2024_Anyjoi = () => {
   return (
-    <div className="flex flex-col w-full overflow-hidden pb-4 lg:pb-8">
+    <div className="flex flex-col w-full overflow-hidden pb-20">
       <div className="flex items-center justify-center mx-4 lg:mx-16 h-[160px] bg-coffee-6 text-center">
         <h1 className="text-coffee-0 font-title font-bold tracking-wider text-[40px] lg:text-[48px] leading-[44px]">
           ANYJOI
@@ -15,12 +15,12 @@ const Work_2023_Anyjoi = () => {
           </div>
           <div className="flex flex-col gap-y-1 ml-4 lg:ml-8">
             <span>Anyjoi</span>
-            <span>2023 - Now</span>
+            <span>2024 - Now</span>
             <span>Web Developer</span>
           </div>
         </div>
         <a
-          className="group transition-colors duration-300 mt-8 lg:mt-0 ml-auto lg:ml-24 hover:text-coffee-6 text-base lg:text-2xl w-fit lg:w-auto"
+          className="group transition-colors duration-300 mt-2 lg:mt-0 ml-auto lg:ml-24 hover:text-coffee-6 text-sm lg:text-2xl w-fit lg:w-auto"
           href="https://anyjoi.com/"
           target="_blank"
         >
@@ -37,15 +37,15 @@ const Work_2023_Anyjoi = () => {
       </i>
       <div className="flex flex-col mt-8 mx-4 lg:mx-8 gap-y-4 lg:gap-y-8">
         <div className="flex">
-          <img src="/images/works/2023/anyjoi/desktop-1.jpg" />
+          <img src="/images/works/2024/anyjoi/desktop-1.jpg" />
         </div>
         <div className="grid lg:grid-cols-3 w-full gap-4 lg:gap-8 px-8 lg:px-0">
-          <img className="w-full" src="/images/works/2023/anyjoi/mobile-1.png" />
-          <img className="w-full" src="/images/works/2023/anyjoi/mobile-2.png" />
-          <img className="w-full" src="/images/works/2023/anyjoi/mobile-3.png" />
+          <img className="w-full" src="/images/works/2024/anyjoi/mobile-1.png" />
+          <img className="w-full" src="/images/works/2024/anyjoi/mobile-2.png" />
+          <img className="w-full" src="/images/works/2024/anyjoi/mobile-3.png" />
         </div>
       </div>
     </div>
   )
 }
-export default Work_2023_Anyjoi
+export default Work_2024_Anyjoi

@@ -4,13 +4,14 @@ import { displayedWorkAtom } from '@/utils/recoil'
 import Works from '@/utils/works'
 import Work_2020_Edutech from './WorkListing/2020/Work_2020_Edutech'
 import Work_2022_Superjoi from './WorkListing/2022/Work_2022_Superjoi'
-import Work_2023_Anyjoi from './WorkListing/2023/Work_2023_Anyjoi'
+import Work_2024_Anyjoi from './WorkListing/2024/Work_2024_Anyjoi'
 import Work_2024_StudentSpace from './WorkListing/2024/Work_2024_StudentSpace'
 import Work_2024_Breeeds from './WorkListing/2024/Work_2024_Breeeds'
 import Work_2024_Mezzya from './WorkListing/2024/Work_2024_Mezzya'
 import Work_2024_GOD from './WorkListing/2024/Work_2024_GOD'
 import Work_2024_EKSDemo from './WorkListing/2024/Work_2024_EKSDemo'
 import Work_2025_EKSDemoTerraform from './WorkListing/2025/Work_2025_EKSDemoTerraform'
+import Work_2025_Blitzhype from './WorkListing/2025/Work_2025_Blitzhype'
 
 const WorkDrawer = () => {
   const [displayedWork, setDisplayedWork] = useRecoilState(displayedWorkAtom)
@@ -19,6 +20,8 @@ const WorkDrawer = () => {
     switch (displayedWork) {
       case Works.Y2025.EKS_DEMO_TERRAFORM.name:
         return <Work_2025_EKSDemoTerraform />
+      case Works.Y2025.BLITZHYPE.name:
+        return <Work_2025_Blitzhype />
 
       case Works.Y2024.EKS_DEMO.name:
         return <Work_2024_EKSDemo />
@@ -28,11 +31,10 @@ const WorkDrawer = () => {
         return <Work_2024_Mezzya />
       case Works.Y2024.BREEEDS.name:
         return <Work_2024_Breeeds />
+      case Works.Y2024.ANYJOI.name:
+        return <Work_2024_Anyjoi />
       case Works.Y2024.STUDENTSPACE.name:
         return <Work_2024_StudentSpace />
-
-      case Works.Y2023.ANYJOI.name:
-        return <Work_2023_Anyjoi />
 
       case Works.Y2022.SUPERJOI.name:
         return <Work_2022_Superjoi />

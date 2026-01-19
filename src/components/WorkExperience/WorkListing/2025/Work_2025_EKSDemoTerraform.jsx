@@ -1,6 +1,6 @@
 const Work_2025_EKSDemoTerraform = () => {
   return (
-    <div className="flex flex-col w-full overflow-hidden pb-4 lg:pb-8">
+    <div className="flex flex-col w-full overflow-hidden pb-20">
       <div className="flex items-center justify-center mx-4 lg:mx-16 h-[160px] bg-coffee-6 text-center">
         <h1 className="text-coffee-0 font-title font-bold tracking-wider text-[40px] lg:text-[48px] leading-[44px]">
           EKS DEMO TERRAFORM (COFFEE SHOP)

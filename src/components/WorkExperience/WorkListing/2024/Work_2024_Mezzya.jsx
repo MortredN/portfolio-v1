@@ -1,6 +1,6 @@
 const Work_2024_Mezzya = () => {
   return (
-    <div className="flex flex-col w-full overflow-hidden pb-4 lg:pb-8">
+    <div className="flex flex-col w-full overflow-hidden pb-20">
       <div className="flex items-center justify-center mx-4 lg:mx-16 h-[160px] bg-coffee-6 text-center">
         <h1 className="text-coffee-0 font-title font-bold tracking-wider text-[40px] lg:text-[48px] leading-[44px]">
           MEZZYA
@@ -20,7 +20,7 @@ const Work_2024_Mezzya = () => {
           </div>
         </div>
         <a
-          className="group transition-colors duration-300 mt-8 lg:mt-0 ml-auto lg:ml-24 hover:text-coffee-6 text-base lg:text-2xl w-fit lg:w-auto"
+          className="group transition-colors duration-300 mt-2 lg:mt-0 ml-auto lg:ml-24 hover:text-coffee-6 text-sm lg:text-2xl w-fit lg:w-auto"
           href="https://mezzya.com/"
           target="_blank"
         >

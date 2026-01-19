@@ -3,7 +3,11 @@ const Works = {
     EKS_DEMO_TERRAFORM: {
       name: '2025_EKS_DEMO_TERRAFORM',
       thumbnail: '/images/works/2025/eks-demo-terraform/logo.png'
-    }
+    },
+    BLITZHYPE: {
+      name: '2025_BLITZHYPE',
+      thumbnail: '/images/works/2025/blitzhype/logo.png'
+    },
   },
   Y2024: {
     EKS_DEMO: {
@@ -22,15 +26,13 @@ const Works = {
       name: '2024_Breeeds',
       thumbnail: '/images/works/2024/breeeds/logo.png'
     },
+    ANYJOI: {
+      name: '2024_Anyjoi',
+      thumbnail: '/images/works/2024/anyjoi/logo.png'
+    },
     STUDENTSPACE: {
       name: '2024_StudentSpace',
       thumbnail: '/images/works/2024/studentspace/logo.png'
-    }
-  },
-  Y2023: {
-    ANYJOI: {
-      name: '2023_Anyjoi',
-      thumbnail: '/images/works/2023/anyjoi/logo.png'
     }
   },
   Y2022: {

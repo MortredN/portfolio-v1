@@ -29,7 +29,7 @@ const AboutMe = () => {
             style={{ width: screenSize.width >= 1024 ? `60%` : `100%` }}
           >
             <div className="h-screen overflow-y-auto relative bg-[#EEEEEED9]">
-              <div className="pt-8 pb-16 px-4 lg:px-8 tracking-wide h-full overflow-y-auto flex flex-col items-center">
+              <div className="py-24 lg:pt-8 lg:pb-16 px-4 lg:px-8 tracking-wide h-full overflow-y-auto flex flex-col items-center">
                 <h1 className="text-[32px] lg:text-[40px] text-center font-bold font-title tracking-wider mb-6">
                   About me
                 </h1>
@@ -45,7 +45,7 @@ const AboutMe = () => {
                     </span>
                   </div>
                 </div>
-                <div className="grid lg:grid-cols-2 py-6 text-base lg:text-lg gap-y-12 gap-x-12">
+                <div className="grid lg:grid-cols-2 py-6 text-base lg:text-lg gap-12">
                   <div className="flex flex-col gap-y-3">
                     <span className="leading-7 text-xl lg:text-2xl font-title font-semibold">
                       Web Development
@@ -150,64 +150,88 @@ const AboutMe = () => {
                     and grow confidently in my career. You can check out my certifications down
                     below:
                   </span>
-                  <div className="flex flex-wrap justify-center gap-x-2 items-center">
-                    <a href="https://www.credly.com/badges/25743ab2-ddd6-4187-865c-2b5eb5b1d5ac/public_url">
+                  <div className="flex flex-wrap justify-center gap-2 items-center">
+                    <a
+                      href="https://www.credly.com/badges/25743ab2-ddd6-4187-865c-2b5eb5b1d5ac/public_url"
+                      target="_blank"
+                    >
                       <img
                         src="/images/certifications/cisco-ccna.png"
                         alt="Cisco Certified Network Associate"
                         width="100"
                       />
                     </a>
-                    <a href="https://www.credly.com/badges/42513a44-7f78-4062-a878-bd034b11639a/public_url">
+                    <a
+                      href="https://www.credly.com/badges/42513a44-7f78-4062-a878-bd034b11639a/public_url"
+                      target="_blank"
+                    >
                       <img
                         src="/images/certifications/isc2-cc.png"
                         alt="ISC2 Certified in Cybersecurity"
                         width="100"
                       />
                     </a>
-                    <a href="https://learn.microsoft.com/en-us/users/bachha/credentials/b46f8687d4eb2af6">
+                    <a
+                      href="https://learn.microsoft.com/en-us/users/bachha/credentials/b46f8687d4eb2af6"
+                      target="_blank"
+                    >
                       <img
                         src="/images/certifications/microsoft-azure-fundamentals.png"
                         alt="Microsoft Azure Fundamentals"
                         width="100"
                       />
                     </a>
-                    <a href="https://learn.microsoft.com/api/credentials/share/en-us/BachHa/61CAC71264A1B02?sharingId=ED53CABF2080B677">
+                    <a
+                      href="https://learn.microsoft.com/api/credentials/share/en-us/BachHa/61CAC71264A1B02?sharingId=ED53CABF2080B677"
+                      target="_blank"
+                    >
                       <img
                         src="/images/certifications/microsoft-365-admin-expert.png"
                         alt="Microsoft 365 Admin Expert"
                         width="100"
                       />
                     </a>
-                    <a href="https://learn.microsoft.com/api/credentials/share/en-us/BachHa/596373B87AA164E0?sharingId=ED53CABF2080B677">
+                    <a
+                      href="https://learn.microsoft.com/api/credentials/share/en-us/BachHa/596373B87AA164E0?sharingId=ED53CABF2080B677"
+                      target="_blank"
+                    >
                       <img
                         src="/images/certifications/microsoft-identity-and-access-admin-associate.png"
                         alt="Microsoft Identity and Access Admin Associate"
                         width="100"
                       />
                     </a>
-                    <a href="https://www.credly.com/badges/a1eb00a0-cf97-44a7-8f82-3729849db352/public_url">
+                    <a
+                      href="https://www.credly.com/badges/a1eb00a0-cf97-44a7-8f82-3729849db352/public_url"
+                      target="_blank"
+                    >
                       <img
                         src="/images/certifications/aws-certified-solutions-architect-associate.png"
                         alt="AWS Solutions Architect Associate"
                         width="100"
                       />
                     </a>
-                    <a href="https://www.credly.com/badges/4538b70e-d7da-4c76-b98a-0c311e7279ea/public_url">
+                    <a
+                      href="https://www.credly.com/badges/4538b70e-d7da-4c76-b98a-0c311e7279ea/public_url"
+                      target="_blank"
+                    >
                       <img
                         src="/images/certifications/aws-certified-developer-associate.png"
                         alt="AWS Developer Associate"
                         width="100"
                       />
                     </a>
-                    <a href="https://www.credly.com/badges/a87b2ce2-6f95-4202-8701-9af0a3cb757b/public_url">
+                    <a
+                      href="https://www.credly.com/badges/a87b2ce2-6f95-4202-8701-9af0a3cb757b/public_url"
+                      target="_blank"
+                    >
                       <img
                         src="/images/certifications/aws-certified-cloud-practitioner.png"
                         alt="AWS Cloud Practitioner"
                         width="100"
                       />
                     </a>
-                    <a href="https://threejs-journey.com/certificate/view/25280">
+                    <a href="https://threejs-journey.com/certificate/view/25280" target="_blank">
                       <img
                         src="/images/certifications/threejs-journey.png"
                         alt="Three.js Journey"
